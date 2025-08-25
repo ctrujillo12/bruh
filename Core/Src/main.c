@@ -132,7 +132,7 @@ int main(void)
   /* USER CODE BEGIN BSP */
 
 //   /* -- Sample board code to send message over COM1 port ---- */
-//   printf("Welcome to STM32 world !\n\r");
+// printf("Welcome to STM32 world !\n\r");
 
 //   /* -- Sample board code to switch on leds ---- */
 //   BSP_LED_On(LED_GREEN);

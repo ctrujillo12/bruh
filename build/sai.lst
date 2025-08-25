@@ -1,0 +1,1036 @@
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"sai.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "Core/Src/sai.c"
+  19              		.section	.text.MX_SAI1_Init,"ax",%progbits
+  20              		.align	1
+  21              		.global	MX_SAI1_Init
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	MX_SAI1_Init:
+  27              	.LFB147:
+   1:Core/Src/sai.c **** /* USER CODE BEGIN Header */
+   2:Core/Src/sai.c **** /**
+   3:Core/Src/sai.c ****   ******************************************************************************
+   4:Core/Src/sai.c ****   * File Name          : SAI.c
+   5:Core/Src/sai.c ****   * Description        : This file provides code for the configuration
+   6:Core/Src/sai.c ****   *                      of the SAI instances.
+   7:Core/Src/sai.c ****   ******************************************************************************
+   8:Core/Src/sai.c ****   * @attention
+   9:Core/Src/sai.c ****   *
+  10:Core/Src/sai.c ****   * Copyright (c) 2025 STMicroelectronics.
+  11:Core/Src/sai.c ****   * All rights reserved.
+  12:Core/Src/sai.c ****   *
+  13:Core/Src/sai.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  14:Core/Src/sai.c ****   * in the root directory of this software component.
+  15:Core/Src/sai.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  16:Core/Src/sai.c ****   *
+  17:Core/Src/sai.c ****   ******************************************************************************
+  18:Core/Src/sai.c ****   */
+  19:Core/Src/sai.c **** /* USER CODE END Header */
+  20:Core/Src/sai.c **** 
+  21:Core/Src/sai.c **** /* Includes ------------------------------------------------------------------*/
+  22:Core/Src/sai.c **** #include "sai.h"
+  23:Core/Src/sai.c **** 
+  24:Core/Src/sai.c **** /* USER CODE BEGIN 0 */
+  25:Core/Src/sai.c **** 
+  26:Core/Src/sai.c **** /* USER CODE END 0 */
+  27:Core/Src/sai.c **** 
+  28:Core/Src/sai.c **** SAI_HandleTypeDef hsai_BlockA1;
+  29:Core/Src/sai.c **** SAI_HandleTypeDef hsai_BlockA4;
+  30:Core/Src/sai.c **** 
+  31:Core/Src/sai.c **** /* SAI1 init function */
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 2
+
+
+  32:Core/Src/sai.c **** void MX_SAI1_Init(void)
+  33:Core/Src/sai.c **** {
+  28              		.loc 1 33 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  34:Core/Src/sai.c **** 
+  35:Core/Src/sai.c ****   /* USER CODE BEGIN SAI1_Init 0 */
+  36:Core/Src/sai.c **** 
+  37:Core/Src/sai.c ****   /* USER CODE END SAI1_Init 0 */
+  38:Core/Src/sai.c **** 
+  39:Core/Src/sai.c ****   /* USER CODE BEGIN SAI1_Init 1 */
+  40:Core/Src/sai.c **** 
+  41:Core/Src/sai.c ****   /* USER CODE END SAI1_Init 1 */
+  42:Core/Src/sai.c **** 
+  43:Core/Src/sai.c ****   hsai_BlockA1.Instance = SAI1_Block_A;
+  37              		.loc 1 43 3 view .LVU1
+  38              		.loc 1 43 25 is_stmt 0 view .LVU2
+  39 0002 1648     		ldr	r0, .L5
+  40 0004 164B     		ldr	r3, .L5+4
+  41 0006 0360     		str	r3, [r0]
+  44:Core/Src/sai.c ****   hsai_BlockA1.Init.Protocol = SAI_FREE_PROTOCOL;
+  42              		.loc 1 44 3 is_stmt 1 view .LVU3
+  43              		.loc 1 44 30 is_stmt 0 view .LVU4
+  44 0008 0023     		movs	r3, #0
+  45 000a 4364     		str	r3, [r0, #68]
+  45:Core/Src/sai.c ****   hsai_BlockA1.Init.AudioMode = SAI_MODEMASTER_TX;
+  46              		.loc 1 45 3 is_stmt 1 view .LVU5
+  47              		.loc 1 45 31 is_stmt 0 view .LVU6
+  48 000c 4360     		str	r3, [r0, #4]
+  46:Core/Src/sai.c ****   hsai_BlockA1.Init.DataSize = SAI_DATASIZE_8;
+  49              		.loc 1 46 3 is_stmt 1 view .LVU7
+  50              		.loc 1 46 30 is_stmt 0 view .LVU8
+  51 000e 4022     		movs	r2, #64
+  52 0010 8264     		str	r2, [r0, #72]
+  47:Core/Src/sai.c ****   hsai_BlockA1.Init.FirstBit = SAI_FIRSTBIT_MSB;
+  53              		.loc 1 47 3 is_stmt 1 view .LVU9
+  54              		.loc 1 47 30 is_stmt 0 view .LVU10
+  55 0012 C364     		str	r3, [r0, #76]
+  48:Core/Src/sai.c ****   hsai_BlockA1.Init.ClockStrobing = SAI_CLOCKSTROBING_FALLINGEDGE;
+  56              		.loc 1 48 3 is_stmt 1 view .LVU11
+  57              		.loc 1 48 35 is_stmt 0 view .LVU12
+  58 0014 0365     		str	r3, [r0, #80]
+  49:Core/Src/sai.c ****   hsai_BlockA1.Init.Synchro = SAI_ASYNCHRONOUS;
+  59              		.loc 1 49 3 is_stmt 1 view .LVU13
+  60              		.loc 1 49 29 is_stmt 0 view .LVU14
+  61 0016 8360     		str	r3, [r0, #8]
+  50:Core/Src/sai.c ****   hsai_BlockA1.Init.OutputDrive = SAI_OUTPUTDRIVE_DISABLE;
+  62              		.loc 1 50 3 is_stmt 1 view .LVU15
+  63              		.loc 1 50 33 is_stmt 0 view .LVU16
+  64 0018 4361     		str	r3, [r0, #20]
+  51:Core/Src/sai.c ****   hsai_BlockA1.Init.NoDivider = SAI_MASTERDIVIDER_ENABLE;
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 3
+
+
+  65              		.loc 1 51 3 is_stmt 1 view .LVU17
+  66              		.loc 1 51 31 is_stmt 0 view .LVU18
+  67 001a 8361     		str	r3, [r0, #24]
+  52:Core/Src/sai.c ****   hsai_BlockA1.Init.FIFOThreshold = SAI_FIFOTHRESHOLD_EMPTY;
+  68              		.loc 1 52 3 is_stmt 1 view .LVU19
+  69              		.loc 1 52 35 is_stmt 0 view .LVU20
+  70 001c C361     		str	r3, [r0, #28]
+  53:Core/Src/sai.c ****   hsai_BlockA1.Init.AudioFrequency = SAI_AUDIO_FREQUENCY_192K;
+  71              		.loc 1 53 3 is_stmt 1 view .LVU21
+  72              		.loc 1 53 36 is_stmt 0 view .LVU22
+  73 001e 114A     		ldr	r2, .L5+8
+  74 0020 0262     		str	r2, [r0, #32]
+  54:Core/Src/sai.c ****   hsai_BlockA1.Init.SynchroExt = SAI_SYNCEXT_DISABLE;
+  75              		.loc 1 54 3 is_stmt 1 view .LVU23
+  76              		.loc 1 54 32 is_stmt 0 view .LVU24
+  77 0022 C360     		str	r3, [r0, #12]
+  55:Core/Src/sai.c ****   hsai_BlockA1.Init.MonoStereoMode = SAI_STEREOMODE;
+  78              		.loc 1 55 3 is_stmt 1 view .LVU25
+  79              		.loc 1 55 36 is_stmt 0 view .LVU26
+  80 0024 C362     		str	r3, [r0, #44]
+  56:Core/Src/sai.c ****   hsai_BlockA1.Init.CompandingMode = SAI_NOCOMPANDING;
+  81              		.loc 1 56 3 is_stmt 1 view .LVU27
+  82              		.loc 1 56 36 is_stmt 0 view .LVU28
+  83 0026 0363     		str	r3, [r0, #48]
+  57:Core/Src/sai.c ****   hsai_BlockA1.Init.TriState = SAI_OUTPUT_NOTRELEASED;
+  84              		.loc 1 57 3 is_stmt 1 view .LVU29
+  85              		.loc 1 57 30 is_stmt 0 view .LVU30
+  86 0028 4363     		str	r3, [r0, #52]
+  58:Core/Src/sai.c ****   hsai_BlockA1.Init.PdmInit.Activation = DISABLE;
+  87              		.loc 1 58 3 is_stmt 1 view .LVU31
+  88              		.loc 1 58 40 is_stmt 0 view .LVU32
+  89 002a 80F83830 		strb	r3, [r0, #56]
+  59:Core/Src/sai.c ****   hsai_BlockA1.Init.PdmInit.MicPairsNbr = 0;
+  90              		.loc 1 59 3 is_stmt 1 view .LVU33
+  91              		.loc 1 59 41 is_stmt 0 view .LVU34
+  92 002e C363     		str	r3, [r0, #60]
+  60:Core/Src/sai.c ****   hsai_BlockA1.Init.PdmInit.ClockEnable = SAI_PDM_CLOCK1_ENABLE;
+  93              		.loc 1 60 3 is_stmt 1 view .LVU35
+  94              		.loc 1 60 41 is_stmt 0 view .LVU36
+  95 0030 4FF48072 		mov	r2, #256
+  96 0034 0264     		str	r2, [r0, #64]
+  61:Core/Src/sai.c ****   hsai_BlockA1.FrameInit.FrameLength = 8;
+  97              		.loc 1 61 3 is_stmt 1 view .LVU37
+  98              		.loc 1 61 38 is_stmt 0 view .LVU38
+  99 0036 0822     		movs	r2, #8
+ 100 0038 4265     		str	r2, [r0, #84]
+  62:Core/Src/sai.c ****   hsai_BlockA1.FrameInit.ActiveFrameLength = 1;
+ 101              		.loc 1 62 3 is_stmt 1 view .LVU39
+ 102              		.loc 1 62 44 is_stmt 0 view .LVU40
+ 103 003a 0122     		movs	r2, #1
+ 104 003c 8265     		str	r2, [r0, #88]
+  63:Core/Src/sai.c ****   hsai_BlockA1.FrameInit.FSDefinition = SAI_FS_STARTFRAME;
+ 105              		.loc 1 63 3 is_stmt 1 view .LVU41
+ 106              		.loc 1 63 39 is_stmt 0 view .LVU42
+ 107 003e C365     		str	r3, [r0, #92]
+  64:Core/Src/sai.c ****   hsai_BlockA1.FrameInit.FSPolarity = SAI_FS_ACTIVE_LOW;
+ 108              		.loc 1 64 3 is_stmt 1 view .LVU43
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 4
+
+
+ 109              		.loc 1 64 37 is_stmt 0 view .LVU44
+ 110 0040 0366     		str	r3, [r0, #96]
+  65:Core/Src/sai.c ****   hsai_BlockA1.FrameInit.FSOffset = SAI_FS_FIRSTBIT;
+ 111              		.loc 1 65 3 is_stmt 1 view .LVU45
+ 112              		.loc 1 65 35 is_stmt 0 view .LVU46
+ 113 0042 4366     		str	r3, [r0, #100]
+  66:Core/Src/sai.c ****   hsai_BlockA1.SlotInit.FirstBitOffset = 0;
+ 114              		.loc 1 66 3 is_stmt 1 view .LVU47
+ 115              		.loc 1 66 40 is_stmt 0 view .LVU48
+ 116 0044 8366     		str	r3, [r0, #104]
+  67:Core/Src/sai.c ****   hsai_BlockA1.SlotInit.SlotSize = SAI_SLOTSIZE_DATASIZE;
+ 117              		.loc 1 67 3 is_stmt 1 view .LVU49
+ 118              		.loc 1 67 34 is_stmt 0 view .LVU50
+ 119 0046 C366     		str	r3, [r0, #108]
+  68:Core/Src/sai.c ****   hsai_BlockA1.SlotInit.SlotNumber = 1;
+ 120              		.loc 1 68 3 is_stmt 1 view .LVU51
+ 121              		.loc 1 68 36 is_stmt 0 view .LVU52
+ 122 0048 0267     		str	r2, [r0, #112]
+  69:Core/Src/sai.c ****   hsai_BlockA1.SlotInit.SlotActive = 0x00000000;
+ 123              		.loc 1 69 3 is_stmt 1 view .LVU53
+ 124              		.loc 1 69 36 is_stmt 0 view .LVU54
+ 125 004a 4367     		str	r3, [r0, #116]
+  70:Core/Src/sai.c ****   if (HAL_SAI_Init(&hsai_BlockA1) != HAL_OK)
+ 126              		.loc 1 70 3 is_stmt 1 view .LVU55
+ 127              		.loc 1 70 7 is_stmt 0 view .LVU56
+ 128 004c FFF7FEFF 		bl	HAL_SAI_Init
+ 129              	.LVL0:
+ 130              		.loc 1 70 6 discriminator 1 view .LVU57
+ 131 0050 00B9     		cbnz	r0, .L4
+ 132              	.L1:
+  71:Core/Src/sai.c ****   {
+  72:Core/Src/sai.c ****     Error_Handler();
+  73:Core/Src/sai.c ****   }
+  74:Core/Src/sai.c ****   /* USER CODE BEGIN SAI1_Init 2 */
+  75:Core/Src/sai.c **** 
+  76:Core/Src/sai.c ****   /* USER CODE END SAI1_Init 2 */
+  77:Core/Src/sai.c **** 
+  78:Core/Src/sai.c **** }
+ 133              		.loc 1 78 1 view .LVU58
+ 134 0052 08BD     		pop	{r3, pc}
+ 135              	.L4:
+  72:Core/Src/sai.c ****   }
+ 136              		.loc 1 72 5 is_stmt 1 view .LVU59
+ 137 0054 FFF7FEFF 		bl	Error_Handler
+ 138              	.LVL1:
+ 139              		.loc 1 78 1 is_stmt 0 view .LVU60
+ 140 0058 FBE7     		b	.L1
+ 141              	.L6:
+ 142 005a 00BF     		.align	2
+ 143              	.L5:
+ 144 005c 00000000 		.word	hsai_BlockA1
+ 145 0060 04580140 		.word	1073829892
+ 146 0064 00EE0200 		.word	192000
+ 147              		.cfi_endproc
+ 148              	.LFE147:
+ 150              		.section	.text.MX_SAI4_Init,"ax",%progbits
+ 151              		.align	1
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 5
+
+
+ 152              		.global	MX_SAI4_Init
+ 153              		.syntax unified
+ 154              		.thumb
+ 155              		.thumb_func
+ 157              	MX_SAI4_Init:
+ 158              	.LFB148:
+  79:Core/Src/sai.c **** /* SAI4 init function */
+  80:Core/Src/sai.c **** void MX_SAI4_Init(void)
+  81:Core/Src/sai.c **** {
+ 159              		.loc 1 81 1 is_stmt 1 view -0
+ 160              		.cfi_startproc
+ 161              		@ args = 0, pretend = 0, frame = 0
+ 162              		@ frame_needed = 0, uses_anonymous_args = 0
+ 163 0000 08B5     		push	{r3, lr}
+ 164              	.LCFI1:
+ 165              		.cfi_def_cfa_offset 8
+ 166              		.cfi_offset 3, -8
+ 167              		.cfi_offset 14, -4
+  82:Core/Src/sai.c **** 
+  83:Core/Src/sai.c ****   /* USER CODE BEGIN SAI4_Init 0 */
+  84:Core/Src/sai.c **** 
+  85:Core/Src/sai.c ****   /* USER CODE END SAI4_Init 0 */
+  86:Core/Src/sai.c **** 
+  87:Core/Src/sai.c ****   /* USER CODE BEGIN SAI4_Init 1 */
+  88:Core/Src/sai.c **** 
+  89:Core/Src/sai.c ****   /* USER CODE END SAI4_Init 1 */
+  90:Core/Src/sai.c **** 
+  91:Core/Src/sai.c ****   hsai_BlockA4.Instance = SAI4_Block_A;
+ 168              		.loc 1 91 3 view .LVU62
+ 169              		.loc 1 91 25 is_stmt 0 view .LVU63
+ 170 0002 1648     		ldr	r0, .L11
+ 171 0004 164B     		ldr	r3, .L11+4
+ 172 0006 0360     		str	r3, [r0]
+  92:Core/Src/sai.c ****   hsai_BlockA4.Init.Protocol = SAI_FREE_PROTOCOL;
+ 173              		.loc 1 92 3 is_stmt 1 view .LVU64
+ 174              		.loc 1 92 30 is_stmt 0 view .LVU65
+ 175 0008 0023     		movs	r3, #0
+ 176 000a 4364     		str	r3, [r0, #68]
+  93:Core/Src/sai.c ****   hsai_BlockA4.Init.AudioMode = SAI_MODEMASTER_TX;
+ 177              		.loc 1 93 3 is_stmt 1 view .LVU66
+ 178              		.loc 1 93 31 is_stmt 0 view .LVU67
+ 179 000c 4360     		str	r3, [r0, #4]
+  94:Core/Src/sai.c ****   hsai_BlockA4.Init.DataSize = SAI_DATASIZE_8;
+ 180              		.loc 1 94 3 is_stmt 1 view .LVU68
+ 181              		.loc 1 94 30 is_stmt 0 view .LVU69
+ 182 000e 4022     		movs	r2, #64
+ 183 0010 8264     		str	r2, [r0, #72]
+  95:Core/Src/sai.c ****   hsai_BlockA4.Init.FirstBit = SAI_FIRSTBIT_MSB;
+ 184              		.loc 1 95 3 is_stmt 1 view .LVU70
+ 185              		.loc 1 95 30 is_stmt 0 view .LVU71
+ 186 0012 C364     		str	r3, [r0, #76]
+  96:Core/Src/sai.c ****   hsai_BlockA4.Init.ClockStrobing = SAI_CLOCKSTROBING_FALLINGEDGE;
+ 187              		.loc 1 96 3 is_stmt 1 view .LVU72
+ 188              		.loc 1 96 35 is_stmt 0 view .LVU73
+ 189 0014 0365     		str	r3, [r0, #80]
+  97:Core/Src/sai.c ****   hsai_BlockA4.Init.Synchro = SAI_ASYNCHRONOUS;
+ 190              		.loc 1 97 3 is_stmt 1 view .LVU74
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 6
+
+
+ 191              		.loc 1 97 29 is_stmt 0 view .LVU75
+ 192 0016 8360     		str	r3, [r0, #8]
+  98:Core/Src/sai.c ****   hsai_BlockA4.Init.OutputDrive = SAI_OUTPUTDRIVE_DISABLE;
+ 193              		.loc 1 98 3 is_stmt 1 view .LVU76
+ 194              		.loc 1 98 33 is_stmt 0 view .LVU77
+ 195 0018 4361     		str	r3, [r0, #20]
+  99:Core/Src/sai.c ****   hsai_BlockA4.Init.NoDivider = SAI_MASTERDIVIDER_ENABLE;
+ 196              		.loc 1 99 3 is_stmt 1 view .LVU78
+ 197              		.loc 1 99 31 is_stmt 0 view .LVU79
+ 198 001a 8361     		str	r3, [r0, #24]
+ 100:Core/Src/sai.c ****   hsai_BlockA4.Init.FIFOThreshold = SAI_FIFOTHRESHOLD_EMPTY;
+ 199              		.loc 1 100 3 is_stmt 1 view .LVU80
+ 200              		.loc 1 100 35 is_stmt 0 view .LVU81
+ 201 001c C361     		str	r3, [r0, #28]
+ 101:Core/Src/sai.c ****   hsai_BlockA4.Init.AudioFrequency = SAI_AUDIO_FREQUENCY_192K;
+ 202              		.loc 1 101 3 is_stmt 1 view .LVU82
+ 203              		.loc 1 101 36 is_stmt 0 view .LVU83
+ 204 001e 114A     		ldr	r2, .L11+8
+ 205 0020 0262     		str	r2, [r0, #32]
+ 102:Core/Src/sai.c ****   hsai_BlockA4.Init.SynchroExt = SAI_SYNCEXT_DISABLE;
+ 206              		.loc 1 102 3 is_stmt 1 view .LVU84
+ 207              		.loc 1 102 32 is_stmt 0 view .LVU85
+ 208 0022 C360     		str	r3, [r0, #12]
+ 103:Core/Src/sai.c ****   hsai_BlockA4.Init.MonoStereoMode = SAI_STEREOMODE;
+ 209              		.loc 1 103 3 is_stmt 1 view .LVU86
+ 210              		.loc 1 103 36 is_stmt 0 view .LVU87
+ 211 0024 C362     		str	r3, [r0, #44]
+ 104:Core/Src/sai.c ****   hsai_BlockA4.Init.CompandingMode = SAI_NOCOMPANDING;
+ 212              		.loc 1 104 3 is_stmt 1 view .LVU88
+ 213              		.loc 1 104 36 is_stmt 0 view .LVU89
+ 214 0026 0363     		str	r3, [r0, #48]
+ 105:Core/Src/sai.c ****   hsai_BlockA4.Init.TriState = SAI_OUTPUT_NOTRELEASED;
+ 215              		.loc 1 105 3 is_stmt 1 view .LVU90
+ 216              		.loc 1 105 30 is_stmt 0 view .LVU91
+ 217 0028 4363     		str	r3, [r0, #52]
+ 106:Core/Src/sai.c ****   hsai_BlockA4.Init.PdmInit.Activation = DISABLE;
+ 218              		.loc 1 106 3 is_stmt 1 view .LVU92
+ 219              		.loc 1 106 40 is_stmt 0 view .LVU93
+ 220 002a 80F83830 		strb	r3, [r0, #56]
+ 107:Core/Src/sai.c ****   hsai_BlockA4.Init.PdmInit.MicPairsNbr = 0;
+ 221              		.loc 1 107 3 is_stmt 1 view .LVU94
+ 222              		.loc 1 107 41 is_stmt 0 view .LVU95
+ 223 002e C363     		str	r3, [r0, #60]
+ 108:Core/Src/sai.c ****   hsai_BlockA4.Init.PdmInit.ClockEnable = SAI_PDM_CLOCK1_ENABLE;
+ 224              		.loc 1 108 3 is_stmt 1 view .LVU96
+ 225              		.loc 1 108 41 is_stmt 0 view .LVU97
+ 226 0030 4FF48072 		mov	r2, #256
+ 227 0034 0264     		str	r2, [r0, #64]
+ 109:Core/Src/sai.c ****   hsai_BlockA4.FrameInit.FrameLength = 8;
+ 228              		.loc 1 109 3 is_stmt 1 view .LVU98
+ 229              		.loc 1 109 38 is_stmt 0 view .LVU99
+ 230 0036 0822     		movs	r2, #8
+ 231 0038 4265     		str	r2, [r0, #84]
+ 110:Core/Src/sai.c ****   hsai_BlockA4.FrameInit.ActiveFrameLength = 1;
+ 232              		.loc 1 110 3 is_stmt 1 view .LVU100
+ 233              		.loc 1 110 44 is_stmt 0 view .LVU101
+ 234 003a 0122     		movs	r2, #1
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 7
+
+
+ 235 003c 8265     		str	r2, [r0, #88]
+ 111:Core/Src/sai.c ****   hsai_BlockA4.FrameInit.FSDefinition = SAI_FS_STARTFRAME;
+ 236              		.loc 1 111 3 is_stmt 1 view .LVU102
+ 237              		.loc 1 111 39 is_stmt 0 view .LVU103
+ 238 003e C365     		str	r3, [r0, #92]
+ 112:Core/Src/sai.c ****   hsai_BlockA4.FrameInit.FSPolarity = SAI_FS_ACTIVE_LOW;
+ 239              		.loc 1 112 3 is_stmt 1 view .LVU104
+ 240              		.loc 1 112 37 is_stmt 0 view .LVU105
+ 241 0040 0366     		str	r3, [r0, #96]
+ 113:Core/Src/sai.c ****   hsai_BlockA4.FrameInit.FSOffset = SAI_FS_FIRSTBIT;
+ 242              		.loc 1 113 3 is_stmt 1 view .LVU106
+ 243              		.loc 1 113 35 is_stmt 0 view .LVU107
+ 244 0042 4366     		str	r3, [r0, #100]
+ 114:Core/Src/sai.c ****   hsai_BlockA4.SlotInit.FirstBitOffset = 0;
+ 245              		.loc 1 114 3 is_stmt 1 view .LVU108
+ 246              		.loc 1 114 40 is_stmt 0 view .LVU109
+ 247 0044 8366     		str	r3, [r0, #104]
+ 115:Core/Src/sai.c ****   hsai_BlockA4.SlotInit.SlotSize = SAI_SLOTSIZE_DATASIZE;
+ 248              		.loc 1 115 3 is_stmt 1 view .LVU110
+ 249              		.loc 1 115 34 is_stmt 0 view .LVU111
+ 250 0046 C366     		str	r3, [r0, #108]
+ 116:Core/Src/sai.c ****   hsai_BlockA4.SlotInit.SlotNumber = 1;
+ 251              		.loc 1 116 3 is_stmt 1 view .LVU112
+ 252              		.loc 1 116 36 is_stmt 0 view .LVU113
+ 253 0048 0267     		str	r2, [r0, #112]
+ 117:Core/Src/sai.c ****   hsai_BlockA4.SlotInit.SlotActive = 0x00000000;
+ 254              		.loc 1 117 3 is_stmt 1 view .LVU114
+ 255              		.loc 1 117 36 is_stmt 0 view .LVU115
+ 256 004a 4367     		str	r3, [r0, #116]
+ 118:Core/Src/sai.c ****   if (HAL_SAI_Init(&hsai_BlockA4) != HAL_OK)
+ 257              		.loc 1 118 3 is_stmt 1 view .LVU116
+ 258              		.loc 1 118 7 is_stmt 0 view .LVU117
+ 259 004c FFF7FEFF 		bl	HAL_SAI_Init
+ 260              	.LVL2:
+ 261              		.loc 1 118 6 discriminator 1 view .LVU118
+ 262 0050 00B9     		cbnz	r0, .L10
+ 263              	.L7:
+ 119:Core/Src/sai.c ****   {
+ 120:Core/Src/sai.c ****     Error_Handler();
+ 121:Core/Src/sai.c ****   }
+ 122:Core/Src/sai.c ****   /* USER CODE BEGIN SAI4_Init 2 */
+ 123:Core/Src/sai.c **** 
+ 124:Core/Src/sai.c ****   /* USER CODE END SAI4_Init 2 */
+ 125:Core/Src/sai.c **** 
+ 126:Core/Src/sai.c **** }
+ 264              		.loc 1 126 1 view .LVU119
+ 265 0052 08BD     		pop	{r3, pc}
+ 266              	.L10:
+ 120:Core/Src/sai.c ****   }
+ 267              		.loc 1 120 5 is_stmt 1 view .LVU120
+ 268 0054 FFF7FEFF 		bl	Error_Handler
+ 269              	.LVL3:
+ 270              		.loc 1 126 1 is_stmt 0 view .LVU121
+ 271 0058 FBE7     		b	.L7
+ 272              	.L12:
+ 273 005a 00BF     		.align	2
+ 274              	.L11:
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 8
+
+
+ 275 005c 00000000 		.word	hsai_BlockA4
+ 276 0060 04540058 		.word	1476416516
+ 277 0064 00EE0200 		.word	192000
+ 278              		.cfi_endproc
+ 279              	.LFE148:
+ 281              		.section	.text.HAL_SAI_MspInit,"ax",%progbits
+ 282              		.align	1
+ 283              		.global	HAL_SAI_MspInit
+ 284              		.syntax unified
+ 285              		.thumb
+ 286              		.thumb_func
+ 288              	HAL_SAI_MspInit:
+ 289              	.LVL4:
+ 290              	.LFB149:
+ 127:Core/Src/sai.c **** static uint32_t SAI1_client =0;
+ 128:Core/Src/sai.c **** static uint32_t SAI4_client =0;
+ 129:Core/Src/sai.c **** 
+ 130:Core/Src/sai.c **** void HAL_SAI_MspInit(SAI_HandleTypeDef* saiHandle)
+ 131:Core/Src/sai.c **** {
+ 291              		.loc 1 131 1 is_stmt 1 view -0
+ 292              		.cfi_startproc
+ 293              		@ args = 0, pretend = 0, frame = 216
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295              		.loc 1 131 1 is_stmt 0 view .LVU123
+ 296 0000 10B5     		push	{r4, lr}
+ 297              	.LCFI2:
+ 298              		.cfi_def_cfa_offset 8
+ 299              		.cfi_offset 4, -8
+ 300              		.cfi_offset 14, -4
+ 301 0002 B6B0     		sub	sp, sp, #216
+ 302              	.LCFI3:
+ 303              		.cfi_def_cfa_offset 224
+ 304 0004 0446     		mov	r4, r0
+ 132:Core/Src/sai.c **** 
+ 133:Core/Src/sai.c ****   GPIO_InitTypeDef GPIO_InitStruct;
+ 305              		.loc 1 133 3 is_stmt 1 view .LVU124
+ 134:Core/Src/sai.c ****   RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
+ 306              		.loc 1 134 3 view .LVU125
+ 307              		.loc 1 134 28 is_stmt 0 view .LVU126
+ 308 0006 B822     		movs	r2, #184
+ 309 0008 0021     		movs	r1, #0
+ 310 000a 02A8     		add	r0, sp, #8
+ 311              	.LVL5:
+ 312              		.loc 1 134 28 view .LVU127
+ 313 000c FFF7FEFF 		bl	memset
+ 314              	.LVL6:
+ 135:Core/Src/sai.c **** /* SAI1 */
+ 136:Core/Src/sai.c ****     if(saiHandle->Instance==SAI1_Block_A)
+ 315              		.loc 1 136 5 is_stmt 1 view .LVU128
+ 316              		.loc 1 136 17 is_stmt 0 view .LVU129
+ 317 0010 2268     		ldr	r2, [r4]
+ 318              		.loc 1 136 7 view .LVU130
+ 319 0012 334B     		ldr	r3, .L25
+ 320 0014 9A42     		cmp	r2, r3
+ 321 0016 05D0     		beq	.L21
+ 322              	.L14:
+ 137:Core/Src/sai.c ****     {
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 9
+
+
+ 138:Core/Src/sai.c ****     /* SAI1 clock enable */
+ 139:Core/Src/sai.c **** 
+ 140:Core/Src/sai.c ****   /** Initializes the peripherals clock
+ 141:Core/Src/sai.c ****   */
+ 142:Core/Src/sai.c ****     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SAI1;
+ 143:Core/Src/sai.c ****     PeriphClkInitStruct.Sai1ClockSelection = RCC_SAI1CLKSOURCE_PLL;
+ 144:Core/Src/sai.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+ 145:Core/Src/sai.c ****     {
+ 146:Core/Src/sai.c ****       Error_Handler();
+ 147:Core/Src/sai.c ****     }
+ 148:Core/Src/sai.c **** 
+ 149:Core/Src/sai.c ****     if (SAI1_client == 0)
+ 150:Core/Src/sai.c ****     {
+ 151:Core/Src/sai.c ****        __HAL_RCC_SAI1_CLK_ENABLE();
+ 152:Core/Src/sai.c ****     }
+ 153:Core/Src/sai.c ****     SAI1_client ++;
+ 154:Core/Src/sai.c **** 
+ 155:Core/Src/sai.c ****     /**SAI1_A_Block_A GPIO Configuration
+ 156:Core/Src/sai.c ****     PE4     ------> SAI1_FS_A
+ 157:Core/Src/sai.c ****     PE5     ------> SAI1_SCK_A
+ 158:Core/Src/sai.c ****     PE6     ------> SAI1_SD_A
+ 159:Core/Src/sai.c ****     */
+ 160:Core/Src/sai.c ****     GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6;
+ 161:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 162:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 163:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 164:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF6_SAI1;
+ 165:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+ 166:Core/Src/sai.c **** 
+ 167:Core/Src/sai.c ****     }
+ 168:Core/Src/sai.c **** /* SAI4 */
+ 169:Core/Src/sai.c ****     if(saiHandle->Instance==SAI4_Block_A)
+ 323              		.loc 1 169 5 is_stmt 1 view .LVU131
+ 324              		.loc 1 169 17 is_stmt 0 view .LVU132
+ 325 0018 2268     		ldr	r2, [r4]
+ 326              		.loc 1 169 7 view .LVU133
+ 327 001a 324B     		ldr	r3, .L25+4
+ 328 001c 9A42     		cmp	r2, r3
+ 329 001e 2ED0     		beq	.L22
+ 330              	.L13:
+ 170:Core/Src/sai.c ****     {
+ 171:Core/Src/sai.c ****     /* SAI4 clock enable */
+ 172:Core/Src/sai.c **** 
+ 173:Core/Src/sai.c ****   /** Initializes the peripherals clock
+ 174:Core/Src/sai.c ****   */
+ 175:Core/Src/sai.c ****     PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_SAI4A;
+ 176:Core/Src/sai.c ****     PeriphClkInitStruct.Sai4AClockSelection = RCC_SAI4ACLKSOURCE_PLL;
+ 177:Core/Src/sai.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+ 178:Core/Src/sai.c ****     {
+ 179:Core/Src/sai.c ****       Error_Handler();
+ 180:Core/Src/sai.c ****     }
+ 181:Core/Src/sai.c **** 
+ 182:Core/Src/sai.c ****     if (SAI4_client == 0)
+ 183:Core/Src/sai.c ****     {
+ 184:Core/Src/sai.c ****        __HAL_RCC_SAI4_CLK_ENABLE();
+ 185:Core/Src/sai.c ****     }
+ 186:Core/Src/sai.c ****     SAI4_client ++;
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 10
+
+
+ 187:Core/Src/sai.c **** 
+ 188:Core/Src/sai.c ****     /**SAI4_A_Block_A GPIO Configuration
+ 189:Core/Src/sai.c ****     PD11     ------> SAI4_SD_A
+ 190:Core/Src/sai.c ****     PD12     ------> SAI4_FS_A
+ 191:Core/Src/sai.c ****     PD13     ------> SAI4_SCK_A
+ 192:Core/Src/sai.c ****     */
+ 193:Core/Src/sai.c ****     GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13;
+ 194:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 195:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 196:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 197:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF10_SAI4;
+ 198:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 199:Core/Src/sai.c **** 
+ 200:Core/Src/sai.c ****     }
+ 201:Core/Src/sai.c **** }
+ 331              		.loc 1 201 1 view .LVU134
+ 332 0020 36B0     		add	sp, sp, #216
+ 333              	.LCFI4:
+ 334              		.cfi_remember_state
+ 335              		.cfi_def_cfa_offset 8
+ 336              		@ sp needed
+ 337 0022 10BD     		pop	{r4, pc}
+ 338              	.LVL7:
+ 339              	.L21:
+ 340              	.LCFI5:
+ 341              		.cfi_restore_state
+ 142:Core/Src/sai.c ****     PeriphClkInitStruct.Sai1ClockSelection = RCC_SAI1CLKSOURCE_PLL;
+ 342              		.loc 1 142 5 is_stmt 1 view .LVU135
+ 142:Core/Src/sai.c ****     PeriphClkInitStruct.Sai1ClockSelection = RCC_SAI1CLKSOURCE_PLL;
+ 343              		.loc 1 142 46 is_stmt 0 view .LVU136
+ 344 0024 4FF48072 		mov	r2, #256
+ 345 0028 0023     		movs	r3, #0
+ 346 002a CDE90223 		strd	r2, [sp, #8]
+ 143:Core/Src/sai.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+ 347              		.loc 1 143 5 is_stmt 1 view .LVU137
+ 144:Core/Src/sai.c ****     {
+ 348              		.loc 1 144 5 view .LVU138
+ 144:Core/Src/sai.c ****     {
+ 349              		.loc 1 144 9 is_stmt 0 view .LVU139
+ 350 002e 02A8     		add	r0, sp, #8
+ 351 0030 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 352              	.LVL8:
+ 144:Core/Src/sai.c ****     {
+ 353              		.loc 1 144 8 discriminator 1 view .LVU140
+ 354 0034 00BB     		cbnz	r0, .L23
+ 355              	.L15:
+ 149:Core/Src/sai.c ****     {
+ 356              		.loc 1 149 5 is_stmt 1 view .LVU141
+ 149:Core/Src/sai.c ****     {
+ 357              		.loc 1 149 21 is_stmt 0 view .LVU142
+ 358 0036 2C4B     		ldr	r3, .L25+8
+ 359 0038 1B68     		ldr	r3, [r3]
+ 149:Core/Src/sai.c ****     {
+ 360              		.loc 1 149 8 view .LVU143
+ 361 003a 63B9     		cbnz	r3, .L16
+ 151:Core/Src/sai.c ****     }
+ 362              		.loc 1 151 8 is_stmt 1 view .LVU144
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 11
+
+
+ 363              	.LBB2:
+ 151:Core/Src/sai.c ****     }
+ 364              		.loc 1 151 8 view .LVU145
+ 151:Core/Src/sai.c ****     }
+ 365              		.loc 1 151 8 view .LVU146
+ 366 003c 2B4A     		ldr	r2, .L25+12
+ 367 003e D2F8F010 		ldr	r1, [r2, #240]
+ 368 0042 41F48001 		orr	r1, r1, #4194304
+ 369 0046 C2F8F010 		str	r1, [r2, #240]
+ 151:Core/Src/sai.c ****     }
+ 370              		.loc 1 151 8 view .LVU147
+ 371 004a D2F8F020 		ldr	r2, [r2, #240]
+ 372 004e 02F48002 		and	r2, r2, #4194304
+ 373 0052 0092     		str	r2, [sp]
+ 151:Core/Src/sai.c ****     }
+ 374              		.loc 1 151 8 view .LVU148
+ 375 0054 009A     		ldr	r2, [sp]
+ 376              	.L16:
+ 377              	.LBE2:
+ 151:Core/Src/sai.c ****     }
+ 378              		.loc 1 151 8 view .LVU149
+ 153:Core/Src/sai.c **** 
+ 379              		.loc 1 153 5 view .LVU150
+ 153:Core/Src/sai.c **** 
+ 380              		.loc 1 153 17 is_stmt 0 view .LVU151
+ 381 0056 0133     		adds	r3, r3, #1
+ 382 0058 234A     		ldr	r2, .L25+8
+ 383 005a 1360     		str	r3, [r2]
+ 160:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 384              		.loc 1 160 5 is_stmt 1 view .LVU152
+ 160:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 385              		.loc 1 160 25 is_stmt 0 view .LVU153
+ 386 005c 7023     		movs	r3, #112
+ 387 005e 3193     		str	r3, [sp, #196]
+ 161:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 388              		.loc 1 161 5 is_stmt 1 view .LVU154
+ 161:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 389              		.loc 1 161 26 is_stmt 0 view .LVU155
+ 390 0060 0223     		movs	r3, #2
+ 391 0062 3293     		str	r3, [sp, #200]
+ 162:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 392              		.loc 1 162 5 is_stmt 1 view .LVU156
+ 162:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 393              		.loc 1 162 26 is_stmt 0 view .LVU157
+ 394 0064 0023     		movs	r3, #0
+ 395 0066 3393     		str	r3, [sp, #204]
+ 163:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF6_SAI1;
+ 396              		.loc 1 163 5 is_stmt 1 view .LVU158
+ 163:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF6_SAI1;
+ 397              		.loc 1 163 27 is_stmt 0 view .LVU159
+ 398 0068 3493     		str	r3, [sp, #208]
+ 164:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+ 399              		.loc 1 164 5 is_stmt 1 view .LVU160
+ 164:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOE, &GPIO_InitStruct);
+ 400              		.loc 1 164 31 is_stmt 0 view .LVU161
+ 401 006a 0623     		movs	r3, #6
+ 402 006c 3593     		str	r3, [sp, #212]
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 12
+
+
+ 165:Core/Src/sai.c **** 
+ 403              		.loc 1 165 5 is_stmt 1 view .LVU162
+ 404 006e 31A9     		add	r1, sp, #196
+ 405 0070 1F48     		ldr	r0, .L25+16
+ 406 0072 FFF7FEFF 		bl	HAL_GPIO_Init
+ 407              	.LVL9:
+ 408 0076 CFE7     		b	.L14
+ 409              	.L23:
+ 146:Core/Src/sai.c ****     }
+ 410              		.loc 1 146 7 view .LVU163
+ 411 0078 FFF7FEFF 		bl	Error_Handler
+ 412              	.LVL10:
+ 413 007c DBE7     		b	.L15
+ 414              	.L22:
+ 175:Core/Src/sai.c ****     PeriphClkInitStruct.Sai4AClockSelection = RCC_SAI4ACLKSOURCE_PLL;
+ 415              		.loc 1 175 5 view .LVU164
+ 175:Core/Src/sai.c ****     PeriphClkInitStruct.Sai4AClockSelection = RCC_SAI4ACLKSOURCE_PLL;
+ 416              		.loc 1 175 46 is_stmt 0 view .LVU165
+ 417 007e 4FF48062 		mov	r2, #1024
+ 418 0082 0023     		movs	r3, #0
+ 419 0084 CDE90223 		strd	r2, [sp, #8]
+ 176:Core/Src/sai.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+ 420              		.loc 1 176 5 is_stmt 1 view .LVU166
+ 176:Core/Src/sai.c ****     if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+ 421              		.loc 1 176 45 is_stmt 0 view .LVU167
+ 422 0088 0023     		movs	r3, #0
+ 423 008a 2B93     		str	r3, [sp, #172]
+ 177:Core/Src/sai.c ****     {
+ 424              		.loc 1 177 5 is_stmt 1 view .LVU168
+ 177:Core/Src/sai.c ****     {
+ 425              		.loc 1 177 9 is_stmt 0 view .LVU169
+ 426 008c 02A8     		add	r0, sp, #8
+ 427 008e FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 428              	.LVL11:
+ 177:Core/Src/sai.c ****     {
+ 429              		.loc 1 177 8 discriminator 1 view .LVU170
+ 430 0092 08BB     		cbnz	r0, .L24
+ 431              	.L18:
+ 182:Core/Src/sai.c ****     {
+ 432              		.loc 1 182 5 is_stmt 1 view .LVU171
+ 182:Core/Src/sai.c ****     {
+ 433              		.loc 1 182 21 is_stmt 0 view .LVU172
+ 434 0094 174B     		ldr	r3, .L25+20
+ 435 0096 1B68     		ldr	r3, [r3]
+ 182:Core/Src/sai.c ****     {
+ 436              		.loc 1 182 8 view .LVU173
+ 437 0098 63B9     		cbnz	r3, .L19
+ 184:Core/Src/sai.c ****     }
+ 438              		.loc 1 184 8 is_stmt 1 view .LVU174
+ 439              	.LBB3:
+ 184:Core/Src/sai.c ****     }
+ 440              		.loc 1 184 8 view .LVU175
+ 184:Core/Src/sai.c ****     }
+ 441              		.loc 1 184 8 view .LVU176
+ 442 009a 144A     		ldr	r2, .L25+12
+ 443 009c D2F8F410 		ldr	r1, [r2, #244]
+ 444 00a0 41F40011 		orr	r1, r1, #2097152
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 13
+
+
+ 445 00a4 C2F8F410 		str	r1, [r2, #244]
+ 184:Core/Src/sai.c ****     }
+ 446              		.loc 1 184 8 view .LVU177
+ 447 00a8 D2F8F420 		ldr	r2, [r2, #244]
+ 448 00ac 02F40012 		and	r2, r2, #2097152
+ 449 00b0 0192     		str	r2, [sp, #4]
+ 184:Core/Src/sai.c ****     }
+ 450              		.loc 1 184 8 view .LVU178
+ 451 00b2 019A     		ldr	r2, [sp, #4]
+ 452              	.L19:
+ 453              	.LBE3:
+ 184:Core/Src/sai.c ****     }
+ 454              		.loc 1 184 8 view .LVU179
+ 186:Core/Src/sai.c **** 
+ 455              		.loc 1 186 5 view .LVU180
+ 186:Core/Src/sai.c **** 
+ 456              		.loc 1 186 17 is_stmt 0 view .LVU181
+ 457 00b4 0133     		adds	r3, r3, #1
+ 458 00b6 0F4A     		ldr	r2, .L25+20
+ 459 00b8 1360     		str	r3, [r2]
+ 193:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 460              		.loc 1 193 5 is_stmt 1 view .LVU182
+ 193:Core/Src/sai.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
+ 461              		.loc 1 193 25 is_stmt 0 view .LVU183
+ 462 00ba 4FF46053 		mov	r3, #14336
+ 463 00be 3193     		str	r3, [sp, #196]
+ 194:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 464              		.loc 1 194 5 is_stmt 1 view .LVU184
+ 194:Core/Src/sai.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
+ 465              		.loc 1 194 26 is_stmt 0 view .LVU185
+ 466 00c0 0223     		movs	r3, #2
+ 467 00c2 3293     		str	r3, [sp, #200]
+ 195:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 468              		.loc 1 195 5 is_stmt 1 view .LVU186
+ 195:Core/Src/sai.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+ 469              		.loc 1 195 26 is_stmt 0 view .LVU187
+ 470 00c4 0023     		movs	r3, #0
+ 471 00c6 3393     		str	r3, [sp, #204]
+ 196:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF10_SAI4;
+ 472              		.loc 1 196 5 is_stmt 1 view .LVU188
+ 196:Core/Src/sai.c ****     GPIO_InitStruct.Alternate = GPIO_AF10_SAI4;
+ 473              		.loc 1 196 27 is_stmt 0 view .LVU189
+ 474 00c8 3493     		str	r3, [sp, #208]
+ 197:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 475              		.loc 1 197 5 is_stmt 1 view .LVU190
+ 197:Core/Src/sai.c ****     HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+ 476              		.loc 1 197 31 is_stmt 0 view .LVU191
+ 477 00ca 0A23     		movs	r3, #10
+ 478 00cc 3593     		str	r3, [sp, #212]
+ 198:Core/Src/sai.c **** 
+ 479              		.loc 1 198 5 is_stmt 1 view .LVU192
+ 480 00ce 31A9     		add	r1, sp, #196
+ 481 00d0 0948     		ldr	r0, .L25+24
+ 482 00d2 FFF7FEFF 		bl	HAL_GPIO_Init
+ 483              	.LVL12:
+ 484              		.loc 1 201 1 is_stmt 0 view .LVU193
+ 485 00d6 A3E7     		b	.L13
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 14
+
+
+ 486              	.L24:
+ 179:Core/Src/sai.c ****     }
+ 487              		.loc 1 179 7 is_stmt 1 view .LVU194
+ 488 00d8 FFF7FEFF 		bl	Error_Handler
+ 489              	.LVL13:
+ 490 00dc DAE7     		b	.L18
+ 491              	.L26:
+ 492 00de 00BF     		.align	2
+ 493              	.L25:
+ 494 00e0 04580140 		.word	1073829892
+ 495 00e4 04540058 		.word	1476416516
+ 496 00e8 00000000 		.word	SAI1_client
+ 497 00ec 00440258 		.word	1476543488
+ 498 00f0 00100258 		.word	1476530176
+ 499 00f4 00000000 		.word	SAI4_client
+ 500 00f8 000C0258 		.word	1476529152
+ 501              		.cfi_endproc
+ 502              	.LFE149:
+ 504              		.section	.text.HAL_SAI_MspDeInit,"ax",%progbits
+ 505              		.align	1
+ 506              		.global	HAL_SAI_MspDeInit
+ 507              		.syntax unified
+ 508              		.thumb
+ 509              		.thumb_func
+ 511              	HAL_SAI_MspDeInit:
+ 512              	.LVL14:
+ 513              	.LFB150:
+ 202:Core/Src/sai.c **** 
+ 203:Core/Src/sai.c **** void HAL_SAI_MspDeInit(SAI_HandleTypeDef* saiHandle)
+ 204:Core/Src/sai.c **** {
+ 514              		.loc 1 204 1 view -0
+ 515              		.cfi_startproc
+ 516              		@ args = 0, pretend = 0, frame = 0
+ 517              		@ frame_needed = 0, uses_anonymous_args = 0
+ 518              		.loc 1 204 1 is_stmt 0 view .LVU196
+ 519 0000 10B5     		push	{r4, lr}
+ 520              	.LCFI6:
+ 521              		.cfi_def_cfa_offset 8
+ 522              		.cfi_offset 4, -8
+ 523              		.cfi_offset 14, -4
+ 524 0002 0446     		mov	r4, r0
+ 205:Core/Src/sai.c **** 
+ 206:Core/Src/sai.c **** /* SAI1 */
+ 207:Core/Src/sai.c ****     if(saiHandle->Instance==SAI1_Block_A)
+ 525              		.loc 1 207 5 is_stmt 1 view .LVU197
+ 526              		.loc 1 207 17 is_stmt 0 view .LVU198
+ 527 0004 0268     		ldr	r2, [r0]
+ 528              		.loc 1 207 7 view .LVU199
+ 529 0006 154B     		ldr	r3, .L35
+ 530 0008 9A42     		cmp	r2, r3
+ 531 000a 04D0     		beq	.L33
+ 532              	.LVL15:
+ 533              	.L28:
+ 208:Core/Src/sai.c ****     {
+ 209:Core/Src/sai.c ****     SAI1_client --;
+ 210:Core/Src/sai.c ****     if (SAI1_client == 0)
+ 211:Core/Src/sai.c ****       {
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 15
+
+
+ 212:Core/Src/sai.c ****       /* Peripheral clock disable */
+ 213:Core/Src/sai.c ****        __HAL_RCC_SAI1_CLK_DISABLE();
+ 214:Core/Src/sai.c ****       }
+ 215:Core/Src/sai.c **** 
+ 216:Core/Src/sai.c ****     /**SAI1_A_Block_A GPIO Configuration
+ 217:Core/Src/sai.c ****     PE4     ------> SAI1_FS_A
+ 218:Core/Src/sai.c ****     PE5     ------> SAI1_SCK_A
+ 219:Core/Src/sai.c ****     PE6     ------> SAI1_SD_A
+ 220:Core/Src/sai.c ****     */
+ 221:Core/Src/sai.c ****     HAL_GPIO_DeInit(GPIOE, GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6);
+ 222:Core/Src/sai.c **** 
+ 223:Core/Src/sai.c ****     }
+ 224:Core/Src/sai.c **** /* SAI4 */
+ 225:Core/Src/sai.c ****     if(saiHandle->Instance==SAI4_Block_A)
+ 534              		.loc 1 225 5 is_stmt 1 view .LVU200
+ 535              		.loc 1 225 17 is_stmt 0 view .LVU201
+ 536 000c 2268     		ldr	r2, [r4]
+ 537              		.loc 1 225 7 view .LVU202
+ 538 000e 144B     		ldr	r3, .L35+4
+ 539 0010 9A42     		cmp	r2, r3
+ 540 0012 11D0     		beq	.L34
+ 541              	.L27:
+ 226:Core/Src/sai.c ****     {
+ 227:Core/Src/sai.c ****     SAI4_client --;
+ 228:Core/Src/sai.c ****     if (SAI4_client == 0)
+ 229:Core/Src/sai.c ****       {
+ 230:Core/Src/sai.c ****       /* Peripheral clock disable */
+ 231:Core/Src/sai.c ****        __HAL_RCC_SAI4_CLK_DISABLE();
+ 232:Core/Src/sai.c ****       }
+ 233:Core/Src/sai.c **** 
+ 234:Core/Src/sai.c ****     /**SAI4_A_Block_A GPIO Configuration
+ 235:Core/Src/sai.c ****     PD11     ------> SAI4_SD_A
+ 236:Core/Src/sai.c ****     PD12     ------> SAI4_FS_A
+ 237:Core/Src/sai.c ****     PD13     ------> SAI4_SCK_A
+ 238:Core/Src/sai.c ****     */
+ 239:Core/Src/sai.c ****     HAL_GPIO_DeInit(GPIOD, GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_13);
+ 240:Core/Src/sai.c **** 
+ 241:Core/Src/sai.c ****     }
+ 242:Core/Src/sai.c **** }
+ 542              		.loc 1 242 1 view .LVU203
+ 543 0014 10BD     		pop	{r4, pc}
+ 544              	.LVL16:
+ 545              	.L33:
+ 209:Core/Src/sai.c ****     if (SAI1_client == 0)
+ 546              		.loc 1 209 5 is_stmt 1 view .LVU204
+ 209:Core/Src/sai.c ****     if (SAI1_client == 0)
+ 547              		.loc 1 209 17 is_stmt 0 view .LVU205
+ 548 0016 134A     		ldr	r2, .L35+8
+ 549 0018 1368     		ldr	r3, [r2]
+ 550 001a 013B     		subs	r3, r3, #1
+ 551 001c 1360     		str	r3, [r2]
+ 210:Core/Src/sai.c ****       {
+ 552              		.loc 1 210 5 is_stmt 1 view .LVU206
+ 210:Core/Src/sai.c ****       {
+ 553              		.loc 1 210 8 is_stmt 0 view .LVU207
+ 554 001e 33B9     		cbnz	r3, .L29
+ 213:Core/Src/sai.c ****       }
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 16
+
+
+ 555              		.loc 1 213 8 is_stmt 1 view .LVU208
+ 556 0020 114A     		ldr	r2, .L35+12
+ 557 0022 D2F8F030 		ldr	r3, [r2, #240]
+ 558 0026 23F48003 		bic	r3, r3, #4194304
+ 559 002a C2F8F030 		str	r3, [r2, #240]
+ 560              	.L29:
+ 221:Core/Src/sai.c **** 
+ 561              		.loc 1 221 5 view .LVU209
+ 562 002e 7021     		movs	r1, #112
+ 563 0030 0E48     		ldr	r0, .L35+16
+ 564              	.LVL17:
+ 221:Core/Src/sai.c **** 
+ 565              		.loc 1 221 5 is_stmt 0 view .LVU210
+ 566 0032 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 567              	.LVL18:
+ 568 0036 E9E7     		b	.L28
+ 569              	.L34:
+ 227:Core/Src/sai.c ****     if (SAI4_client == 0)
+ 570              		.loc 1 227 5 is_stmt 1 view .LVU211
+ 227:Core/Src/sai.c ****     if (SAI4_client == 0)
+ 571              		.loc 1 227 17 is_stmt 0 view .LVU212
+ 572 0038 0D4A     		ldr	r2, .L35+20
+ 573 003a 1368     		ldr	r3, [r2]
+ 574 003c 013B     		subs	r3, r3, #1
+ 575 003e 1360     		str	r3, [r2]
+ 228:Core/Src/sai.c ****       {
+ 576              		.loc 1 228 5 is_stmt 1 view .LVU213
+ 228:Core/Src/sai.c ****       {
+ 577              		.loc 1 228 8 is_stmt 0 view .LVU214
+ 578 0040 33B9     		cbnz	r3, .L31
+ 231:Core/Src/sai.c ****       }
+ 579              		.loc 1 231 8 is_stmt 1 view .LVU215
+ 580 0042 094A     		ldr	r2, .L35+12
+ 581 0044 D2F8F430 		ldr	r3, [r2, #244]
+ 582 0048 23F40013 		bic	r3, r3, #2097152
+ 583 004c C2F8F430 		str	r3, [r2, #244]
+ 584              	.L31:
+ 239:Core/Src/sai.c **** 
+ 585              		.loc 1 239 5 view .LVU216
+ 586 0050 4FF46051 		mov	r1, #14336
+ 587 0054 0748     		ldr	r0, .L35+24
+ 588 0056 FFF7FEFF 		bl	HAL_GPIO_DeInit
+ 589              	.LVL19:
+ 590              		.loc 1 242 1 is_stmt 0 view .LVU217
+ 591 005a DBE7     		b	.L27
+ 592              	.L36:
+ 593              		.align	2
+ 594              	.L35:
+ 595 005c 04580140 		.word	1073829892
+ 596 0060 04540058 		.word	1476416516
+ 597 0064 00000000 		.word	SAI1_client
+ 598 0068 00440258 		.word	1476543488
+ 599 006c 00100258 		.word	1476530176
+ 600 0070 00000000 		.word	SAI4_client
+ 601 0074 000C0258 		.word	1476529152
+ 602              		.cfi_endproc
+ 603              	.LFE150:
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 17
+
+
+ 605              		.section	.bss.SAI4_client,"aw",%nobits
+ 606              		.align	2
+ 609              	SAI4_client:
+ 610 0000 00000000 		.space	4
+ 611              		.section	.bss.SAI1_client,"aw",%nobits
+ 612              		.align	2
+ 615              	SAI1_client:
+ 616 0000 00000000 		.space	4
+ 617              		.global	hsai_BlockA4
+ 618              		.section	.bss.hsai_BlockA4,"aw",%nobits
+ 619              		.align	2
+ 622              	hsai_BlockA4:
+ 623 0000 00000000 		.space	152
+ 623      00000000 
+ 623      00000000 
+ 623      00000000 
+ 623      00000000 
+ 624              		.global	hsai_BlockA1
+ 625              		.section	.bss.hsai_BlockA1,"aw",%nobits
+ 626              		.align	2
+ 629              	hsai_BlockA1:
+ 630 0000 00000000 		.space	152
+ 630      00000000 
+ 630      00000000 
+ 630      00000000 
+ 630      00000000 
+ 631              		.text
+ 632              	.Letext0:
+ 633              		.file 2 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 634              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 635              		.file 4 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
+ 636              		.file 5 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
+ 637              		.file 6 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h"
+ 638              		.file 7 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h"
+ 639              		.file 8 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_gpio.h"
+ 640              		.file 9 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h"
+ 641              		.file 10 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h"
+ 642              		.file 11 "Core/Inc/sai.h"
+ 643              		.file 12 "Core/Inc/main.h"
+ 644              		.file 13 "<built-in>"
+ARM GAS  C:\msys64\tmp\ccPloJTQ.s 			page 18
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 sai.c
+C:\msys64\tmp\ccPloJTQ.s:20     .text.MX_SAI1_Init:00000000 $t
+C:\msys64\tmp\ccPloJTQ.s:26     .text.MX_SAI1_Init:00000000 MX_SAI1_Init
+C:\msys64\tmp\ccPloJTQ.s:144    .text.MX_SAI1_Init:0000005c $d
+C:\msys64\tmp\ccPloJTQ.s:629    .bss.hsai_BlockA1:00000000 hsai_BlockA1
+C:\msys64\tmp\ccPloJTQ.s:151    .text.MX_SAI4_Init:00000000 $t
+C:\msys64\tmp\ccPloJTQ.s:157    .text.MX_SAI4_Init:00000000 MX_SAI4_Init
+C:\msys64\tmp\ccPloJTQ.s:275    .text.MX_SAI4_Init:0000005c $d
+C:\msys64\tmp\ccPloJTQ.s:622    .bss.hsai_BlockA4:00000000 hsai_BlockA4
+C:\msys64\tmp\ccPloJTQ.s:282    .text.HAL_SAI_MspInit:00000000 $t
+C:\msys64\tmp\ccPloJTQ.s:288    .text.HAL_SAI_MspInit:00000000 HAL_SAI_MspInit
+C:\msys64\tmp\ccPloJTQ.s:494    .text.HAL_SAI_MspInit:000000e0 $d
+C:\msys64\tmp\ccPloJTQ.s:615    .bss.SAI1_client:00000000 SAI1_client
+C:\msys64\tmp\ccPloJTQ.s:609    .bss.SAI4_client:00000000 SAI4_client
+C:\msys64\tmp\ccPloJTQ.s:505    .text.HAL_SAI_MspDeInit:00000000 $t
+C:\msys64\tmp\ccPloJTQ.s:511    .text.HAL_SAI_MspDeInit:00000000 HAL_SAI_MspDeInit
+C:\msys64\tmp\ccPloJTQ.s:595    .text.HAL_SAI_MspDeInit:0000005c $d
+C:\msys64\tmp\ccPloJTQ.s:606    .bss.SAI4_client:00000000 $d
+C:\msys64\tmp\ccPloJTQ.s:612    .bss.SAI1_client:00000000 $d
+C:\msys64\tmp\ccPloJTQ.s:619    .bss.hsai_BlockA4:00000000 $d
+C:\msys64\tmp\ccPloJTQ.s:626    .bss.hsai_BlockA1:00000000 $d
+
+UNDEFINED SYMBOLS
+HAL_SAI_Init
+Error_Handler
+memset
+HAL_RCCEx_PeriphCLKConfig
+HAL_GPIO_Init
+HAL_GPIO_DeInit

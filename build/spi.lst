@@ -1,4 +1,4 @@
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
   29:Core/Src/spi.c **** SPI_HandleTypeDef hspi3;
   30:Core/Src/spi.c **** 
   31:Core/Src/spi.c **** /* SPI1 init function */
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 2
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 2
 
 
   32:Core/Src/spi.c **** void MX_SPI1_Init(void)
@@ -118,7 +118,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
   64              		.loc 1 49 3 is_stmt 1 view .LVU15
   65              		.loc 1 49 32 is_stmt 0 view .LVU16
   66 0020 C361     		str	r3, [r0, #28]
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 3
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 3
 
 
   50:Core/Src/spi.c ****   hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
@@ -178,7 +178,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  107              		.loc 1 63 3 is_stmt 1 view .LVU43
  108              		.loc 1 63 21 is_stmt 0 view .LVU44
  109 0040 8365     		str	r3, [r0, #88]
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 4
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 4
 
 
   64:Core/Src/spi.c ****   if (HAL_SPI_Init(&hspi1) != HAL_OK)
@@ -238,7 +238,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
   78:Core/Src/spi.c **** 
   79:Core/Src/spi.c ****   /* USER CODE END SPI2_Init 0 */
   80:Core/Src/spi.c **** 
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 5
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 5
 
 
   81:Core/Src/spi.c ****   /* USER CODE BEGIN SPI2_Init 1 */
@@ -298,7 +298,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  190              		.loc 1 95 3 is_stmt 1 view .LVU74
  191              		.loc 1 95 28 is_stmt 0 view .LVU75
  192 0028 C362     		str	r3, [r0, #44]
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 6
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 6
 
 
   96:Core/Src/spi.c ****   hspi2.Init.NSSPMode = SPI_NSS_PULSE_ENABLE;
@@ -358,7 +358,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  112:Core/Src/spi.c ****   /* USER CODE END SPI2_Init 2 */
  113:Core/Src/spi.c **** 
  114:Core/Src/spi.c **** }
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 7
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 7
 
 
  231              		.loc 1 114 1 view .LVU99
@@ -418,7 +418,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  273 000c 4360     		str	r3, [r0, #4]
  128:Core/Src/spi.c ****   hspi3.Init.Direction = SPI_DIRECTION_2LINES;
  274              		.loc 1 128 3 is_stmt 1 view .LVU107
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 8
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 8
 
 
  275              		.loc 1 128 24 is_stmt 0 view .LVU108
@@ -478,7 +478,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  141:Core/Src/spi.c ****   hspi3.Init.TxCRCInitializationPattern = SPI_CRC_INITIALIZATION_ALL_ZERO_PATTERN;
  317              		.loc 1 141 3 is_stmt 1 view .LVU133
  318              		.loc 1 141 41 is_stmt 0 view .LVU134
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 9
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 9
 
 
  319 0034 0364     		str	r3, [r0, #64]
@@ -538,7 +538,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  357 0054 003C0040 		.word	1073757184
  358              		.cfi_endproc
  359              	.LFE149:
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 10
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 10
 
 
  361              		.section	.text.HAL_SPI_MspInit,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  409 001e 9342     		cmp	r3, r2
  410 0020 08D0     		beq	.L27
  164:Core/Src/spi.c ****   {
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 11
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 11
 
 
  165:Core/Src/spi.c ****   /* USER CODE BEGIN SPI1_MspInit 0 */
@@ -658,7 +658,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  214:Core/Src/spi.c ****     __HAL_RCC_SPI2_CLK_ENABLE();
  215:Core/Src/spi.c **** 
  216:Core/Src/spi.c ****     __HAL_RCC_GPIOC_CLK_ENABLE();
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 12
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 12
 
 
  217:Core/Src/spi.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
@@ -718,7 +718,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  264:Core/Src/spi.c ****     PC11     ------> SPI3_MISO
  265:Core/Src/spi.c ****     */
  266:Core/Src/spi.c ****     GPIO_InitStruct.Pin = GPIO_PIN_2;
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 13
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 13
 
 
  267:Core/Src/spi.c ****     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
@@ -778,7 +778,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  179:Core/Src/spi.c **** 
  451              		.loc 1 179 5 view .LVU176
  452 0046 644B     		ldr	r3, .L33+12
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 14
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 14
 
 
  453 0048 D3F8F020 		ldr	r2, [r3, #240]
@@ -838,7 +838,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  491              		.loc 1 190 5 is_stmt 1 view .LVU192
  190:Core/Src/spi.c ****     GPIO_InitStruct.Alternate = GPIO_AF5_SPI1;
  492              		.loc 1 190 27 is_stmt 0 view .LVU193
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 15
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 15
 
 
  493 0084 3A93     		str	r3, [sp, #232]
@@ -898,7 +898,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  533              		.loc 1 214 5 view .LVU207
  534 00bc D3F8E820 		ldr	r2, [r3, #232]
  535 00c0 02F48042 		and	r2, r2, #16384
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 16
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 16
 
 
  536 00c4 0292     		str	r2, [sp, #8]
@@ -958,7 +958,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  574 00fa 3793     		str	r3, [sp, #220]
  224:Core/Src/spi.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
  575              		.loc 1 224 5 is_stmt 1 view .LVU224
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 17
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 17
 
 
  224:Core/Src/spi.c ****     GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  234:Core/Src/spi.c ****     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
  612              		.loc 1 234 31 is_stmt 0 view .LVU243
  613 0120 3B96     		str	r6, [sp, #236]
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 18
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 18
 
 
  235:Core/Src/spi.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  655 015e 059A     		ldr	r2, [sp, #20]
  656              	.LBE7:
  257:Core/Src/spi.c **** 
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 19
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 19
 
 
  657              		.loc 1 257 5 view .LVU257
@@ -1138,7 +1138,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  695 0196 3896     		str	r6, [sp, #224]
  268:Core/Src/spi.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
  696              		.loc 1 268 5 is_stmt 1 view .LVU274
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 20
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 20
 
 
  268:Core/Src/spi.c ****     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -1198,7 +1198,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  733 01bc 2946     		mov	r1, r5
  734 01be 0848     		ldr	r0, .L33+20
  735 01c0 FFF7FEFF 		bl	HAL_GPIO_Init
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 21
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 21
 
 
  736              	.LVL23:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  291:Core/Src/spi.c ****   /* USER CODE BEGIN SPI1_MspDeInit 0 */
  292:Core/Src/spi.c **** 
  293:Core/Src/spi.c ****   /* USER CODE END SPI1_MspDeInit 0 */
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 22
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 22
 
 
  294:Core/Src/spi.c ****     /* Peripheral clock disable */
@@ -1318,7 +1318,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  336:Core/Src/spi.c **** 
  337:Core/Src/spi.c ****     /**SPI3 GPIO Configuration
  338:Core/Src/spi.c ****     PB2     ------> SPI3_MOSI
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 23
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 23
 
 
  339:Core/Src/spi.c ****     PC10     ------> SPI3_SCK
@@ -1378,7 +1378,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  832              	.LVL34:
  833 0050 E1E7     		b	.L35
  834              	.LVL35:
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 24
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 24
 
 
  835              	.L42:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  882              		.global	hspi1
  883              		.section	.bss.hspi1,"aw",%nobits
  884              		.align	2
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 25
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 25
 
 
  887              	hspi1:
@@ -1460,32 +1460,32 @@ ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 1
  899              		.file 10 "Core/Inc/spi.h"
  900              		.file 11 "Core/Inc/main.h"
  901              		.file 12 "<built-in>"
-ARM GAS  C:\msys64\tmp\ccThAiim.s 			page 26
+ARM GAS  C:\msys64\tmp\ccci5eU0.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-C:\msys64\tmp\ccThAiim.s:20     .text.MX_SPI1_Init:00000000 $t
-C:\msys64\tmp\ccThAiim.s:26     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\msys64\tmp\ccThAiim.s:128    .text.MX_SPI1_Init:00000050 $d
-C:\msys64\tmp\ccThAiim.s:887    .bss.hspi1:00000000 hspi1
-C:\msys64\tmp\ccThAiim.s:134    .text.MX_SPI2_Init:00000000 $t
-C:\msys64\tmp\ccThAiim.s:140    .text.MX_SPI2_Init:00000000 MX_SPI2_Init
-C:\msys64\tmp\ccThAiim.s:242    .text.MX_SPI2_Init:00000050 $d
-C:\msys64\tmp\ccThAiim.s:880    .bss.hspi2:00000000 hspi2
-C:\msys64\tmp\ccThAiim.s:248    .text.MX_SPI3_Init:00000000 $t
-C:\msys64\tmp\ccThAiim.s:254    .text.MX_SPI3_Init:00000000 MX_SPI3_Init
-C:\msys64\tmp\ccThAiim.s:356    .text.MX_SPI3_Init:00000050 $d
-C:\msys64\tmp\ccThAiim.s:873    .bss.hspi3:00000000 hspi3
-C:\msys64\tmp\ccThAiim.s:362    .text.HAL_SPI_MspInit:00000000 $t
-C:\msys64\tmp\ccThAiim.s:368    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-C:\msys64\tmp\ccThAiim.s:748    .text.HAL_SPI_MspInit:000001cc $d
-C:\msys64\tmp\ccThAiim.s:759    .text.HAL_SPI_MspDeInit:00000000 $t
-C:\msys64\tmp\ccThAiim.s:765    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-C:\msys64\tmp\ccThAiim.s:858    .text.HAL_SPI_MspDeInit:00000074 $d
-C:\msys64\tmp\ccThAiim.s:870    .bss.hspi3:00000000 $d
-C:\msys64\tmp\ccThAiim.s:877    .bss.hspi2:00000000 $d
-C:\msys64\tmp\ccThAiim.s:884    .bss.hspi1:00000000 $d
+C:\msys64\tmp\ccci5eU0.s:20     .text.MX_SPI1_Init:00000000 $t
+C:\msys64\tmp\ccci5eU0.s:26     .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\msys64\tmp\ccci5eU0.s:128    .text.MX_SPI1_Init:00000050 $d
+C:\msys64\tmp\ccci5eU0.s:887    .bss.hspi1:00000000 hspi1
+C:\msys64\tmp\ccci5eU0.s:134    .text.MX_SPI2_Init:00000000 $t
+C:\msys64\tmp\ccci5eU0.s:140    .text.MX_SPI2_Init:00000000 MX_SPI2_Init
+C:\msys64\tmp\ccci5eU0.s:242    .text.MX_SPI2_Init:00000050 $d
+C:\msys64\tmp\ccci5eU0.s:880    .bss.hspi2:00000000 hspi2
+C:\msys64\tmp\ccci5eU0.s:248    .text.MX_SPI3_Init:00000000 $t
+C:\msys64\tmp\ccci5eU0.s:254    .text.MX_SPI3_Init:00000000 MX_SPI3_Init
+C:\msys64\tmp\ccci5eU0.s:356    .text.MX_SPI3_Init:00000050 $d
+C:\msys64\tmp\ccci5eU0.s:873    .bss.hspi3:00000000 hspi3
+C:\msys64\tmp\ccci5eU0.s:362    .text.HAL_SPI_MspInit:00000000 $t
+C:\msys64\tmp\ccci5eU0.s:368    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+C:\msys64\tmp\ccci5eU0.s:748    .text.HAL_SPI_MspInit:000001cc $d
+C:\msys64\tmp\ccci5eU0.s:759    .text.HAL_SPI_MspDeInit:00000000 $t
+C:\msys64\tmp\ccci5eU0.s:765    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+C:\msys64\tmp\ccci5eU0.s:858    .text.HAL_SPI_MspDeInit:00000074 $d
+C:\msys64\tmp\ccci5eU0.s:870    .bss.hspi3:00000000 $d
+C:\msys64\tmp\ccci5eU0.s:877    .bss.hspi2:00000000 $d
+C:\msys64\tmp\ccci5eU0.s:884    .bss.hspi1:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init
