@@ -1,4 +1,4 @@
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
   29:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   [..]
   30:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     The SAI HAL driver can be used as follows:
   31:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 2
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 2
 
 
   32:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     (#) Declare a SAI_HandleTypeDef handle structure (eg. SAI_HandleTypeDef hsai).
@@ -118,7 +118,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
   86:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
   87:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   [..]
   88:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     (@) PDM interface can be activated through HAL_SAI_Init function.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 3
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 3
 
 
   89:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         Please note that PDM interface is only available for SAI1 or SAI4 sub-block A.
@@ -178,7 +178,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  143:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       Below the list of most used macros in SAI HAL driver :
  144:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  145:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       (+) __HAL_SAI_ENABLE(): Enable the SAI peripheral
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 4
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 4
 
 
  146:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       (+) __HAL_SAI_DISABLE(): Disable the SAI peripheral
@@ -238,7 +238,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  200:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     Exception done for MspInit/MspDeInit callbacks that can be registered/unregistered
  201:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     in READY or RESET state, thus registered (user) MspInit/DeInit callbacks can be used
  202:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     during the Init/DeInit.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 5
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 5
 
 
  203:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     In that case first register the MspInit/MspDeInit user callbacks
@@ -298,7 +298,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  257:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /** @defgroup SAI_Private_Functions  SAI Private Functions
  258:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @{
  259:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   */
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 6
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 6
 
 
  260:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** static void SAI_FillFifo(SAI_HandleTypeDef *hsai);
@@ -358,7 +358,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  314:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           of the selected SAI peripheral.
  315:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  316:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** @endverbatim
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 7
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 7
 
 
  317:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @{
@@ -418,7 +418,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  371:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** HAL_StatusTypeDef HAL_SAI_Init(SAI_HandleTypeDef *hsai)
  372:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** {
  373:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   uint32_t tmpregisterGCR;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 8
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 8
 
 
  374:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   uint32_t ckstr_bits;
@@ -478,7 +478,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  428:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   if (hsai->Init.PdmInit.Activation == ENABLE)
  429:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  430:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     assert_param(IS_SAI_PDM_MIC_PAIRS_NUMBER(hsai->Init.PdmInit.MicPairsNbr));
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 9
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 9
 
 
  431:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     assert_param(IS_SAI_PDM_CLOCK_ENABLE(hsai->Init.PdmInit.ClockEnable));
@@ -538,7 +538,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  485:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->RxCpltCallback     = HAL_SAI_RxCpltCallback;
  486:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->RxHalfCpltCallback = HAL_SAI_RxHalfCpltCallback;
  487:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->TxCpltCallback     = HAL_SAI_TxCpltCallback;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 10
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 10
 
 
  488:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->TxHalfCpltCallback = HAL_SAI_TxHalfCpltCallback;
@@ -598,7 +598,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  542:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       syncen_bits = SAI_xCR1_SYNCEN_1;
  543:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       tmpregisterGCR |= SAI_GCR_SYNCIN_0;
  544:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 11
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 11
 
 
  545:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #endif /* SAI2 */
@@ -658,7 +658,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  599:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
  600:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #endif /* SAI3 */
  601:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #if defined(SAI4)
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 12
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 12
 
 
  602:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     if (hsai->Instance == SAI4_Block_A)
@@ -718,7 +718,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  656:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  657:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* For SPDIF protocol, SAI shall provide a bit clock twice faster the symbol-rate */
  658:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     if (hsai->Init.Protocol == SAI_SPDIF_PROTOCOL)
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 13
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 13
 
 
  659:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
@@ -778,7 +778,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  713:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->Instance->CR1 &= ~(SAI_xCR1_MODE | SAI_xCR1_PRTCFG |  SAI_xCR1_DS |      \
  714:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                            SAI_xCR1_LSBFIRST | SAI_xCR1_CKSTR | SAI_xCR1_SYNCEN | \
  715:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                            SAI_xCR1_MONO | SAI_xCR1_OUTDRIV  | SAI_xCR1_DMAEN |  \
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 14
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 14
 
 
  716:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                            SAI_xCR1_NODIV | SAI_xCR1_MCKDIV | SAI_xCR1_OSR |     \
@@ -838,7 +838,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  770:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->State = HAL_SAI_STATE_READY;
  771:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  772:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* Release Lock */
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 15
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 15
 
 
  773:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   __HAL_UNLOCK(hsai);
@@ -898,7 +898,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  827:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #endif /* SAI4 */
  828:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  829:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* Reset PDM delays */
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 16
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 16
 
 
  830:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     SaiBaseAddress->PDMDLY = 0U;
@@ -958,7 +958,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  884:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   UNUSED(hsai);
  885:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  886:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* NOTE : This function should not be modified, when the callback is needed,
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 17
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 17
 
 
  887:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****             the HAL_SAI_MspDeInit could be implemented in the user file
@@ -1018,7 +1018,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  941:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           break;
  942:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         case HAL_SAI_MSPINIT_CB_ID :
  943:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           hsai->MspInitCallback = pCallback;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 18
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 18
 
 
  944:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           break;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  998:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @retval HAL status.
  999:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   */
 1000:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** HAL_StatusTypeDef HAL_SAI_UnRegisterCallback(SAI_HandleTypeDef        *hsai,
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 19
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 19
 
 
 1001:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                                              HAL_SAI_CallbackIDTypeDef CallbackID)
@@ -1138,7 +1138,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1055:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
 1056:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   else
 1057:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 20
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 20
 
 
 1058:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* update the error code */
@@ -1198,7 +1198,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 1113:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
 1114:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  Transmit an amount of data in blocking mode.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 21
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 21
 
 
 1115:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
@@ -1258,7 +1258,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1169:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         }
 1170:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         else
 1171:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 22
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 22
 
 
 1172:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           temp = (uint32_t)(*hsai->pBuffPtr);
@@ -1318,7 +1318,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1226:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
 1227:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  Receive an amount of data in blocking mode.
 1228:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 23
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 23
 
 
 1229:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for SAI module.
@@ -1378,7 +1378,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1283:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           temp = hsai->Instance->DR;
 1284:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           *hsai->pBuffPtr = (uint8_t)temp;
 1285:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           hsai->pBuffPtr++;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 24
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 24
 
 
 1286:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           *hsai->pBuffPtr = (uint8_t)(temp >> 8);
@@ -1438,7 +1438,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1340:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for SAI module.
 1341:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  pData Pointer to data buffer
 1342:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  Size Amount of data to be sent
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 25
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 25
 
 
 1343:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @retval HAL status
@@ -1498,7 +1498,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1397:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** }
 1398:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 1399:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 26
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 26
 
 
 1400:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  Receive an amount of data in non-blocking mode with Interrupt.
@@ -1558,7 +1558,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1454:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
 1455:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     return HAL_BUSY;
 1456:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 27
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 27
 
 
 1457:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** }
@@ -1618,7 +1618,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1511:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   */
 1512:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** HAL_StatusTypeDef HAL_SAI_DMAStop(SAI_HandleTypeDef *hsai)
 1513:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 28
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 28
 
 
 1514:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   HAL_StatusTypeDef status = HAL_OK;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1568:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
 1569:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief Abort the current transfer and disable the SAI.
 1570:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 29
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 29
 
 
 1571:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for SAI module.
@@ -1738,7 +1738,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1625:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 1626:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* Flush the fifo */
 1627:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   SET_BIT(hsai->Instance->CR2, SAI_xCR2_FFLUSH);
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 30
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 30
 
 
 1628:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1682:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       return  HAL_ERROR;
 1683:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
 1684:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 31
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 31
 
 
 1685:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* Enable the interrupts for error handling */
@@ -1858,7 +1858,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1739:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
 1740:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 1741:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   if (hsai->State == HAL_SAI_STATE_READY)
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 32
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 32
 
 
 1742:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
@@ -1918,7 +1918,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1796:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  Enable the Tx mute mode.
 1797:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
 1798:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for SAI module.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 33
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 33
 
 
 1799:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  val  value sent during the mute @ref SAI_Block_Mute_Value
@@ -1978,7 +1978,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1853:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   return HAL_ERROR;
 1854:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** }
 1855:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 34
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 34
 
 
 1856:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
@@ -2038,7 +2038,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1910:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
 1911:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* SAI mutedet interrupt occurred ----------------------------------*/
 1912:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     else if (((itflags & SAI_FLAG_MUTEDET) == SAI_FLAG_MUTEDET) && ((itsources & SAI_IT_MUTEDET) ==
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 35
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 35
 
 
 1913:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
@@ -2098,7 +2098,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1967:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #if (USE_HAL_SAI_REGISTER_CALLBACKS == 1)
 1968:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****             hsai->ErrorCallback(hsai);
 1969:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #else
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 36
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 36
 
 
 1970:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****             HAL_SAI_ErrorCallback(hsai);
@@ -2158,7 +2158,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2024:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           hsai->hdmarx->XferAbortCallback = SAI_DMAAbort;
 2025:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 2026:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           /* Abort DMA in IT mode */
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 37
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 37
 
 
 2027:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           if (HAL_DMA_Abort_IT(hsai->hdmarx) != HAL_OK)
@@ -2218,7 +2218,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2081:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****             hsai->ErrorCallback(hsai);
 2082:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #else
 2083:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****             HAL_SAI_ErrorCallback(hsai);
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 38
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 38
 
 
 2084:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #endif
@@ -2278,7 +2278,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2138:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       HAL_SAI_ErrorCallback(hsai);
 2139:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #endif
 2140:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 39
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 39
 
 
 2141:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     else
@@ -2338,7 +2338,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2195:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 2196:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** /**
 2197:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief Rx Transfer half completed callback.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 40
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 40
 
 
 2198:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
@@ -2398,7 +2398,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2252:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   */
 2253:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** HAL_SAI_StateTypeDef HAL_SAI_GetState(const SAI_HandleTypeDef *hsai)
 2254:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 41
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 41
 
 
 2255:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   return hsai->State;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
   39 0002 0020     		movs	r0, #0
   40              	.LVL2:
   41              		.loc 1 2297 34 view .LVU5
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 42
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 42
 
 
   42 0004 CCF84400 		str	r0, [ip, #68]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
   77 003c 68D1     		bne	.L14
 2317:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
 2318:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     return HAL_ERROR;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 43
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 43
 
 
 2319:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2330:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
  111              		.loc 1 2330 34 is_stmt 0 view .LVU35
  112 0068 0020     		movs	r0, #0
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 44
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 44
 
 
  113 006a CCF86400 		str	r0, [ip, #100]
@@ -2638,7 +2638,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2359:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
 2360:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     default :
 2361:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       status = HAL_ERROR;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 45
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 45
 
 
 2362:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
@@ -2698,7 +2698,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  170 00a6 8023     		movs	r3, #128
  171 00a8 CCF86C30 		str	r3, [ip, #108]
 2353:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     case SAI_PROTOCOL_DATASIZE_32BIT:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 46
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 46
 
 
  172              		.loc 1 2353 7 is_stmt 1 view .LVU63
@@ -2758,7 +2758,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  209 00d0 DCE7     		b	.L17
  210              	.L11:
 2294:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   HAL_StatusTypeDef status = HAL_OK;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 47
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 47
 
 
  211              		.loc 1 2294 1 view .LVU81
@@ -2818,7 +2818,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  250              		.cfi_def_cfa_offset 0
  251 00f6 7047     		bx	lr
  252              	.L25:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 48
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 48
 
 
  253              	.LCFI2:
@@ -2878,7 +2878,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2372:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
  293              		.loc 1 2372 7 is_stmt 1 view .LVU112
 2372:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 49
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 49
 
 
  294              		.loc 1 2372 37 is_stmt 0 view .LVU113
@@ -2938,7 +2938,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  331              		.loc 1 2392 34 is_stmt 0 view .LVU121
  332 0002 0024     		movs	r4, #0
  333 0004 4464     		str	r4, [r0, #68]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 50
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 50
 
 
 2393:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->Init.FirstBit            = SAI_FIRSTBIT_MSB;
@@ -2998,7 +2998,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  370 002a 4FF6FF74 		movw	r4, #65535
  371 002e 4467     		str	r4, [r0, #116]
 2411:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 51
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 51
 
 
 2412:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   if (protocol == SAI_PCM_SHORT)
@@ -3058,7 +3058,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2424:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     case SAI_PROTOCOL_DATASIZE_16BIT:
 2425:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       hsai->Init.DataSize = SAI_DATASIZE_16;
  409              		.loc 1 2425 7 is_stmt 1 view .LVU152
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 52
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 52
 
 
  410              		.loc 1 2425 27 is_stmt 0 view .LVU153
@@ -3118,7 +3118,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  438 0060 7047     		bx	lr
  439              	.LVL22:
  440              	.L37:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 53
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 53
 
 
  441              	.LCFI6:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2437:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
  478              		.loc 1 2437 7 is_stmt 1 view .LVU181
 2437:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 54
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 54
 
 
  479              		.loc 1 2437 31 is_stmt 0 view .LVU182
@@ -3238,7 +3238,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  517              		.loc 1 2422 3 view .LVU198
  518 0092 E4E7     		b	.L33
  519              		.cfi_endproc
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 55
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 55
 
 
  520              	.LFE172:
@@ -3298,7 +3298,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  558              		.loc 1 2468 11 is_stmt 0 view .LVU211
  559 000e 836F     		ldr	r3, [r0, #120]
  560              		.loc 1 2468 21 view .LVU212
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 56
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 56
 
 
  561 0010 0133     		adds	r3, r3, #1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  597 0034 DC78     		ldrb	r4, [r3, #3]	@ zero_extendqisi2
  598              		.loc 1 2486 12 view .LVU230
  599 0036 42EA0462 		orr	r2, r2, r4, lsl #24
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 57
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 57
 
 
  600              	.LVL40:
@@ -3418,7 +3418,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2470:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
  639              		.loc 1 2470 13 is_stmt 0 view .LVU249
  640 0064 802B     		cmp	r3, #128
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 58
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 58
 
 
  641 0066 D6D8     		bhi	.L46
@@ -3478,7 +3478,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  683              	SAI_InterruptFlag:
  684              	.LVL45:
  685              	.LFB174:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 59
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 59
 
 
 2493:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  715 0012 0CD9     		bls	.L58
 2517:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
 2518:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     tmpIT |= SAI_IT_AFSDET | SAI_IT_LFSDET;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 60
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 60
 
 
 2519:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
@@ -3598,7 +3598,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  754              		.section	.text.SAI_Disable,"ax",%progbits
  755              		.align	1
  756              		.syntax unified
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 61
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 61
 
 
  757              		.thumb
@@ -3658,7 +3658,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2550:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       break;
 2551:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
 2552:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     count--;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 62
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 62
 
 
  789              		.loc 1 2552 5 is_stmt 1 view .LVU297
@@ -3718,7 +3718,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  830              	.LFE175:
  832              		.section	.text.HAL_SAI_MspInit,"ax",%progbits
  833              		.align	1
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 63
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 63
 
 
  834              		.weak	HAL_SAI_MspInit
@@ -3778,7 +3778,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  881              		.loc 1 379 3 view .LVU322
  379:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  882              		.loc 1 379 6 is_stmt 0 view .LVU323
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 64
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 64
 
 
  883 0002 0028     		cmp	r0, #0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  911              		.loc 1 424 3 view .LVU349
  427:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   if (hsai->Init.PdmInit.Activation == ENABLE)
  912              		.loc 1 427 3 view .LVU350
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 65
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 65
 
 
  428:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
@@ -3898,7 +3898,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  953 0046 18BF     		it	ne
  954 0048 9342     		cmpne	r3, r2
  955 004a 40F0EA80 		bne	.L68
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 66
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 66
 
 
  435:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****          (hsai->Init.Protocol != SAI_FREE_PROTOCOL))
@@ -3958,7 +3958,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  513:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  995              		.loc 1 513 3 view .LVU380
  996 007c 012B     		cmp	r3, #1
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 67
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 67
 
 
  997 007e 0AD0     		beq	.L91
@@ -4018,7 +4018,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  566:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  1038              		.loc 1 566 17 is_stmt 0 view .LVU394
  1039 00b2 236A     		ldr	r3, [r4, #32]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 68
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 68
 
 
  566:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
@@ -4078,7 +4078,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1080              	.L78:
  617:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
  1081              		.loc 1 617 5 is_stmt 1 view .LVU409
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 69
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 69
 
 
  617:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
@@ -4138,7 +4138,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1119 0106 784B     		ldr	r3, .L113+24
  1120 0108 A3FB0023 		umull	r2, r3, r3, r0
  1121 010c DB08     		lsrs	r3, r3, #3
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 70
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 70
 
 
  649:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -4198,7 +4198,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1159              		.loc 1 671 82 view .LVU443
  1160 0136 012B     		cmp	r3, #1
  1161 0138 00F0AD80 		beq	.L110
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 71
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 71
 
 
  671:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
@@ -4258,7 +4258,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1198              		.loc 1 722 37 view .LVU461
  1199 0162 E06A     		ldr	r0, [r4, #44]
  721:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                           hsai->Init.MonoStereoMode | hsai->Init.OutputDrive |   \
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 72
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 72
 
 
  1200              		.loc 1 721 52 view .LVU462
@@ -4318,7 +4318,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  729:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  1237              		.loc 1 729 17 view .LVU480
  1238 018c 4A68     		ldr	r2, [r1, #4]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 73
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 73
 
 
  729:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -4378,7 +4378,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1275 01b2 E16D     		ldr	r1, [r4, #92]
  735:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                            hsai->FrameInit.FSDefinition |
  1276              		.loc 1 735 53 view .LVU499
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 74
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 74
 
 
  1277 01b4 0B43     		orrs	r3, r3, r1
@@ -4438,7 +4438,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1314 01e2 616F     		ldr	r1, [r4, #116]
  745:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****                            (hsai->SlotInit.SlotActive << 16) | ((hsai->SlotInit.SlotNumber - 1U) <<
  1315              		.loc 1 745 84 view .LVU517
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 75
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 75
 
 
  1316 01e4 43EA0143 		orr	r3, r3, r1, lsl #16
@@ -4498,7 +4498,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  770:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  1354              		.loc 1 770 15 is_stmt 0 view .LVU534
  1355 0218 0122     		movs	r2, #1
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 76
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 76
 
 
  1356 021a 84F89120 		strb	r2, [r4, #145]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  574:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
  1396              		.loc 1 574 7 is_stmt 1 view .LVU549
  574:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 77
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 77
 
 
  1397              		.loc 1 574 14 is_stmt 0 view .LVU550
@@ -4618,7 +4618,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1438 026a 0BD0     		beq	.L97
  635:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       }
  1439              		.loc 1 635 9 is_stmt 1 view .LVU564
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 78
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 78
 
 
  635:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       }
@@ -4678,7 +4678,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  660:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
  1481              		.loc 1 660 7 is_stmt 1 view .LVU578
  660:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 79
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 79
 
 
  1482              		.loc 1 660 37 is_stmt 0 view .LVU579
@@ -4738,7 +4738,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1521              		.loc 1 760 29 view .LVU594
  1522 02b8 7364     		str	r3, [r6, #68]
  762:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 80
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 80
 
 
  1523              		.loc 1 762 7 is_stmt 1 view .LVU595
@@ -4798,7 +4798,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1573              		@ frame_needed = 0, uses_anonymous_args = 0
  333:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   HAL_StatusTypeDef status;
  1574              		.loc 1 333 1 is_stmt 0 view .LVU602
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 81
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 81
 
 
  1575 0000 10B5     		push	{r4, lr}
@@ -4858,7 +4858,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1614 001c 10BD     		pop	{r4, pc}
  1615              	.LVL111:
  1616              	.L124:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 82
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 82
 
 
  358:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
@@ -4918,7 +4918,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1666              		.cfi_startproc
  1667              		@ args = 0, pretend = 0, frame = 0
  1668              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 83
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 83
 
 
  785:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   SAI_TypeDef *SaiBaseAddress;
@@ -4978,7 +4978,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1707 0024 2268     		ldr	r2, [r4]
  1708 0026 5368     		ldr	r3, [r2, #4]
  1709 0028 43F00803 		orr	r3, r3, #8
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 84
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 84
 
 
  1710 002c 5360     		str	r3, [r2, #4]
@@ -5038,7 +5038,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1749              		.loc 1 851 3 is_stmt 1 view .LVU657
  851:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  1750              		.loc 1 851 15 is_stmt 0 view .LVU658
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 85
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 85
 
 
  1751 005a 84F89130 		strb	r3, [r4, #145]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1791 0088 00580140 		.word	1073829888
  1792              		.cfi_endproc
  1793              	.LFE146:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 86
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 86
 
 
  1795              		.section	.text.HAL_SAI_Transmit,"ax",%progbits
@@ -5158,7 +5158,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1132:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  1841              		.loc 1 1132 6 view .LVU682
  1842 0026 012B     		cmp	r3, #1
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 87
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 87
 
 
  1843 0028 40F08D80 		bne	.L150
@@ -5218,7 +5218,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1878              		.loc 1 1147 7 is_stmt 1 view .LVU701
  1879 005e 2046     		mov	r0, r4
  1880              	.LVL126:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 88
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 88
 
 
 1147:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       /* Enable SAI peripheral */
@@ -5278,7 +5278,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1919              		.loc 1 1173 25 is_stmt 0 view .LVU717
  1920 008c A067     		str	r0, [r4, #120]
 1174:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           hsai->pBuffPtr++;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 89
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 89
 
 
  1921              		.loc 1 1174 11 is_stmt 1 view .LVU718
@@ -5338,7 +5338,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  1957              		.loc 1 1182 13 is_stmt 0 view .LVU736
  1958 00ae B4F87E30 		ldrh	r3, [r4, #126]
 1182:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 90
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 90
 
 
  1959              		.loc 1 1182 24 view .LVU737
@@ -5398,7 +5398,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1165:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           temp |= ((uint32_t)(*hsai->pBuffPtr) << 8);
  1997              		.loc 1 1165 11 is_stmt 1 view .LVU754
 1165:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           temp |= ((uint32_t)(*hsai->pBuffPtr) << 8);
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 91
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 91
 
 
  1998              		.loc 1 1165 25 is_stmt 0 view .LVU755
@@ -5458,7 +5458,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1193:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  2036              		.loc 1 1193 15 is_stmt 0 view .LVU772
  2037 010a 2368     		ldr	r3, [r4]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 92
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 92
 
 
 1193:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -5518,7 +5518,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2074              		.loc 1 1218 12 is_stmt 0 view .LVU790
  2075 013c 00E0     		b	.L139
  2076              	.LVL138:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 93
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 93
 
 
  2077              	.L149:
@@ -5578,7 +5578,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1237:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   uint32_t temp;
  2127              		.loc 1 1237 3 is_stmt 1 view .LVU797
 1237:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   uint32_t temp;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 94
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 94
 
 
  2128              		.loc 1 1237 24 is_stmt 0 view .LVU798
@@ -5638,7 +5638,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1253:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->ErrorCode = HAL_SAI_ERROR_NONE;
  2165              		.loc 1 1253 17 is_stmt 0 view .LVU816
  2166 0048 2223     		movs	r3, #34
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 95
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 95
 
 
  2167 004a 84F89130 		strb	r3, [r4, #145]
@@ -5698,7 +5698,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2205 007a 16E0     		b	.L160
  2206              	.L161:
 1283:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           *hsai->pBuffPtr = (uint8_t)temp;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 96
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 96
 
 
  2207              		.loc 1 1283 11 is_stmt 1 view .LVU833
@@ -5758,7 +5758,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2242 009c 511C     		adds	r1, r2, #1
  2243 009e A167     		str	r1, [r4, #120]
 1290:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           hsai->pBuffPtr++;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 97
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 97
 
 
  2244              		.loc 1 1290 11 is_stmt 1 view .LVU853
@@ -5818,7 +5818,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2281 00c6 A36C     		ldr	r3, [r4, #72]
 1268:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
  2282              		.loc 1 1268 12 view .LVU871
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 98
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 98
 
 
  2283 00c8 402B     		cmp	r3, #64
@@ -5878,7 +5878,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2320              		.loc 1 1298 9 is_stmt 1 view .LVU888
 1298:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
  2321              		.loc 1 1298 16 is_stmt 0 view .LVU889
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 99
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 99
 
 
  2322 00ea FFF7FEFF 		bl	HAL_GetTick
@@ -5938,7 +5938,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2360              		.loc 1 1317 11 view .LVU905
  2361 0122 0023     		movs	r3, #0
  2362 0124 84F89030 		strb	r3, [r4, #144]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 100
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 100
 
 
 1317:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -5998,7 +5998,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2404              		.syntax unified
  2405              		.thumb
  2406              		.thumb_func
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 101
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 101
 
 
  2408              	HAL_SAI_Transmit_IT:
@@ -6058,7 +6058,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2447              		.loc 1 1358 20 is_stmt 0 view .LVU934
  2448 0024 A0F87C20 		strh	r2, [r0, #124]	@ movhi
 1359:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->ErrorCode = HAL_SAI_ERROR_NONE;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 102
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 102
 
 
  2449              		.loc 1 1359 5 is_stmt 1 view .LVU935
@@ -6118,7 +6118,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1380:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  2488              		.loc 1 1380 5 is_stmt 0 discriminator 1 view .LVU951
  2489 0056 2268     		ldr	r2, [r4]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 103
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 103
 
 
  2490 0058 1369     		ldr	r3, [r2, #16]
@@ -6178,7 +6178,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2529              		.loc 1 1373 7 is_stmt 1 view .LVU966
 1373:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     }
  2530              		.loc 1 1373 37 is_stmt 0 view .LVU967
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 104
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 104
 
 
  2531 0086 074B     		ldr	r3, .L186+8
@@ -6238,7 +6238,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2581              	.LFB152:
 1408:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   if ((pData == NULL) || (Size == 0U))
  2582              		.loc 1 1408 1 is_stmt 1 view -0
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 105
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 105
 
 
  2583              		.cfi_startproc
@@ -6298,7 +6298,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2621              		.loc 1 1421 21 is_stmt 0 view .LVU990
  2622 0028 A0F87E20 		strh	r2, [r0, #126]	@ movhi
 1422:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_RX;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 106
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 106
 
 
  2623              		.loc 1 1422 5 is_stmt 1 view .LVU991
@@ -6358,7 +6358,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2662              		.loc 1 1442 5 is_stmt 1 view .LVU1006
 1442:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
  2663              		.loc 1 1442 14 is_stmt 0 view .LVU1007
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 107
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 107
 
 
  2664 0058 2368     		ldr	r3, [r4]
@@ -6418,7 +6418,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2704              	.L194:
  2705              	.LCFI18:
  2706              		.cfi_def_cfa_offset 0
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 108
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 108
 
 
  2707              		.cfi_restore 4
@@ -6478,7 +6478,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1468:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  2756              		.loc 1 1468 3 view .LVU1029
 1468:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 109
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 109
 
 
  2757              		.loc 1 1468 3 view .LVU1030
@@ -6538,7 +6538,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2798              		.thumb
  2799              		.thumb_func
  2801              	HAL_SAI_DMAResume:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 110
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 110
 
 
  2802              	.LVL185:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2840              		.loc 1 1501 3 view .LVU1060
  2841 002a 0023     		movs	r3, #0
  2842 002c 80F89030 		strb	r3, [r0, #144]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 111
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 111
 
 
 1501:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -6658,7 +6658,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2888 0008 4CD0     		beq	.L216
  2889 000a 0446     		mov	r4, r0
 1517:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 112
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 112
 
 
  2890              		.loc 1 1517 3 discriminator 2 view .LVU1072
@@ -6718,7 +6718,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1557:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  2929              		.loc 1 1557 3 is_stmt 1 view .LVU1088
  2930 0036 2268     		ldr	r2, [r4]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 113
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 113
 
 
  2931 0038 5368     		ldr	r3, [r2, #4]
@@ -6778,7 +6778,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  2969 0066 802B     		cmp	r3, #128
  2970 0068 E1D0     		beq	.L214
 1536:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         hsai->ErrorCode |= HAL_SAI_ERROR_DMA;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 114
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 114
 
 
  2971              		.loc 1 1536 9 is_stmt 1 view .LVU1105
@@ -6838,7 +6838,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1551:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       }
  3009              		.loc 1 1551 25 view .LVU1122
  3010 0098 43F08003 		orr	r3, r3, #128
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 115
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 115
 
 
  3011 009c C4F89430 		str	r3, [r4, #148]
@@ -6898,7 +6898,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3057              		.loc 1 1582 3 view .LVU1132
 1582:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
  3058              		.loc 1 1582 7 is_stmt 0 view .LVU1133
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 116
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 116
 
 
  3059 0012 FFF7FEFF 		bl	SAI_Disable
@@ -6958,7 +6958,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1623:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->Instance->CLRFR = 0xFFFFFFFFU;
  3098              		.loc 1 1623 3 is_stmt 1 view .LVU1149
 1623:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->Instance->CLRFR = 0xFFFFFFFFU;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 117
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 117
 
 
  3099              		.loc 1 1623 7 is_stmt 0 view .LVU1150
@@ -7018,7 +7018,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3137              		.loc 1 1596 11 is_stmt 0 view .LVU1166
  3138 006c FFF7FEFF 		bl	HAL_DMA_Abort
  3139              	.LVL211:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 118
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 118
 
 
 1596:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       {
@@ -7078,7 +7078,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3177              		.loc 1 1613 17 is_stmt 0 view .LVU1183
  3178 009e D4F88430 		ldr	r3, [r4, #132]
 1613:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 119
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 119
 
 
  3179              		.loc 1 1613 25 view .LVU1184
@@ -7138,7 +7138,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3226              		.cfi_offset 14, -4
  3227 0004 0446     		mov	r4, r0
  3228 0006 0F46     		mov	r7, r1
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 120
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 120
 
 
  3229 0008 1646     		mov	r6, r2
@@ -7198,7 +7198,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1663:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_TX;
  3266              		.loc 1 1663 5 is_stmt 1 view .LVU1211
 1663:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_BUSY_TX;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 121
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 121
 
 
  3267              		.loc 1 1663 21 is_stmt 0 view .LVU1212
@@ -7258,7 +7258,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3304 0070 D4F88000 		ldr	r0, [r4, #128]
  3305              	.LVL219:
 1679:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 122
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 122
 
 
  3306              		.loc 1 1679 9 view .LVU1230
@@ -7318,7 +7318,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3345              	.LVL223:
 1695:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       {
  3346              		.loc 1 1695 26 discriminator 1 view .LVU1246
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 123
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 123
 
 
  3347 00a4 431B     		subs	r3, r0, r5
@@ -7378,7 +7378,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3383 00d4 1A68     		ldr	r2, [r3]
  3384 00d6 42F48032 		orr	r2, r2, #65536
  3385 00da 1A60     		str	r2, [r3]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 124
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 124
 
 
  3386              	.L236:
@@ -7438,7 +7438,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1734:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  3433              		.loc 1 1734 1 is_stmt 1 view -0
  3434              		.cfi_startproc
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 125
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 125
 
 
  3435              		@ args = 0, pretend = 0, frame = 0
@@ -7498,7 +7498,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3474              		.loc 1 1748 5 is_stmt 1 view .LVU1289
 1748:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->ErrorCode = HAL_SAI_ERROR_NONE;
  3475              		.loc 1 1748 21 is_stmt 0 view .LVU1290
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 126
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 126
 
 
  3476 002a A0F87E20 		strh	r2, [r0, #126]	@ movhi
@@ -7558,7 +7558,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3512 0056 1365     		str	r3, [r2, #80]
 1765:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
  3513              		.loc 1 1765 5 is_stmt 1 view .LVU1309
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 127
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 127
 
 
 1765:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
@@ -7618,7 +7618,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3553 008a 43F40033 		orr	r3, r3, #131072
  3554 008e 1360     		str	r3, [r2]
 1778:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 128
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 128
 
 
  3555              		.loc 1 1778 5 is_stmt 1 view .LVU1325
@@ -7678,7 +7678,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3596 00ba 00BF     		.align	2
  3597              	.L253:
  3598 00bc 00000000 		.word	SAI_DMARxHalfCplt
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 129
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 129
 
 
  3599 00c0 00000000 		.word	SAI_DMARxCplt
@@ -7738,7 +7738,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1810:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
  3645              		.loc 1 1810 5 is_stmt 1 view .LVU1349
 1810:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 130
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 130
 
 
  3646              		.loc 1 1810 12 is_stmt 0 view .LVU1350
@@ -7798,7 +7798,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3691 0016 7047     		bx	lr
  3692              		.cfi_endproc
  3693              	.LFE160:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 131
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 131
 
 
  3695              		.section	.text.HAL_SAI_EnableRxMuteMode,"ax",%progbits
@@ -7858,7 +7858,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 1848:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* enable the IT interrupt */
  3739              		.loc 1 1848 24 is_stmt 0 view .LVU1373
  3740 0020 C0F88810 		str	r1, [r0, #136]
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 132
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 132
 
 
 1850:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     return HAL_OK;
@@ -7918,7 +7918,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3786              	.LVL253:
  3787              	.L274:
 1867:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* enable the IT interrupt */
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 133
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 133
 
 
  3788              		.loc 1 1867 5 is_stmt 1 view .LVU1385
@@ -7978,7 +7978,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2560:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  Tx Handler for Transmit in Interrupt mode 8-Bit transfer.
 2561:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hsai pointer to a SAI_HandleTypeDef structure that contains
 2562:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for SAI module.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 134
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 134
 
 
 2563:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @retval None
@@ -8038,7 +8038,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2617:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->XferCount--;
 2618:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   }
 2619:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** }
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 135
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 135
 
 
 2620:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -8098,7 +8098,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3863 0012 8167     		str	r1, [r0, #120]
 2647:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     temp |= ((uint32_t)(*hsai->pBuffPtr) << 8);
  3864              		.loc 1 2647 5 is_stmt 1 view .LVU1405
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 136
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 136
 
 
  3865              		.loc 1 2647 25 is_stmt 0 view .LVU1406
@@ -8158,7 +8158,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3910 0040 10BD     		pop	{r4, pc}
  3911              	.LVL262:
  3912              	.L280:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 137
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 137
 
 
 2633:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_READY;
@@ -8218,7 +8218,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3959              	.LBB9:
 2611:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     temp = (uint32_t)(*hsai->pBuffPtr);
  3960              		.loc 1 2611 5 is_stmt 1 view .LVU1438
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 138
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 138
 
 
 2612:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->pBuffPtr++;
@@ -8278,7 +8278,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  3997 002c 10BD     		pop	{r4, pc}
  3998              	.LVL269:
  3999              	.L285:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 139
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 139
 
 
 2600:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_READY;
@@ -8338,7 +8338,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2582:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->pBuffPtr++;
  4046              		.loc 1 2582 5 is_stmt 1 view .LVU1467
 2582:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->pBuffPtr++;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 140
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 140
 
 
  4047              		.loc 1 2582 31 is_stmt 0 view .LVU1468
@@ -8398,7 +8398,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4086              		.loc 1 2576 5 is_stmt 1 view .LVU1483
  4087 003a 2046     		mov	r0, r4
  4088 003c FFF7FEFF 		bl	HAL_SAI_TxCpltCallback
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 141
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 141
 
 
  4089              	.LVL276:
@@ -8458,7 +8458,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2699:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* Receive data */
 2700:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   temp = hsai->Instance->DR;
 2701:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *hsai->pBuffPtr = (uint8_t)temp;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 142
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 142
 
 
 2702:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->pBuffPtr++;
@@ -8518,7 +8518,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2756:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->State = HAL_SAI_STATE_READY;
 2757:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #if (USE_HAL_SAI_REGISTER_CALLBACKS == 1)
 2758:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     hsai->RxCpltCallback(hsai);
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 143
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 143
 
 
 2759:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #else
@@ -8578,7 +8578,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2781:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
 2782:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     /* Stop the interrupts error handling */
 2783:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     __HAL_SAI_DISABLE_IT(hsai, SAI_InterruptFlag(hsai, SAI_MODE_DMA));
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 144
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 144
 
 
  4135              		.loc 1 2783 5 is_stmt 1 view .LVU1497
@@ -8638,7 +8638,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4179              		.cfi_endproc
  4180              	.LFE165:
  4182              		.section	.text.SAI_DMATxHalfCplt,"ax",%progbits
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 145
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 145
 
 
  4183              		.align	1
@@ -8698,7 +8698,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4223              	.LFB166:
 2187:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* Prevent unused argument(s) compilation warning */
  4224              		.loc 1 2187 1 is_stmt 1 view -0
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 146
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 146
 
 
  4225              		.cfi_startproc
@@ -8758,7 +8758,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2739:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->pBuffPtr++;
  4267              		.loc 1 2739 21 is_stmt 0 view .LVU1529
  4268 000e C3F30721 		ubfx	r1, r3, #8, #8
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 147
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 147
 
 
 2739:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->pBuffPtr++;
@@ -8818,7 +8818,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4304 0034 013B     		subs	r3, r3, #1
  4305 0036 9BB2     		uxth	r3, r3
  4306 0038 A0F87E30 		strh	r3, [r0, #126]	@ movhi
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 148
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 148
 
 
 2748:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   {
@@ -8878,7 +8878,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4352              	.LVL293:
  4353              	.LFB180:
 2696:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   uint32_t temp;
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 149
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 149
 
 
  4354              		.loc 1 2696 1 is_stmt 1 view -0
@@ -8938,7 +8938,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4390 001a B0F87E30 		ldrh	r3, [r0, #126]
 2705:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  4391              		.loc 1 2705 18 view .LVU1579
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 150
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 150
 
 
  4392 001e 013B     		subs	r3, r3, #1
@@ -8998,7 +8998,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4436              		.thumb
  4437              		.thumb_func
  4439              	SAI_Receive_IT8Bit:
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 151
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 151
 
 
  4440              	.LVL298:
@@ -9058,7 +9058,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4479 0020 0446     		mov	r4, r0
 2675:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  4480              		.loc 1 2675 5 is_stmt 1 view .LVU1606
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 152
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 152
 
 
  4481 0022 0121     		movs	r1, #1
@@ -9118,7 +9118,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4521              	.LCFI34:
  4522              		.cfi_def_cfa_offset 8
  4523              		.cfi_offset 4, -8
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 153
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 153
 
 
  4524              		.cfi_offset 14, -4
@@ -9178,7 +9178,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2834:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** #else
 2835:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   HAL_SAI_RxCpltCallback(hsai);
  4563              		.loc 1 2835 3 is_stmt 1 view .LVU1632
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 154
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 154
 
 
  4564 0032 2046     		mov	r0, r4
@@ -9238,7 +9238,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4608 0000 08B5     		push	{r3, lr}
  4609              	.LCFI35:
  4610              		.cfi_def_cfa_offset 8
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 155
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 155
 
 
  4611              		.cfi_offset 3, -8
@@ -9298,7 +9298,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2857:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @brief  DMA SAI communication error callback.
 2858:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @param  hdma pointer to a DMA_HandleTypeDef structure that contains
 2859:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   *              the configuration information for the specified DMA module.
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 156
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 156
 
 
 2860:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   * @retval None
@@ -9358,7 +9358,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2892:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** }
  4678              		.loc 1 2892 1 view .LVU1654
  4679 000c 10BD     		pop	{r4, pc}
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 157
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 157
 
 
  4680              	.LVL315:
@@ -9418,7 +9418,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4721              		.syntax unified
  4722              		.thumb
  4723              		.thumb_func
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 158
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 158
 
 
  4725              	HAL_SAI_IRQHandler:
@@ -9478,7 +9478,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4764 001a 07D0     		beq	.L332
 1891:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
  4765              		.loc 1 1891 52 discriminator 1 view .LVU1685
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 159
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 159
 
 
  4766 001c 11F0080F 		tst	r1, #8
@@ -9538,7 +9538,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4805              	.L334:
  4806              	.LVL326:
 1903:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       /* the transfer is not stopped, we will forward the information to the user and we let the us
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 160
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 160
 
 
  4807              		.loc 1 1903 7 is_stmt 1 view .LVU1701
@@ -9598,7 +9598,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4846              	.LVL332:
  4847              	.L335:
 1924:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****     {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 161
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 161
 
 
  4848              		.loc 1 1924 10 is_stmt 1 view .LVU1717
@@ -9658,7 +9658,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4885              	.LVL335:
 1942:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****           {
  4886              		.loc 1 1942 14 discriminator 1 view .LVU1735
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 162
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 162
 
 
  4887 00a8 A8B9     		cbnz	r0, .L350
@@ -9718,7 +9718,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  4925              		.loc 1 1951 13 is_stmt 1 view .LVU1751
  4926 00e2 2046     		mov	r0, r4
  4927 00e4 FFF7FEFF 		bl	HAL_SAI_ErrorCallback
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 163
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 163
 
 
  4928              	.LVL338:
@@ -9778,7 +9778,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2002:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
  4968              		.loc 1 2002 9 is_stmt 1 view .LVU1766
 2002:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         {
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 164
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 164
 
 
  4969              		.loc 1 2002 17 is_stmt 0 view .LVU1767
@@ -9838,7 +9838,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5006              		.loc 1 2030 17 is_stmt 0 view .LVU1784
  5007 014a D4F89430 		ldr	r3, [r4, #148]
 2030:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 165
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 165
 
 
  5008              		.loc 1 2030 29 view .LVU1785
@@ -9898,7 +9898,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5050 018a 46D0     		beq	.L342
 2059:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
  5051              		.loc 1 2059 7 is_stmt 1 view .LVU1798
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 166
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 166
 
 
  5052 018c 0422     		movs	r2, #4
@@ -9958,7 +9958,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5088              		.loc 1 2087 12 view .LVU1816
  5089 01ba 002B     		cmp	r3, #0
  5090 01bc 3FF435AF 		beq	.L330
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 167
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 167
 
 
 2090:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c **** 
@@ -10018,7 +10018,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5130 01fa 2268     		ldr	r2, [r4]
 2111:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****         hsai->Instance->CLRFR = 0xFFFFFFFFU;
  5131              		.loc 1 2111 29 view .LVU1832
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 168
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 168
 
 
  5132 01fc 0023     		movs	r3, #0
@@ -10078,7 +10078,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5170              		.loc 1 2133 7 is_stmt 1 view .LVU1848
 2133:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****       /* the transfer is not stopped, we will forward the information to the user and we let the us
  5171              		.loc 1 2133 11 is_stmt 0 view .LVU1849
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 169
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 169
 
 
  5172 022e D4F89430 		ldr	r3, [r4, #148]
@@ -10138,7 +10138,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5213              		@ frame_needed = 0, uses_anonymous_args = 0
  5214              		.loc 1 2901 1 is_stmt 0 view .LVU1857
  5215 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 170
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 170
 
 
  5216              	.LCFI39:
@@ -10198,7 +10198,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2920:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   /* Set the SAI state to ready to be able to start again the process */
 2921:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   hsai->State = HAL_SAI_STATE_READY;
  5252              		.loc 1 2921 3 is_stmt 1 view .LVU1873
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 171
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 171
 
 
  5253              		.loc 1 2921 15 is_stmt 0 view .LVU1874
@@ -10258,7 +10258,7 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
 2254:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai.c ****   return hsai->State;
  5294              		.loc 1 2254 1 view -0
  5295              		.cfi_startproc
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 172
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 172
 
 
  5296              		@ args = 0, pretend = 0, frame = 0
@@ -10313,114 +10313,114 @@ ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 1
  5341              		.file 9 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc_ex.h"
  5342              		.file 10 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/system_stm32h7xx.h"
  5343              		.file 11 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 173
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 173
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32h7xx_hal_sai.c
-C:\msys64\tmp\ccbBnHTM.s:20     .text.SAI_InitI2S:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:25     .text.SAI_InitI2S:00000000 SAI_InitI2S
-C:\msys64\tmp\ccbBnHTM.s:94     .text.SAI_InitI2S:00000054 $d
-C:\msys64\tmp\ccbBnHTM.s:98     .text.SAI_InitI2S:00000058 $t
-C:\msys64\tmp\ccbBnHTM.s:309    .text.SAI_InitPCM:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:314    .text.SAI_InitPCM:00000000 SAI_InitPCM
-C:\msys64\tmp\ccbBnHTM.s:388    .text.SAI_InitPCM:00000040 $d
-C:\msys64\tmp\ccbBnHTM.s:393    .text.SAI_InitPCM:00000044 $t
-C:\msys64\tmp\ccbBnHTM.s:523    .text.SAI_FillFifo:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:528    .text.SAI_FillFifo:00000000 SAI_FillFifo
-C:\msys64\tmp\ccbBnHTM.s:678    .text.SAI_InterruptFlag:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:683    .text.SAI_InterruptFlag:00000000 SAI_InterruptFlag
-C:\msys64\tmp\ccbBnHTM.s:755    .text.SAI_Disable:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:760    .text.SAI_Disable:00000000 SAI_Disable
-C:\msys64\tmp\ccbBnHTM.s:827    .text.SAI_Disable:0000003c $d
-C:\msys64\tmp\ccbBnHTM.s:833    .text.HAL_SAI_MspInit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:839    .text.HAL_SAI_MspInit:00000000 HAL_SAI_MspInit
-C:\msys64\tmp\ccbBnHTM.s:854    .text.HAL_SAI_Init:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:860    .text.HAL_SAI_Init:00000000 HAL_SAI_Init
-C:\msys64\tmp\ccbBnHTM.s:1547   .text.HAL_SAI_Init:000002d0 $d
-C:\msys64\tmp\ccbBnHTM.s:1561   .text.HAL_SAI_InitProtocol:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:1567   .text.HAL_SAI_InitProtocol:00000000 HAL_SAI_InitProtocol
-C:\msys64\tmp\ccbBnHTM.s:1635   .text.HAL_SAI_MspDeInit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:1641   .text.HAL_SAI_MspDeInit:00000000 HAL_SAI_MspDeInit
-C:\msys64\tmp\ccbBnHTM.s:1656   .text.HAL_SAI_DeInit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:1662   .text.HAL_SAI_DeInit:00000000 HAL_SAI_DeInit
-C:\msys64\tmp\ccbBnHTM.s:1788   .text.HAL_SAI_DeInit:0000007c $d
-C:\msys64\tmp\ccbBnHTM.s:1796   .text.HAL_SAI_Transmit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:1802   .text.HAL_SAI_Transmit:00000000 HAL_SAI_Transmit
-C:\msys64\tmp\ccbBnHTM.s:2098   .text.HAL_SAI_Receive:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2104   .text.HAL_SAI_Receive:00000000 HAL_SAI_Receive
-C:\msys64\tmp\ccbBnHTM.s:2402   .text.HAL_SAI_Transmit_IT:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2408   .text.HAL_SAI_Transmit_IT:00000000 HAL_SAI_Transmit_IT
-C:\msys64\tmp\ccbBnHTM.s:2566   .text.HAL_SAI_Transmit_IT:0000009c $d
-C:\msys64\tmp\ccbBnHTM.s:3940   .text.SAI_Transmit_IT16Bit:00000000 SAI_Transmit_IT16Bit
-C:\msys64\tmp\ccbBnHTM.s:4027   .text.SAI_Transmit_IT8Bit:00000000 SAI_Transmit_IT8Bit
-C:\msys64\tmp\ccbBnHTM.s:3833   .text.SAI_Transmit_IT32Bit:00000000 SAI_Transmit_IT32Bit
-C:\msys64\tmp\ccbBnHTM.s:2573   .text.HAL_SAI_Receive_IT:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2579   .text.HAL_SAI_Receive_IT:00000000 HAL_SAI_Receive_IT
-C:\msys64\tmp\ccbBnHTM.s:2735   .text.HAL_SAI_Receive_IT:00000094 $d
-C:\msys64\tmp\ccbBnHTM.s:4351   .text.SAI_Receive_IT16Bit:00000000 SAI_Receive_IT16Bit
-C:\msys64\tmp\ccbBnHTM.s:4439   .text.SAI_Receive_IT8Bit:00000000 SAI_Receive_IT8Bit
-C:\msys64\tmp\ccbBnHTM.s:4241   .text.SAI_Receive_IT32Bit:00000000 SAI_Receive_IT32Bit
-C:\msys64\tmp\ccbBnHTM.s:2742   .text.HAL_SAI_DMAPause:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2748   .text.HAL_SAI_DMAPause:00000000 HAL_SAI_DMAPause
-C:\msys64\tmp\ccbBnHTM.s:2795   .text.HAL_SAI_DMAResume:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2801   .text.HAL_SAI_DMAResume:00000000 HAL_SAI_DMAResume
-C:\msys64\tmp\ccbBnHTM.s:2861   .text.HAL_SAI_DMAStop:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:2867   .text.HAL_SAI_DMAStop:00000000 HAL_SAI_DMAStop
-C:\msys64\tmp\ccbBnHTM.s:3024   .text.HAL_SAI_Abort:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3030   .text.HAL_SAI_Abort:00000000 HAL_SAI_Abort
-C:\msys64\tmp\ccbBnHTM.s:3204   .text.HAL_SAI_Transmit_DMA:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3210   .text.HAL_SAI_Transmit_DMA:00000000 HAL_SAI_Transmit_DMA
-C:\msys64\tmp\ccbBnHTM.s:3417   .text.HAL_SAI_Transmit_DMA:000000fc $d
-C:\msys64\tmp\ccbBnHTM.s:4188   .text.SAI_DMATxHalfCplt:00000000 SAI_DMATxHalfCplt
-ARM GAS  C:\msys64\tmp\ccbBnHTM.s 			page 174
+C:\msys64\tmp\ccs03r39.s:20     .text.SAI_InitI2S:00000000 $t
+C:\msys64\tmp\ccs03r39.s:25     .text.SAI_InitI2S:00000000 SAI_InitI2S
+C:\msys64\tmp\ccs03r39.s:94     .text.SAI_InitI2S:00000054 $d
+C:\msys64\tmp\ccs03r39.s:98     .text.SAI_InitI2S:00000058 $t
+C:\msys64\tmp\ccs03r39.s:309    .text.SAI_InitPCM:00000000 $t
+C:\msys64\tmp\ccs03r39.s:314    .text.SAI_InitPCM:00000000 SAI_InitPCM
+C:\msys64\tmp\ccs03r39.s:388    .text.SAI_InitPCM:00000040 $d
+C:\msys64\tmp\ccs03r39.s:393    .text.SAI_InitPCM:00000044 $t
+C:\msys64\tmp\ccs03r39.s:523    .text.SAI_FillFifo:00000000 $t
+C:\msys64\tmp\ccs03r39.s:528    .text.SAI_FillFifo:00000000 SAI_FillFifo
+C:\msys64\tmp\ccs03r39.s:678    .text.SAI_InterruptFlag:00000000 $t
+C:\msys64\tmp\ccs03r39.s:683    .text.SAI_InterruptFlag:00000000 SAI_InterruptFlag
+C:\msys64\tmp\ccs03r39.s:755    .text.SAI_Disable:00000000 $t
+C:\msys64\tmp\ccs03r39.s:760    .text.SAI_Disable:00000000 SAI_Disable
+C:\msys64\tmp\ccs03r39.s:827    .text.SAI_Disable:0000003c $d
+C:\msys64\tmp\ccs03r39.s:833    .text.HAL_SAI_MspInit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:839    .text.HAL_SAI_MspInit:00000000 HAL_SAI_MspInit
+C:\msys64\tmp\ccs03r39.s:854    .text.HAL_SAI_Init:00000000 $t
+C:\msys64\tmp\ccs03r39.s:860    .text.HAL_SAI_Init:00000000 HAL_SAI_Init
+C:\msys64\tmp\ccs03r39.s:1547   .text.HAL_SAI_Init:000002d0 $d
+C:\msys64\tmp\ccs03r39.s:1561   .text.HAL_SAI_InitProtocol:00000000 $t
+C:\msys64\tmp\ccs03r39.s:1567   .text.HAL_SAI_InitProtocol:00000000 HAL_SAI_InitProtocol
+C:\msys64\tmp\ccs03r39.s:1635   .text.HAL_SAI_MspDeInit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:1641   .text.HAL_SAI_MspDeInit:00000000 HAL_SAI_MspDeInit
+C:\msys64\tmp\ccs03r39.s:1656   .text.HAL_SAI_DeInit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:1662   .text.HAL_SAI_DeInit:00000000 HAL_SAI_DeInit
+C:\msys64\tmp\ccs03r39.s:1788   .text.HAL_SAI_DeInit:0000007c $d
+C:\msys64\tmp\ccs03r39.s:1796   .text.HAL_SAI_Transmit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:1802   .text.HAL_SAI_Transmit:00000000 HAL_SAI_Transmit
+C:\msys64\tmp\ccs03r39.s:2098   .text.HAL_SAI_Receive:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2104   .text.HAL_SAI_Receive:00000000 HAL_SAI_Receive
+C:\msys64\tmp\ccs03r39.s:2402   .text.HAL_SAI_Transmit_IT:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2408   .text.HAL_SAI_Transmit_IT:00000000 HAL_SAI_Transmit_IT
+C:\msys64\tmp\ccs03r39.s:2566   .text.HAL_SAI_Transmit_IT:0000009c $d
+C:\msys64\tmp\ccs03r39.s:3940   .text.SAI_Transmit_IT16Bit:00000000 SAI_Transmit_IT16Bit
+C:\msys64\tmp\ccs03r39.s:4027   .text.SAI_Transmit_IT8Bit:00000000 SAI_Transmit_IT8Bit
+C:\msys64\tmp\ccs03r39.s:3833   .text.SAI_Transmit_IT32Bit:00000000 SAI_Transmit_IT32Bit
+C:\msys64\tmp\ccs03r39.s:2573   .text.HAL_SAI_Receive_IT:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2579   .text.HAL_SAI_Receive_IT:00000000 HAL_SAI_Receive_IT
+C:\msys64\tmp\ccs03r39.s:2735   .text.HAL_SAI_Receive_IT:00000094 $d
+C:\msys64\tmp\ccs03r39.s:4351   .text.SAI_Receive_IT16Bit:00000000 SAI_Receive_IT16Bit
+C:\msys64\tmp\ccs03r39.s:4439   .text.SAI_Receive_IT8Bit:00000000 SAI_Receive_IT8Bit
+C:\msys64\tmp\ccs03r39.s:4241   .text.SAI_Receive_IT32Bit:00000000 SAI_Receive_IT32Bit
+C:\msys64\tmp\ccs03r39.s:2742   .text.HAL_SAI_DMAPause:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2748   .text.HAL_SAI_DMAPause:00000000 HAL_SAI_DMAPause
+C:\msys64\tmp\ccs03r39.s:2795   .text.HAL_SAI_DMAResume:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2801   .text.HAL_SAI_DMAResume:00000000 HAL_SAI_DMAResume
+C:\msys64\tmp\ccs03r39.s:2861   .text.HAL_SAI_DMAStop:00000000 $t
+C:\msys64\tmp\ccs03r39.s:2867   .text.HAL_SAI_DMAStop:00000000 HAL_SAI_DMAStop
+C:\msys64\tmp\ccs03r39.s:3024   .text.HAL_SAI_Abort:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3030   .text.HAL_SAI_Abort:00000000 HAL_SAI_Abort
+C:\msys64\tmp\ccs03r39.s:3204   .text.HAL_SAI_Transmit_DMA:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3210   .text.HAL_SAI_Transmit_DMA:00000000 HAL_SAI_Transmit_DMA
+C:\msys64\tmp\ccs03r39.s:3417   .text.HAL_SAI_Transmit_DMA:000000fc $d
+C:\msys64\tmp\ccs03r39.s:4188   .text.SAI_DMATxHalfCplt:00000000 SAI_DMATxHalfCplt
+ARM GAS  C:\msys64\tmp\ccs03r39.s 			page 174
 
 
-C:\msys64\tmp\ccbBnHTM.s:4100   .text.SAI_DMATxCplt:00000000 SAI_DMATxCplt
-C:\msys64\tmp\ccbBnHTM.s:4653   .text.SAI_DMAError:00000000 SAI_DMAError
-C:\msys64\tmp\ccbBnHTM.s:3424   .text.HAL_SAI_Receive_DMA:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3430   .text.HAL_SAI_Receive_DMA:00000000 HAL_SAI_Receive_DMA
-C:\msys64\tmp\ccbBnHTM.s:3598   .text.HAL_SAI_Receive_DMA:000000bc $d
-C:\msys64\tmp\ccbBnHTM.s:4600   .text.SAI_DMARxHalfCplt:00000000 SAI_DMARxHalfCplt
-C:\msys64\tmp\ccbBnHTM.s:4512   .text.SAI_DMARxCplt:00000000 SAI_DMARxCplt
-C:\msys64\tmp\ccbBnHTM.s:3605   .text.HAL_SAI_EnableTxMuteMode:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3611   .text.HAL_SAI_EnableTxMuteMode:00000000 HAL_SAI_EnableTxMuteMode
-C:\msys64\tmp\ccbBnHTM.s:3655   .text.HAL_SAI_DisableTxMuteMode:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3661   .text.HAL_SAI_DisableTxMuteMode:00000000 HAL_SAI_DisableTxMuteMode
-C:\msys64\tmp\ccbBnHTM.s:3696   .text.HAL_SAI_EnableRxMuteMode:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3702   .text.HAL_SAI_EnableRxMuteMode:00000000 HAL_SAI_EnableRxMuteMode
-C:\msys64\tmp\ccbBnHTM.s:3762   .text.HAL_SAI_DisableRxMuteMode:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3768   .text.HAL_SAI_DisableRxMuteMode:00000000 HAL_SAI_DisableRxMuteMode
-C:\msys64\tmp\ccbBnHTM.s:3807   .text.HAL_SAI_TxCpltCallback:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3813   .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
-C:\msys64\tmp\ccbBnHTM.s:3828   .text.SAI_Transmit_IT32Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:3935   .text.SAI_Transmit_IT16Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4022   .text.SAI_Transmit_IT8Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4095   .text.SAI_DMATxCplt:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4162   .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4168   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
-C:\msys64\tmp\ccbBnHTM.s:4183   .text.SAI_DMATxHalfCplt:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4215   .text.HAL_SAI_RxCpltCallback:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4221   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
-C:\msys64\tmp\ccbBnHTM.s:4236   .text.SAI_Receive_IT32Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4346   .text.SAI_Receive_IT16Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4434   .text.SAI_Receive_IT8Bit:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4507   .text.SAI_DMARxCplt:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4574   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4580   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
-C:\msys64\tmp\ccbBnHTM.s:4595   .text.SAI_DMARxHalfCplt:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4627   .text.HAL_SAI_ErrorCallback:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4633   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
-C:\msys64\tmp\ccbBnHTM.s:4648   .text.SAI_DMAError:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4719   .text.HAL_SAI_IRQHandler:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:4725   .text.HAL_SAI_IRQHandler:00000000 HAL_SAI_IRQHandler
-C:\msys64\tmp\ccbBnHTM.s:5197   .text.HAL_SAI_IRQHandler:00000244 $d
-C:\msys64\tmp\ccbBnHTM.s:5207   .text.SAI_DMAAbort:00000000 SAI_DMAAbort
-C:\msys64\tmp\ccbBnHTM.s:5202   .text.SAI_DMAAbort:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:5285   .text.HAL_SAI_GetState:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:5291   .text.HAL_SAI_GetState:00000000 HAL_SAI_GetState
-C:\msys64\tmp\ccbBnHTM.s:5309   .text.HAL_SAI_GetError:00000000 $t
-C:\msys64\tmp\ccbBnHTM.s:5315   .text.HAL_SAI_GetError:00000000 HAL_SAI_GetError
+C:\msys64\tmp\ccs03r39.s:4100   .text.SAI_DMATxCplt:00000000 SAI_DMATxCplt
+C:\msys64\tmp\ccs03r39.s:4653   .text.SAI_DMAError:00000000 SAI_DMAError
+C:\msys64\tmp\ccs03r39.s:3424   .text.HAL_SAI_Receive_DMA:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3430   .text.HAL_SAI_Receive_DMA:00000000 HAL_SAI_Receive_DMA
+C:\msys64\tmp\ccs03r39.s:3598   .text.HAL_SAI_Receive_DMA:000000bc $d
+C:\msys64\tmp\ccs03r39.s:4600   .text.SAI_DMARxHalfCplt:00000000 SAI_DMARxHalfCplt
+C:\msys64\tmp\ccs03r39.s:4512   .text.SAI_DMARxCplt:00000000 SAI_DMARxCplt
+C:\msys64\tmp\ccs03r39.s:3605   .text.HAL_SAI_EnableTxMuteMode:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3611   .text.HAL_SAI_EnableTxMuteMode:00000000 HAL_SAI_EnableTxMuteMode
+C:\msys64\tmp\ccs03r39.s:3655   .text.HAL_SAI_DisableTxMuteMode:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3661   .text.HAL_SAI_DisableTxMuteMode:00000000 HAL_SAI_DisableTxMuteMode
+C:\msys64\tmp\ccs03r39.s:3696   .text.HAL_SAI_EnableRxMuteMode:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3702   .text.HAL_SAI_EnableRxMuteMode:00000000 HAL_SAI_EnableRxMuteMode
+C:\msys64\tmp\ccs03r39.s:3762   .text.HAL_SAI_DisableRxMuteMode:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3768   .text.HAL_SAI_DisableRxMuteMode:00000000 HAL_SAI_DisableRxMuteMode
+C:\msys64\tmp\ccs03r39.s:3807   .text.HAL_SAI_TxCpltCallback:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3813   .text.HAL_SAI_TxCpltCallback:00000000 HAL_SAI_TxCpltCallback
+C:\msys64\tmp\ccs03r39.s:3828   .text.SAI_Transmit_IT32Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:3935   .text.SAI_Transmit_IT16Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4022   .text.SAI_Transmit_IT8Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4095   .text.SAI_DMATxCplt:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4162   .text.HAL_SAI_TxHalfCpltCallback:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4168   .text.HAL_SAI_TxHalfCpltCallback:00000000 HAL_SAI_TxHalfCpltCallback
+C:\msys64\tmp\ccs03r39.s:4183   .text.SAI_DMATxHalfCplt:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4215   .text.HAL_SAI_RxCpltCallback:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4221   .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
+C:\msys64\tmp\ccs03r39.s:4236   .text.SAI_Receive_IT32Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4346   .text.SAI_Receive_IT16Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4434   .text.SAI_Receive_IT8Bit:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4507   .text.SAI_DMARxCplt:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4574   .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4580   .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
+C:\msys64\tmp\ccs03r39.s:4595   .text.SAI_DMARxHalfCplt:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4627   .text.HAL_SAI_ErrorCallback:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4633   .text.HAL_SAI_ErrorCallback:00000000 HAL_SAI_ErrorCallback
+C:\msys64\tmp\ccs03r39.s:4648   .text.SAI_DMAError:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4719   .text.HAL_SAI_IRQHandler:00000000 $t
+C:\msys64\tmp\ccs03r39.s:4725   .text.HAL_SAI_IRQHandler:00000000 HAL_SAI_IRQHandler
+C:\msys64\tmp\ccs03r39.s:5197   .text.HAL_SAI_IRQHandler:00000244 $d
+C:\msys64\tmp\ccs03r39.s:5207   .text.SAI_DMAAbort:00000000 SAI_DMAAbort
+C:\msys64\tmp\ccs03r39.s:5202   .text.SAI_DMAAbort:00000000 $t
+C:\msys64\tmp\ccs03r39.s:5285   .text.HAL_SAI_GetState:00000000 $t
+C:\msys64\tmp\ccs03r39.s:5291   .text.HAL_SAI_GetState:00000000 HAL_SAI_GetState
+C:\msys64\tmp\ccs03r39.s:5309   .text.HAL_SAI_GetError:00000000 $t
+C:\msys64\tmp\ccs03r39.s:5315   .text.HAL_SAI_GetError:00000000 HAL_SAI_GetError
 
 UNDEFINED SYMBOLS
 SystemCoreClock

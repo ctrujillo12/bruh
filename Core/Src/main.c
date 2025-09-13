@@ -117,6 +117,7 @@ int main(void)
   MX_SPI3_Init();
   MX_UART4_Init();
   MX_USART1_UART_Init();
+  MX_USART3_UART_Init();
   MX_SAI1_Init();
   MX_SAI4_Init();
   MX_DMA2D_Init();

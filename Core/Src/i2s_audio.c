@@ -6,7 +6,7 @@
 #include <stdbool.h>   // for bool
 
 // -------------------------- Configuration ----------------------------
-#define AUDIO_BUFFER_SIZE      1024   // DMA buffer size (32-bit samples)
+// #define AUDIO_BUFFER_SIZE      1024   // DMA buffer size (32-bit samples)
 #define CIRCULAR_BUFFER_SIZE   2048   // Circular buffer size
 
 // -------------------------- Buffers ----------------------------

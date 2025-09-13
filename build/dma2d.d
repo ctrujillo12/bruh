@@ -1,5 +1,4 @@
-build/stm32h7xx_hal_uart_ex.o: \
- Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c \
+build/dma2d.o: Core/Src/dma2d.c Core/Inc/dma2d.h Core/Inc/main.h \
  Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  Core/Inc/stm32h7xx_hal_conf.h \
  Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -32,7 +31,13 @@ build/stm32h7xx_hal_uart_ex.o: \
  Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h \
  Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h \
  Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h \
- Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h
+ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h \
+ Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h \
+ Core/Inc/stm32h7xx_nucleo_conf.h \
+ Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo_errno.h \
+ Core/Inc/i2s_audio.h
+Core/Inc/dma2d.h:
+Core/Inc/main.h:
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 Core/Inc/stm32h7xx_hal_conf.h:
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
@@ -68,3 +73,7 @@ Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi.h:
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_spi_ex.h:
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart.h:
 Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_uart_ex.h:
+Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h:
+Core/Inc/stm32h7xx_nucleo_conf.h:
+Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo_errno.h:
+Core/Inc/i2s_audio.h:
