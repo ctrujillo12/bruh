@@ -1,4 +1,4 @@
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 1
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -27,66 +27,76 @@ ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 1
   24              		.thumb_func
   26              	I2S_Audio_Init:
   27              	.LFB147:
-   1:Core/Src/i2s_audio.c **** #include "i2s_audio.h"
-   2:Core/Src/i2s_audio.c **** #include "sai.h"
-   3:Core/Src/i2s_audio.c **** #include "usart.h"
-   4:Core/Src/i2s_audio.c **** #include "stm32h7xx_hal.h"   // adjust series if different
-   5:Core/Src/i2s_audio.c **** 
-   6:Core/Src/i2s_audio.c **** // ----------------- Configuration -----------------
-   7:Core/Src/i2s_audio.c **** #define AUDIO_BUFFER_SIZE 1024    // DMA buffer size in 32-bit words
-   8:Core/Src/i2s_audio.c **** #define CAPTURE_BUFFER_SIZE 4096  // Processed samples buffer
-   9:Core/Src/i2s_audio.c **** 
-  10:Core/Src/i2s_audio.c **** // ----------------- Buffers -----------------------
-  11:Core/Src/i2s_audio.c **** static uint32_t i2s_rx_buffer[AUDIO_BUFFER_SIZE]; // DMA buffer
-  12:Core/Src/i2s_audio.c **** static uint16_t captured_samples[CAPTURE_BUFFER_SIZE]; // Processed audio
-  13:Core/Src/i2s_audio.c **** static uint32_t capture_index = 0;                 // Circular index
-  14:Core/Src/i2s_audio.c **** 
-  15:Core/Src/i2s_audio.c **** // ----------------- Initialize and start I2S -----------------
-  16:Core/Src/i2s_audio.c **** void I2S_Audio_Init(void)
-  17:Core/Src/i2s_audio.c **** {
-  28              		.loc 1 17 1 view -0
+   1:Core/Src/i2s_audio.c **** // Core/Src/i2s_audio.c
+   2:Core/Src/i2s_audio.c **** #include "i2s_audio.h"
+   3:Core/Src/i2s_audio.c **** #include "sai.h"
+   4:Core/Src/i2s_audio.c **** #include "usart.h"
+   5:Core/Src/i2s_audio.c **** #include "stm32h7xx_hal.h"
+   6:Core/Src/i2s_audio.c **** #include <stdbool.h>   // for bool
+   7:Core/Src/i2s_audio.c **** 
+   8:Core/Src/i2s_audio.c **** // -------------------------- Configuration ----------------------------
+   9:Core/Src/i2s_audio.c **** #define AUDIO_BUFFER_SIZE      1024   // DMA buffer size (32-bit samples)
+  10:Core/Src/i2s_audio.c **** #define CIRCULAR_BUFFER_SIZE   2048   // Circular buffer size
+  11:Core/Src/i2s_audio.c **** 
+  12:Core/Src/i2s_audio.c **** // -------------------------- Buffers ----------------------------
+  13:Core/Src/i2s_audio.c **** // DMA double-buffered reception
+  14:Core/Src/i2s_audio.c **** static uint32_t i2s_rx_buffer[AUDIO_BUFFER_SIZE];
+  15:Core/Src/i2s_audio.c **** 
+  16:Core/Src/i2s_audio.c **** // Circular buffer for processed audio
+  17:Core/Src/i2s_audio.c **** static uint32_t circular_buffer[CIRCULAR_BUFFER_SIZE];
+  18:Core/Src/i2s_audio.c **** static volatile uint32_t circ_write_idx = 0;
+  19:Core/Src/i2s_audio.c **** static volatile uint32_t circ_sample_count = 0;
+  20:Core/Src/i2s_audio.c **** 
+  21:Core/Src/i2s_audio.c **** // -------------------------- Flags ----------------------------
+  22:Core/Src/i2s_audio.c **** volatile bool new_samples_ready = false; // signal main loop
+  23:Core/Src/i2s_audio.c **** static uint32_t latest_sample = 0;
+  24:Core/Src/i2s_audio.c **** 
+  25:Core/Src/i2s_audio.c **** // -------------------------- Initialization ----------------------------
+  26:Core/Src/i2s_audio.c **** void I2S_Audio_Init(void)
+  27:Core/Src/i2s_audio.c **** {
+  28              		.loc 1 27 1 view -0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 0
   31              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 2
+
+
   32 0000 08B5     		push	{r3, lr}
   33              	.LCFI0:
   34              		.cfi_def_cfa_offset 8
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
-  18:Core/Src/i2s_audio.c ****     MX_SAI1_Init();
-  37              		.loc 1 18 5 view .LVU1
+  28:Core/Src/i2s_audio.c ****     MX_SAI1_Init(); // CubeMX-generated init for SAI1
+  37              		.loc 1 28 5 view .LVU1
   38 0002 FFF7FEFF 		bl	MX_SAI1_Init
   39              	.LVL0:
-  19:Core/Src/i2s_audio.c **** 
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 2
-
-
-  20:Core/Src/i2s_audio.c ****     // Start DMA in circular mode
-  21:Core/Src/i2s_audio.c ****     if (HAL_SAI_Receive_DMA(&hsai_BlockA1, 
-  40              		.loc 1 21 5 view .LVU2
-  41              		.loc 1 21 9 is_stmt 0 view .LVU3
+  29:Core/Src/i2s_audio.c **** 
+  30:Core/Src/i2s_audio.c ****     // Start DMA reception
+  31:Core/Src/i2s_audio.c ****     if (HAL_SAI_Receive_DMA(&hsai_BlockA1,
+  40              		.loc 1 31 5 view .LVU2
+  41              		.loc 1 31 9 is_stmt 0 view .LVU3
   42 0006 4FF48062 		mov	r2, #1024
   43 000a 0449     		ldr	r1, .L5
   44 000c 0448     		ldr	r0, .L5+4
   45 000e FFF7FEFF 		bl	HAL_SAI_Receive_DMA
   46              	.LVL1:
-  47              		.loc 1 21 8 discriminator 1 view .LVU4
+  47              		.loc 1 31 8 discriminator 1 view .LVU4
   48 0012 00B9     		cbnz	r0, .L4
   49              	.L1:
-  22:Core/Src/i2s_audio.c ****                             (uint8_t *)i2s_rx_buffer, 
-  23:Core/Src/i2s_audio.c ****                             AUDIO_BUFFER_SIZE) != HAL_OK)
-  24:Core/Src/i2s_audio.c ****     {
-  25:Core/Src/i2s_audio.c ****         Error_Handler();
-  26:Core/Src/i2s_audio.c ****     }
-  27:Core/Src/i2s_audio.c **** }
-  50              		.loc 1 27 1 view .LVU5
+  32:Core/Src/i2s_audio.c ****                             (uint8_t *)i2s_rx_buffer,
+  33:Core/Src/i2s_audio.c ****                             AUDIO_BUFFER_SIZE) != HAL_OK)
+  34:Core/Src/i2s_audio.c ****     {
+  35:Core/Src/i2s_audio.c ****         Error_Handler();
+  36:Core/Src/i2s_audio.c ****     }
+  37:Core/Src/i2s_audio.c **** }
+  50              		.loc 1 37 1 view .LVU5
   51 0014 08BD     		pop	{r3, pc}
   52              	.L4:
-  25:Core/Src/i2s_audio.c ****     }
-  53              		.loc 1 25 9 is_stmt 1 view .LVU6
+  35:Core/Src/i2s_audio.c ****     }
+  53              		.loc 1 35 9 is_stmt 1 view .LVU6
   54 0016 FFF7FEFF 		bl	Error_Handler
   55              	.LVL2:
-  56              		.loc 1 27 1 is_stmt 0 view .LVU7
+  56              		.loc 1 37 1 is_stmt 0 view .LVU7
   57 001a FBE7     		b	.L1
   58              	.L6:
   59              		.align	2
@@ -95,331 +105,788 @@ ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 1
   62 0020 00000000 		.word	hsai_BlockA1
   63              		.cfi_endproc
   64              	.LFE147:
-  66              		.section	.rodata.I2S_Audio_Process.str1.4,"aMS",%progbits,1
-  67              		.align	2
-  68              	.LC0:
-  69 0000 53616D70 		.ascii	"Sample[0]: %u\015\012\000"
-  69      6C655B30 
-  69      5D3A2025 
-  69      750D0A00 
-  70              		.section	.text.I2S_Audio_Process,"ax",%progbits
-  71              		.align	1
-  72              		.weak	I2S_Audio_Process
-  73              		.syntax unified
-  74              		.thumb
-  75              		.thumb_func
-  77              	I2S_Audio_Process:
-  78              	.LVL3:
-  79              	.LFB150:
-  28:Core/Src/i2s_audio.c **** 
-  29:Core/Src/i2s_audio.c **** // ----------------- DMA callbacks -----------------
-  30:Core/Src/i2s_audio.c **** void HAL_SAI_RxHalfCpltCallback(SAI_HandleTypeDef *hsai)
-  31:Core/Src/i2s_audio.c **** {
-  32:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
-  33:Core/Src/i2s_audio.c ****     {
-  34:Core/Src/i2s_audio.c ****         // First half of buffer ready
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 3
-
-
-  35:Core/Src/i2s_audio.c ****         I2S_Audio_Process(&i2s_rx_buffer[0], AUDIO_BUFFER_SIZE / 2);
-  36:Core/Src/i2s_audio.c ****     }
-  37:Core/Src/i2s_audio.c **** }
+  66              		.section	.text.HAL_SAI_RxHalfCpltCallback,"ax",%progbits
+  67              		.align	1
+  68              		.global	HAL_SAI_RxHalfCpltCallback
+  69              		.syntax unified
+  70              		.thumb
+  71              		.thumb_func
+  73              	HAL_SAI_RxHalfCpltCallback:
+  74              	.LVL3:
+  75              	.LFB148:
   38:Core/Src/i2s_audio.c **** 
-  39:Core/Src/i2s_audio.c **** void HAL_SAI_RxCpltCallback(SAI_HandleTypeDef *hsai)
-  40:Core/Src/i2s_audio.c **** {
+  39:Core/Src/i2s_audio.c **** // -------------------------- DMA Callbacks ----------------------------
+  40:Core/Src/i2s_audio.c **** void HAL_SAI_RxHalfCpltCallback(SAI_HandleTypeDef *hsai)
+  41:Core/Src/i2s_audio.c **** {
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 3
+
+
+  76              		.loc 1 41 1 is_stmt 1 view -0
+  77              		.cfi_startproc
+  78              		@ args = 0, pretend = 0, frame = 0
+  79              		@ frame_needed = 0, uses_anonymous_args = 0
+  80              		@ link register save eliminated.
+  42:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
+  81              		.loc 1 42 5 view .LVU9
+  82              		.loc 1 42 13 is_stmt 0 view .LVU10
+  83 0000 0268     		ldr	r2, [r0]
+  84              		.loc 1 42 8 view .LVU11
+  85 0002 174B     		ldr	r3, .L21
+  86 0004 9A42     		cmp	r2, r3
+  87 0006 21D0     		beq	.L18
+  88 0008 7047     		bx	lr
+  89              	.LVL4:
+  90              	.L10:
+  91              	.LCFI1:
+  92              		.cfi_def_cfa_offset 4
+  93              		.cfi_offset 4, -4
+  94              	.LBB6:
+  43:Core/Src/i2s_audio.c ****     {
+  44:Core/Src/i2s_audio.c ****         for (uint32_t i = 0; i < AUDIO_BUFFER_SIZE / 2; i++)
+  95              		.loc 1 44 58 is_stmt 1 discriminator 2 view .LVU12
+  96 000a 0132     		adds	r2, r2, #1
+  97              	.LVL5:
+  98              		.loc 1 44 32 discriminator 1 view .LVU13
+  99 000c B2F5007F 		cmp	r2, #512
+ 100 0010 16D2     		bcs	.L19
+ 101              	.L11:
+  45:Core/Src/i2s_audio.c ****         {
+  46:Core/Src/i2s_audio.c ****             circular_buffer[circ_write_idx] = i2s_rx_buffer[i];
+ 102              		.loc 1 46 13 view .LVU14
+ 103              		.loc 1 46 28 is_stmt 0 view .LVU15
+ 104 0012 1449     		ldr	r1, .L21+4
+ 105 0014 0868     		ldr	r0, [r1]
+ 106              		.loc 1 46 60 view .LVU16
+ 107 0016 144B     		ldr	r3, .L21+8
+ 108 0018 53F82240 		ldr	r4, [r3, r2, lsl #2]
+ 109              		.loc 1 46 45 view .LVU17
+ 110 001c 134B     		ldr	r3, .L21+12
+ 111 001e 43F82040 		str	r4, [r3, r0, lsl #2]
+  47:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 112              		.loc 1 47 13 is_stmt 1 view .LVU18
+ 113              		.loc 1 47 46 is_stmt 0 view .LVU19
+ 114 0022 0B68     		ldr	r3, [r1]
+ 115 0024 0133     		adds	r3, r3, #1
+ 116              		.loc 1 47 51 view .LVU20
+ 117 0026 C3F30A03 		ubfx	r3, r3, #0, #11
+ 118              		.loc 1 47 28 view .LVU21
+ 119 002a 0B60     		str	r3, [r1]
+  48:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ 120              		.loc 1 48 13 is_stmt 1 view .LVU22
+ 121              		.loc 1 48 35 is_stmt 0 view .LVU23
+ 122 002c 104B     		ldr	r3, .L21+16
+ 123 002e 1B68     		ldr	r3, [r3]
+ 124              		.loc 1 48 16 view .LVU24
+ 125 0030 B3F5006F 		cmp	r3, #2048
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 4
+
+
+ 126 0034 E9D2     		bcs	.L10
+  49:Core/Src/i2s_audio.c ****             {
+  50:Core/Src/i2s_audio.c ****                 circ_sample_count++;
+ 127              		.loc 1 50 17 is_stmt 1 view .LVU25
+ 128              		.loc 1 50 34 is_stmt 0 view .LVU26
+ 129 0036 0E49     		ldr	r1, .L21+16
+ 130 0038 0B68     		ldr	r3, [r1]
+ 131 003a 0133     		adds	r3, r3, #1
+ 132 003c 0B60     		str	r3, [r1]
+ 133 003e E4E7     		b	.L10
+ 134              	.L19:
+ 135              		.loc 1 50 34 view .LVU27
+ 136              	.LBE6:
+  51:Core/Src/i2s_audio.c ****             }
+  52:Core/Src/i2s_audio.c ****         }
+  53:Core/Src/i2s_audio.c ****         new_samples_ready = true;
+ 137              		.loc 1 53 9 is_stmt 1 view .LVU28
+ 138              		.loc 1 53 27 is_stmt 0 view .LVU29
+ 139 0040 0C4B     		ldr	r3, .L21+20
+ 140 0042 0122     		movs	r2, #1
+ 141              	.LVL6:
+ 142              		.loc 1 53 27 view .LVU30
+ 143 0044 1A70     		strb	r2, [r3]
+  54:Core/Src/i2s_audio.c ****     }
+  55:Core/Src/i2s_audio.c **** }
+ 144              		.loc 1 55 1 view .LVU31
+ 145 0046 5DF8044B 		ldr	r4, [sp], #4
+ 146              	.LCFI2:
+ 147              		.cfi_restore 4
+ 148              		.cfi_def_cfa_offset 0
+ 149 004a 7047     		bx	lr
+ 150              	.LVL7:
+ 151              	.L18:
+ 152              	.LBB7:
+  44:Core/Src/i2s_audio.c ****         {
+ 153              		.loc 1 44 23 view .LVU32
+ 154 004c 0022     		movs	r2, #0
+ 155              	.LVL8:
+  44:Core/Src/i2s_audio.c ****         {
+ 156              		.loc 1 44 32 is_stmt 1 discriminator 1 view .LVU33
+ 157 004e B2F5007F 		cmp	r2, #512
+ 158 0052 01D2     		bcs	.L20
+ 159              	.LBE7:
   41:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
-  42:Core/Src/i2s_audio.c ****     {
-  43:Core/Src/i2s_audio.c ****         // Second half of buffer ready
-  44:Core/Src/i2s_audio.c ****         I2S_Audio_Process(&i2s_rx_buffer[AUDIO_BUFFER_SIZE / 2],
-  45:Core/Src/i2s_audio.c ****                           AUDIO_BUFFER_SIZE / 2);
-  46:Core/Src/i2s_audio.c ****     }
-  47:Core/Src/i2s_audio.c **** }
-  48:Core/Src/i2s_audio.c **** 
-  49:Core/Src/i2s_audio.c **** // ----------------- Audio processing -----------------
-  50:Core/Src/i2s_audio.c **** __weak void I2S_Audio_Process(uint32_t *samples, uint32_t num_samples)
-  51:Core/Src/i2s_audio.c **** {
-  80              		.loc 1 51 1 is_stmt 1 view -0
-  81              		.cfi_startproc
-  82              		@ args = 0, pretend = 0, frame = 0
-  83              		@ frame_needed = 0, uses_anonymous_args = 0
-  84              		.loc 1 51 1 is_stmt 0 view .LVU9
-  85 0000 38B5     		push	{r3, r4, r5, lr}
-  86              	.LCFI1:
-  87              		.cfi_def_cfa_offset 16
-  88              		.cfi_offset 3, -16
-  89              		.cfi_offset 4, -12
-  90              		.cfi_offset 5, -8
-  91              		.cfi_offset 14, -4
-  52:Core/Src/i2s_audio.c ****     for (uint32_t i = 0; i < num_samples; i++)
-  92              		.loc 1 52 5 is_stmt 1 view .LVU10
-  93              	.LBB2:
-  94              		.loc 1 52 10 view .LVU11
-  95              	.LVL4:
-  96              		.loc 1 52 19 is_stmt 0 view .LVU12
-  97 0002 0023     		movs	r3, #0
-  98              		.loc 1 52 5 view .LVU13
-  99 0004 00E0     		b	.L8
- 100              	.LVL5:
- 101              	.L9:
- 102              		.loc 1 52 44 is_stmt 1 discriminator 2 view .LVU14
- 103 0006 0133     		adds	r3, r3, #1
- 104              	.LVL6:
- 105              	.L8:
- 106              		.loc 1 52 28 discriminator 1 view .LVU15
- 107 0008 8B42     		cmp	r3, r1
- 108 000a 0FD2     		bcs	.L12
- 109              	.LBB3:
-  53:Core/Src/i2s_audio.c ****     {
-  54:Core/Src/i2s_audio.c ****         // Convert 32-bit sample to 16-bit PCM
-  55:Core/Src/i2s_audio.c ****         uint16_t sample16 = (uint16_t)(samples[i] & 0xFFFF);
- 110              		.loc 1 55 9 view .LVU16
- 111              		.loc 1 55 18 is_stmt 0 view .LVU17
- 112 000c 30F823C0 		ldrh	ip, [r0, r3, lsl #2]
- 113              	.LVL7:
+ 160              		.loc 1 41 1 is_stmt 0 view .LVU34
+ 161 0054 10B4     		push	{r4}
+ 162              	.LCFI3:
+ 163              		.cfi_def_cfa_offset 4
+ 164              		.cfi_offset 4, -4
+ 165 0056 DCE7     		b	.L11
+ 166              	.L20:
+ 167              	.LCFI4:
+ 168              		.cfi_def_cfa_offset 0
+ 169              		.cfi_restore 4
+  53:Core/Src/i2s_audio.c ****     }
+ 170              		.loc 1 53 9 is_stmt 1 view .LVU35
+  53:Core/Src/i2s_audio.c ****     }
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 5
+
+
+ 171              		.loc 1 53 27 is_stmt 0 view .LVU36
+ 172 0058 064B     		ldr	r3, .L21+20
+ 173 005a 0122     		movs	r2, #1
+ 174              	.LVL9:
+  53:Core/Src/i2s_audio.c ****     }
+ 175              		.loc 1 53 27 view .LVU37
+ 176 005c 1A70     		strb	r2, [r3]
+ 177 005e 7047     		bx	lr
+ 178              	.L22:
+ 179              		.align	2
+ 180              	.L21:
+ 181 0060 04580140 		.word	1073829892
+ 182 0064 00000000 		.word	circ_write_idx
+ 183 0068 00000000 		.word	i2s_rx_buffer
+ 184 006c 00000000 		.word	circular_buffer
+ 185 0070 00000000 		.word	circ_sample_count
+ 186 0074 00000000 		.word	new_samples_ready
+ 187              		.cfi_endproc
+ 188              	.LFE148:
+ 190              		.section	.text.HAL_SAI_RxCpltCallback,"ax",%progbits
+ 191              		.align	1
+ 192              		.global	HAL_SAI_RxCpltCallback
+ 193              		.syntax unified
+ 194              		.thumb
+ 195              		.thumb_func
+ 197              	HAL_SAI_RxCpltCallback:
+ 198              	.LVL10:
+ 199              	.LFB149:
   56:Core/Src/i2s_audio.c **** 
-  57:Core/Src/i2s_audio.c ****         // Store in capture buffer with circular wrap
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 4
+  57:Core/Src/i2s_audio.c **** void HAL_SAI_RxCpltCallback(SAI_HandleTypeDef *hsai)
+  58:Core/Src/i2s_audio.c **** {
+ 200              		.loc 1 58 1 is_stmt 1 view -0
+ 201              		.cfi_startproc
+ 202              		@ args = 0, pretend = 0, frame = 0
+ 203              		@ frame_needed = 0, uses_anonymous_args = 0
+  59:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
+ 204              		.loc 1 59 5 view .LVU39
+ 205              		.loc 1 59 13 is_stmt 0 view .LVU40
+ 206 0000 0268     		ldr	r2, [r0]
+ 207              		.loc 1 59 8 view .LVU41
+ 208 0002 154B     		ldr	r3, .L35
+ 209 0004 9A42     		cmp	r2, r3
+ 210 0006 1ED0     		beq	.L33
+ 211 0008 7047     		bx	lr
+ 212              	.LVL11:
+ 213              	.L26:
+ 214              	.LCFI5:
+ 215              		.cfi_def_cfa_offset 8
+ 216              		.cfi_offset 4, -8
+ 217              		.cfi_offset 14, -4
+ 218              	.LBB8:
+  60:Core/Src/i2s_audio.c ****     {
+  61:Core/Src/i2s_audio.c ****         for (uint32_t i = AUDIO_BUFFER_SIZE / 2; i < AUDIO_BUFFER_SIZE; i++)
+  62:Core/Src/i2s_audio.c ****         {
+  63:Core/Src/i2s_audio.c ****             circular_buffer[circ_write_idx] = i2s_rx_buffer[i];
+  64:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+  65:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 6
 
 
-  58:Core/Src/i2s_audio.c ****         captured_samples[capture_index++] = sample16;
- 114              		.loc 1 58 9 is_stmt 1 view .LVU18
- 115              		.loc 1 58 39 is_stmt 0 view .LVU19
- 116 0010 094D     		ldr	r5, .L13
- 117 0012 2C68     		ldr	r4, [r5]
- 118 0014 621C     		adds	r2, r4, #1
- 119 0016 2A60     		str	r2, [r5]
- 120              		.loc 1 58 43 view .LVU20
- 121 0018 084D     		ldr	r5, .L13+4
- 122 001a 25F814C0 		strh	ip, [r5, r4, lsl #1]	@ movhi
-  59:Core/Src/i2s_audio.c ****         if (capture_index >= CAPTURE_BUFFER_SIZE)
- 123              		.loc 1 59 9 is_stmt 1 view .LVU21
- 124              		.loc 1 59 12 is_stmt 0 view .LVU22
- 125 001e B2F5805F 		cmp	r2, #4096
- 126 0022 F0D3     		bcc	.L9
-  60:Core/Src/i2s_audio.c ****         {
-  61:Core/Src/i2s_audio.c ****             capture_index = 0;
- 127              		.loc 1 61 13 is_stmt 1 view .LVU23
- 128              		.loc 1 61 27 is_stmt 0 view .LVU24
- 129 0024 044A     		ldr	r2, .L13
- 130 0026 0024     		movs	r4, #0
- 131 0028 1460     		str	r4, [r2]
- 132 002a ECE7     		b	.L9
- 133              	.LVL8:
- 134              	.L12:
- 135              		.loc 1 61 27 view .LVU25
- 136              	.LBE3:
- 137              	.LBE2:
-  62:Core/Src/i2s_audio.c ****         }
-  63:Core/Src/i2s_audio.c ****     }
-  64:Core/Src/i2s_audio.c **** 
-  65:Core/Src/i2s_audio.c ****     // Optional: print first sample for debug (uncomment if needed)
-  66:Core/Src/i2s_audio.c ****     printf("Sample[0]: %u\r\n", captured_samples[0]);
- 138              		.loc 1 66 5 is_stmt 1 view .LVU26
- 139 002c 034B     		ldr	r3, .L13+4
- 140              	.LVL9:
- 141              		.loc 1 66 5 is_stmt 0 view .LVU27
- 142 002e 1988     		ldrh	r1, [r3]
- 143              	.LVL10:
- 144              		.loc 1 66 5 view .LVU28
- 145 0030 0348     		ldr	r0, .L13+8
- 146              	.LVL11:
- 147              		.loc 1 66 5 view .LVU29
- 148 0032 FFF7FEFF 		bl	printf
- 149              	.LVL12:
-  67:Core/Src/i2s_audio.c **** }
- 150              		.loc 1 67 1 view .LVU30
- 151 0036 38BD     		pop	{r3, r4, r5, pc}
- 152              	.L14:
- 153              		.align	2
- 154              	.L13:
- 155 0038 00000000 		.word	capture_index
- 156 003c 00000000 		.word	captured_samples
- 157 0040 00000000 		.word	.LC0
- 158              		.cfi_endproc
- 159              	.LFE150:
- 161              		.section	.text.HAL_SAI_RxHalfCpltCallback,"ax",%progbits
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 5
+  66:Core/Src/i2s_audio.c ****             {
+  67:Core/Src/i2s_audio.c ****                 circ_sample_count++;
+  68:Core/Src/i2s_audio.c ****             }
+  69:Core/Src/i2s_audio.c ****             BSP_LED_Toggle(LED_YELLOW);
+ 219              		.loc 1 69 13 is_stmt 1 view .LVU42
+ 220 000a 0120     		movs	r0, #1
+ 221 000c FFF7FEFF 		bl	BSP_LED_Toggle
+ 222              	.LVL12:
+  61:Core/Src/i2s_audio.c ****         {
+ 223              		.loc 1 61 74 discriminator 2 view .LVU43
+ 224 0010 0134     		adds	r4, r4, #1
+ 225              	.LVL13:
+ 226              	.L24:
+  61:Core/Src/i2s_audio.c ****         {
+ 227              		.loc 1 61 52 discriminator 1 view .LVU44
+ 228 0012 B4F5806F 		cmp	r4, #1024
+ 229 0016 1AD2     		bcs	.L34
+  63:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 230              		.loc 1 63 13 view .LVU45
+  63:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 231              		.loc 1 63 28 is_stmt 0 view .LVU46
+ 232 0018 104A     		ldr	r2, .L35+4
+ 233 001a 1168     		ldr	r1, [r2]
+  63:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 234              		.loc 1 63 60 view .LVU47
+ 235 001c 104B     		ldr	r3, .L35+8
+ 236 001e 53F82400 		ldr	r0, [r3, r4, lsl #2]
+  63:Core/Src/i2s_audio.c ****             circ_write_idx = (circ_write_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 237              		.loc 1 63 45 view .LVU48
+ 238 0022 104B     		ldr	r3, .L35+12
+ 239 0024 43F82100 		str	r0, [r3, r1, lsl #2]
+  64:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ 240              		.loc 1 64 13 is_stmt 1 view .LVU49
+  64:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ 241              		.loc 1 64 46 is_stmt 0 view .LVU50
+ 242 0028 1368     		ldr	r3, [r2]
+ 243 002a 0133     		adds	r3, r3, #1
+  64:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ 244              		.loc 1 64 51 view .LVU51
+ 245 002c C3F30A03 		ubfx	r3, r3, #0, #11
+  64:Core/Src/i2s_audio.c ****             if (circ_sample_count < CIRCULAR_BUFFER_SIZE)
+ 246              		.loc 1 64 28 view .LVU52
+ 247 0030 1360     		str	r3, [r2]
+  65:Core/Src/i2s_audio.c ****             {
+ 248              		.loc 1 65 13 is_stmt 1 view .LVU53
+  65:Core/Src/i2s_audio.c ****             {
+ 249              		.loc 1 65 35 is_stmt 0 view .LVU54
+ 250 0032 0D4B     		ldr	r3, .L35+16
+ 251 0034 1B68     		ldr	r3, [r3]
+  65:Core/Src/i2s_audio.c ****             {
+ 252              		.loc 1 65 16 view .LVU55
+ 253 0036 B3F5006F 		cmp	r3, #2048
+ 254 003a E6D2     		bcs	.L26
+  67:Core/Src/i2s_audio.c ****             }
+ 255              		.loc 1 67 17 is_stmt 1 view .LVU56
+  67:Core/Src/i2s_audio.c ****             }
+ 256              		.loc 1 67 34 is_stmt 0 view .LVU57
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 7
 
 
- 162              		.align	1
- 163              		.global	HAL_SAI_RxHalfCpltCallback
- 164              		.syntax unified
- 165              		.thumb
- 166              		.thumb_func
- 168              	HAL_SAI_RxHalfCpltCallback:
- 169              	.LVL13:
- 170              	.LFB148:
-  31:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
- 171              		.loc 1 31 1 is_stmt 1 view -0
- 172              		.cfi_startproc
- 173              		@ args = 0, pretend = 0, frame = 0
- 174              		@ frame_needed = 0, uses_anonymous_args = 0
-  31:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
- 175              		.loc 1 31 1 is_stmt 0 view .LVU32
- 176 0000 08B5     		push	{r3, lr}
- 177              	.LCFI2:
- 178              		.cfi_def_cfa_offset 8
- 179              		.cfi_offset 3, -8
- 180              		.cfi_offset 14, -4
-  32:Core/Src/i2s_audio.c ****     {
- 181              		.loc 1 32 5 is_stmt 1 view .LVU33
-  32:Core/Src/i2s_audio.c ****     {
- 182              		.loc 1 32 13 is_stmt 0 view .LVU34
- 183 0002 0268     		ldr	r2, [r0]
-  32:Core/Src/i2s_audio.c ****     {
- 184              		.loc 1 32 8 view .LVU35
- 185 0004 044B     		ldr	r3, .L19
- 186 0006 9A42     		cmp	r2, r3
- 187 0008 00D0     		beq	.L18
- 188              	.LVL14:
- 189              	.L15:
-  37:Core/Src/i2s_audio.c **** 
- 190              		.loc 1 37 1 view .LVU36
- 191 000a 08BD     		pop	{r3, pc}
- 192              	.LVL15:
- 193              	.L18:
-  35:Core/Src/i2s_audio.c ****     }
- 194              		.loc 1 35 9 is_stmt 1 view .LVU37
- 195 000c 4FF40071 		mov	r1, #512
- 196 0010 0248     		ldr	r0, .L19+4
- 197              	.LVL16:
-  35:Core/Src/i2s_audio.c ****     }
- 198              		.loc 1 35 9 is_stmt 0 view .LVU38
- 199 0012 FFF7FEFF 		bl	I2S_Audio_Process
- 200              	.LVL17:
-  37:Core/Src/i2s_audio.c **** 
- 201              		.loc 1 37 1 view .LVU39
- 202 0016 F8E7     		b	.L15
- 203              	.L20:
- 204              		.align	2
- 205              	.L19:
- 206 0018 04580140 		.word	1073829892
- 207 001c 00000000 		.word	i2s_rx_buffer
- 208              		.cfi_endproc
- 209              	.LFE148:
- 211              		.section	.text.HAL_SAI_RxCpltCallback,"ax",%progbits
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 6
+ 257 003c 0A4A     		ldr	r2, .L35+16
+ 258 003e 1368     		ldr	r3, [r2]
+ 259 0040 0133     		adds	r3, r3, #1
+ 260 0042 1360     		str	r3, [r2]
+ 261 0044 E1E7     		b	.L26
+ 262              	.LVL14:
+ 263              	.L33:
+ 264              	.LCFI6:
+ 265              		.cfi_def_cfa_offset 0
+ 266              		.cfi_restore 4
+ 267              		.cfi_restore 14
+  67:Core/Src/i2s_audio.c ****             }
+ 268              		.loc 1 67 34 view .LVU58
+ 269              	.LBE8:
+  58:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
+ 270              		.loc 1 58 1 view .LVU59
+ 271 0046 10B5     		push	{r4, lr}
+ 272              	.LCFI7:
+ 273              		.cfi_def_cfa_offset 8
+ 274              		.cfi_offset 4, -8
+ 275              		.cfi_offset 14, -4
+ 276              	.LBB9:
+  61:Core/Src/i2s_audio.c ****         {
+ 277              		.loc 1 61 23 view .LVU60
+ 278 0048 4FF40074 		mov	r4, #512
+ 279 004c E1E7     		b	.L24
+ 280              	.LVL15:
+ 281              	.L34:
+  61:Core/Src/i2s_audio.c ****         {
+ 282              		.loc 1 61 23 view .LVU61
+ 283              	.LBE9:
+  70:Core/Src/i2s_audio.c **** 
+  71:Core/Src/i2s_audio.c ****         }
+  72:Core/Src/i2s_audio.c ****         new_samples_ready = true;
+ 284              		.loc 1 72 9 is_stmt 1 view .LVU62
+ 285              		.loc 1 72 27 is_stmt 0 view .LVU63
+ 286 004e 074B     		ldr	r3, .L35+20
+ 287 0050 0122     		movs	r2, #1
+ 288 0052 1A70     		strb	r2, [r3]
+  73:Core/Src/i2s_audio.c ****     }
+  74:Core/Src/i2s_audio.c **** }
+ 289              		.loc 1 74 1 view .LVU64
+ 290 0054 10BD     		pop	{r4, pc}
+ 291              	.LVL16:
+ 292              	.L36:
+ 293              		.loc 1 74 1 view .LVU65
+ 294 0056 00BF     		.align	2
+ 295              	.L35:
+ 296 0058 04580140 		.word	1073829892
+ 297 005c 00000000 		.word	circ_write_idx
+ 298 0060 00000000 		.word	i2s_rx_buffer
+ 299 0064 00000000 		.word	circular_buffer
+ 300 0068 00000000 		.word	circ_sample_count
+ 301 006c 00000000 		.word	new_samples_ready
+ 302              		.cfi_endproc
+ 303              	.LFE149:
+ 305              		.section	.text.I2S_Audio_Process,"ax",%progbits
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 8
 
 
- 212              		.align	1
- 213              		.global	HAL_SAI_RxCpltCallback
- 214              		.syntax unified
- 215              		.thumb
- 216              		.thumb_func
- 218              	HAL_SAI_RxCpltCallback:
- 219              	.LVL18:
- 220              	.LFB149:
-  40:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
- 221              		.loc 1 40 1 is_stmt 1 view -0
- 222              		.cfi_startproc
- 223              		@ args = 0, pretend = 0, frame = 0
- 224              		@ frame_needed = 0, uses_anonymous_args = 0
-  40:Core/Src/i2s_audio.c ****     if (hsai->Instance == SAI1_Block_A)
- 225              		.loc 1 40 1 is_stmt 0 view .LVU41
- 226 0000 08B5     		push	{r3, lr}
- 227              	.LCFI3:
- 228              		.cfi_def_cfa_offset 8
- 229              		.cfi_offset 3, -8
- 230              		.cfi_offset 14, -4
-  41:Core/Src/i2s_audio.c ****     {
- 231              		.loc 1 41 5 is_stmt 1 view .LVU42
-  41:Core/Src/i2s_audio.c ****     {
- 232              		.loc 1 41 13 is_stmt 0 view .LVU43
- 233 0002 0268     		ldr	r2, [r0]
-  41:Core/Src/i2s_audio.c ****     {
- 234              		.loc 1 41 8 view .LVU44
- 235 0004 044B     		ldr	r3, .L25
- 236 0006 9A42     		cmp	r2, r3
- 237 0008 00D0     		beq	.L24
- 238              	.LVL19:
- 239              	.L21:
-  47:Core/Src/i2s_audio.c **** 
- 240              		.loc 1 47 1 view .LVU45
- 241 000a 08BD     		pop	{r3, pc}
- 242              	.LVL20:
- 243              	.L24:
-  44:Core/Src/i2s_audio.c ****                           AUDIO_BUFFER_SIZE / 2);
- 244              		.loc 1 44 9 is_stmt 1 view .LVU46
- 245 000c 4FF40071 		mov	r1, #512
- 246 0010 0248     		ldr	r0, .L25+4
- 247              	.LVL21:
-  44:Core/Src/i2s_audio.c ****                           AUDIO_BUFFER_SIZE / 2);
- 248              		.loc 1 44 9 is_stmt 0 view .LVU47
- 249 0012 FFF7FEFF 		bl	I2S_Audio_Process
- 250              	.LVL22:
-  47:Core/Src/i2s_audio.c **** 
- 251              		.loc 1 47 1 view .LVU48
- 252 0016 F8E7     		b	.L21
- 253              	.L26:
- 254              		.align	2
- 255              	.L25:
- 256 0018 04580140 		.word	1073829892
- 257 001c 00080000 		.word	i2s_rx_buffer+2048
- 258              		.cfi_endproc
- 259              	.LFE149:
- 261              		.section	.bss.capture_index,"aw",%nobits
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 7
+ 306              		.align	1
+ 307              		.weak	I2S_Audio_Process
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	I2S_Audio_Process:
+ 313              	.LVL17:
+ 314              	.LFB150:
+  75:Core/Src/i2s_audio.c **** 
+  76:Core/Src/i2s_audio.c **** // -------------------------- Processing ----------------------------
+  77:Core/Src/i2s_audio.c **** // Weak function can be overridden if desired
+  78:Core/Src/i2s_audio.c **** __weak void I2S_Audio_Process(uint32_t *samples, uint32_t num_samples)
+  79:Core/Src/i2s_audio.c **** {
+ 315              		.loc 1 79 1 is_stmt 1 view -0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              		@ link register save eliminated.
+  80:Core/Src/i2s_audio.c ****     latest_sample = samples[0];  // store first sample for main loop
+ 320              		.loc 1 80 5 view .LVU67
+ 321              		.loc 1 80 28 is_stmt 0 view .LVU68
+ 322 0000 0268     		ldr	r2, [r0]
+ 323              		.loc 1 80 19 view .LVU69
+ 324 0002 034B     		ldr	r3, .L38
+ 325 0004 1A60     		str	r2, [r3]
+  81:Core/Src/i2s_audio.c ****     new_samples_ready = true;     // signal main loop
+ 326              		.loc 1 81 5 is_stmt 1 view .LVU70
+ 327              		.loc 1 81 23 is_stmt 0 view .LVU71
+ 328 0006 034B     		ldr	r3, .L38+4
+ 329 0008 0122     		movs	r2, #1
+ 330 000a 1A70     		strb	r2, [r3]
+  82:Core/Src/i2s_audio.c **** }
+ 331              		.loc 1 82 1 view .LVU72
+ 332 000c 7047     		bx	lr
+ 333              	.L39:
+ 334 000e 00BF     		.align	2
+ 335              	.L38:
+ 336 0010 00000000 		.word	latest_sample
+ 337 0014 00000000 		.word	new_samples_ready
+ 338              		.cfi_endproc
+ 339              	.LFE150:
+ 341              		.section	.text.I2S_GetSample,"ax",%progbits
+ 342              		.align	1
+ 343              		.global	I2S_GetSample
+ 344              		.syntax unified
+ 345              		.thumb
+ 346              		.thumb_func
+ 348              	I2S_GetSample:
+ 349              	.LFB151:
+  83:Core/Src/i2s_audio.c **** 
+  84:Core/Src/i2s_audio.c **** // -------------------------- Main Loop Helper ----------------------------
+  85:Core/Src/i2s_audio.c **** uint32_t I2S_GetSample(void)
+  86:Core/Src/i2s_audio.c **** {
+ 350              		.loc 1 86 1 is_stmt 1 view -0
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 9
 
 
- 262              		.align	2
- 265              	capture_index:
- 266 0000 00000000 		.space	4
- 267              		.section	.bss.captured_samples,"aw",%nobits
- 268              		.align	2
- 271              	captured_samples:
- 272 0000 00000000 		.space	8192
- 272      00000000 
- 272      00000000 
- 272      00000000 
- 272      00000000 
- 273              		.section	.bss.i2s_rx_buffer,"aw",%nobits
- 274              		.align	2
- 277              	i2s_rx_buffer:
- 278 0000 00000000 		.space	4096
- 278      00000000 
- 278      00000000 
- 278      00000000 
- 278      00000000 
- 279              		.text
- 280              	.Letext0:
- 281              		.file 2 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
- 282              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
- 283              		.file 4 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
- 284              		.file 5 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
- 285              		.file 6 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h"
- 286              		.file 7 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h"
- 287              		.file 8 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h"
- 288              		.file 9 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/st
- 289              		.file 10 "Core/Inc/main.h"
- 290              		.file 11 "Core/Inc/sai.h"
-ARM GAS  C:\msys64\tmp\cc63yG8g.s 			page 8
+ 354              		@ link register save eliminated.
+  87:Core/Src/i2s_audio.c ****     static uint32_t read_idx = 0;
+ 355              		.loc 1 87 5 view .LVU74
+  88:Core/Src/i2s_audio.c ****     uint32_t sample = 0;
+ 356              		.loc 1 88 5 view .LVU75
+ 357              	.LVL18:
+  89:Core/Src/i2s_audio.c **** 
+  90:Core/Src/i2s_audio.c ****     if (circ_sample_count > 0)
+ 358              		.loc 1 90 5 view .LVU76
+ 359              		.loc 1 90 27 is_stmt 0 view .LVU77
+ 360 0000 094B     		ldr	r3, .L42
+ 361 0002 1868     		ldr	r0, [r3]
+ 362              		.loc 1 90 8 view .LVU78
+ 363 0004 70B1     		cbz	r0, .L40
+  91:Core/Src/i2s_audio.c ****     {
+  92:Core/Src/i2s_audio.c ****         sample = circular_buffer[read_idx];
+ 364              		.loc 1 92 9 is_stmt 1 view .LVU79
+ 365              		.loc 1 92 33 is_stmt 0 view .LVU80
+ 366 0006 094A     		ldr	r2, .L42+4
+ 367 0008 1368     		ldr	r3, [r2]
+ 368              		.loc 1 92 16 view .LVU81
+ 369 000a 0949     		ldr	r1, .L42+8
+ 370 000c 51F82300 		ldr	r0, [r1, r3, lsl #2]
+ 371              	.LVL19:
+  93:Core/Src/i2s_audio.c ****         read_idx = (read_idx + 1) % CIRCULAR_BUFFER_SIZE;
+ 372              		.loc 1 93 9 is_stmt 1 view .LVU82
+ 373              		.loc 1 93 30 is_stmt 0 view .LVU83
+ 374 0010 0133     		adds	r3, r3, #1
+ 375              		.loc 1 93 35 view .LVU84
+ 376 0012 C3F30A03 		ubfx	r3, r3, #0, #11
+ 377              		.loc 1 93 18 view .LVU85
+ 378 0016 1360     		str	r3, [r2]
+  94:Core/Src/i2s_audio.c **** 
+  95:Core/Src/i2s_audio.c ****         __disable_irq();
+ 379              		.loc 1 95 9 is_stmt 1 view .LVU86
+ 380              	.LBB10:
+ 381              	.LBI10:
+ 382              		.file 2 "Drivers/CMSIS/Include/cmsis_gcc.h"
+   1:Drivers/CMSIS/Include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+   3:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @version  V5.2.0
+   5:Drivers/CMSIS/Include/cmsis_gcc.h ****  * @date     08. May 2019
+   6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
+   8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2019 Arm Limited. All rights reserved.
+   9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  10:Drivers/CMSIS/Include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  12:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Drivers/CMSIS/Include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Drivers/CMSIS/Include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
+  18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Drivers/CMSIS/Include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 10
+
+
+  20:Drivers/CMSIS/Include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Drivers/CMSIS/Include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Drivers/CMSIS/Include/cmsis_gcc.h ****  * limitations under the License.
+  23:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+  24:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  25:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  28:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Drivers/CMSIS/Include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
+  35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
+  36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
+  37:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  38:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+  39:Drivers/CMSIS/Include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  40:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ASM
+  41:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ASM                                  __asm
+  42:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  43:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __INLINE
+  44:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __INLINE                               inline
+  45:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
+  48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
+  50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  51:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif                                           
+  52:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  53:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __NO_RETURN                            __attribute__((__noreturn__))
+  54:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  55:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __USED
+  56:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
+  57:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  58:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __WEAK
+  59:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
+  60:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  61:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED
+  62:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED                               __attribute__((packed, aligned(1)))
+  63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+  66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  67:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_UNION
+  68:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+  69:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  70:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32        /* deprecated */
+  71:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  76:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 11
+
+
+  77:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  78:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_WRITE
+  79:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  80:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  81:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  82:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
+  83:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  84:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))-
+  85:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  86:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT16_READ
+  87:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  88:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  89:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
+  91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+  92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
+  93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+  94:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_WRITE
+  95:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+  96:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+  97:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+  98:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
+  99:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 100:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))-
+ 101:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 102:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32_READ
+ 103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
+ 104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
+ 105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
+ 106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
+ 107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
+ 108:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(add
+ 109:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 110:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __ALIGNED
+ 111:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __ALIGNED(x)                           __attribute__((aligned(x)))
+ 112:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 113:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __RESTRICT
+ 114:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
+ 115:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 116:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __COMPILER_BARRIER
+ 117:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
+ 118:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 119:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 120:Drivers/CMSIS/Include/cmsis_gcc.h **** /* #########################  Startup and Lowlevel Init  ######################## */
+ 121:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 122:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __PROGRAM_START
+ 123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 124:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 125:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Initializes data and bss sections
+ 126:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details This default implementations initialized all data and additional bss
+ 127:Drivers/CMSIS/Include/cmsis_gcc.h ****            sections relying on .copy.table and .zero.table specified properly
+ 128:Drivers/CMSIS/Include/cmsis_gcc.h ****            in the used linker script.
+ 129:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 130:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 131:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
+ 132:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 133:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern void _start(void) __NO_RETURN;
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 12
+
+
+ 134:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 135:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 136:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t const* src;
+ 137:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 138:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 139:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __copy_table_t;
+ 140:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 141:Drivers/CMSIS/Include/cmsis_gcc.h ****   typedef struct {
+ 142:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t* dest;
+ 143:Drivers/CMSIS/Include/cmsis_gcc.h ****     uint32_t  wlen;
+ 144:Drivers/CMSIS/Include/cmsis_gcc.h ****   } __zero_table_t;
+ 145:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 146:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_start__;
+ 147:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __copy_table_t __copy_table_end__;
+ 148:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_start__;
+ 149:Drivers/CMSIS/Include/cmsis_gcc.h ****   extern const __zero_table_t __zero_table_end__;
+ 150:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 151:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__copy_table_t const* pTable = &__copy_table_start__; pTable < &__copy_table_end__; ++pTable
+ 152:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 153:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = pTable->src[i];
+ 154:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 155:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 156:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 157:Drivers/CMSIS/Include/cmsis_gcc.h ****   for (__zero_table_t const* pTable = &__zero_table_start__; pTable < &__zero_table_end__; ++pTable
+ 158:Drivers/CMSIS/Include/cmsis_gcc.h ****     for(uint32_t i=0u; i<pTable->wlen; ++i) {
+ 159:Drivers/CMSIS/Include/cmsis_gcc.h ****       pTable->dest[i] = 0u;
+ 160:Drivers/CMSIS/Include/cmsis_gcc.h ****     }
+ 161:Drivers/CMSIS/Include/cmsis_gcc.h ****   }
+ 162:Drivers/CMSIS/Include/cmsis_gcc.h ****  
+ 163:Drivers/CMSIS/Include/cmsis_gcc.h ****   _start();
+ 164:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 165:Drivers/CMSIS/Include/cmsis_gcc.h ****   
+ 166:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __PROGRAM_START           __cmsis_start
+ 167:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 168:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 169:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __INITIAL_SP
+ 170:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __INITIAL_SP              __StackTop
+ 171:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 172:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 173:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __STACK_LIMIT
+ 174:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __STACK_LIMIT             __StackLimit
+ 175:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 176:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 177:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE
+ 178:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE            __Vectors
+ 179:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 180:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 181:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __VECTOR_TABLE_ATTRIBUTE
+ 182:Drivers/CMSIS/Include/cmsis_gcc.h **** #define __VECTOR_TABLE_ATTRIBUTE  __attribute((used, section(".vectors")))
+ 183:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
+ 184:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 185:Drivers/CMSIS/Include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+ 186:Drivers/CMSIS/Include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+ 187:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+ 188:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
+ 189:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 190:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 13
+
+
+ 191:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 192:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+ 193:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+ 194:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 195:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
+ 197:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+ 199:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 200:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 201:Drivers/CMSIS/Include/cmsis_gcc.h **** 
+ 202:Drivers/CMSIS/Include/cmsis_gcc.h **** /**
+ 203:Drivers/CMSIS/Include/cmsis_gcc.h ****   \brief   Disable IRQ Interrupts
+ 204:Drivers/CMSIS/Include/cmsis_gcc.h ****   \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+ 205:Drivers/CMSIS/Include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+ 206:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
+ 207:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __disable_irq(void)
+ 383              		.loc 2 207 27 view .LVU87
+ 384              	.LBB11:
+ 208:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 209:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsid i" : : : "memory");
+ 385              		.loc 2 209 3 view .LVU88
+ 386              		.syntax unified
+ 387              	@ 209 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 388 0018 72B6     		cpsid i
+ 389              	@ 0 "" 2
+ 390              		.thumb
+ 391              		.syntax unified
+ 392              	.LBE11:
+ 393              	.LBE10:
+  96:Core/Src/i2s_audio.c ****         circ_sample_count--;
+ 394              		.loc 1 96 9 view .LVU89
+ 395              		.loc 1 96 26 is_stmt 0 view .LVU90
+ 396 001a 034A     		ldr	r2, .L42
+ 397 001c 1368     		ldr	r3, [r2]
+ 398 001e 013B     		subs	r3, r3, #1
+ 399 0020 1360     		str	r3, [r2]
+  97:Core/Src/i2s_audio.c ****         __enable_irq();
+ 400              		.loc 1 97 9 is_stmt 1 view .LVU91
+ 401              	.LBB12:
+ 402              	.LBI12:
+ 196:Drivers/CMSIS/Include/cmsis_gcc.h **** {
+ 403              		.loc 2 196 27 view .LVU92
+ 404              	.LBB13:
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 405              		.loc 2 198 3 view .LVU93
+ 406              		.syntax unified
+ 407              	@ 198 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
+ 408 0022 62B6     		cpsie i
+ 409              	@ 0 "" 2
+ 198:Drivers/CMSIS/Include/cmsis_gcc.h **** }
+ 410              		.loc 2 198 3 is_stmt 0 view .LVU94
+ 411              		.thumb
+ 412              		.syntax unified
+ 413              	.LBE13:
+ 414              	.LBE12:
+  98:Core/Src/i2s_audio.c ****     }
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 14
+
+
+  99:Core/Src/i2s_audio.c **** 
+ 100:Core/Src/i2s_audio.c ****     return sample;
+ 415              		.loc 1 100 5 is_stmt 1 view .LVU95
+ 416              	.LVL20:
+ 417              	.L40:
+ 101:Core/Src/i2s_audio.c **** }
+ 418              		.loc 1 101 1 is_stmt 0 view .LVU96
+ 419 0024 7047     		bx	lr
+ 420              	.L43:
+ 421 0026 00BF     		.align	2
+ 422              	.L42:
+ 423 0028 00000000 		.word	circ_sample_count
+ 424 002c 00000000 		.word	read_idx.0
+ 425 0030 00000000 		.word	circular_buffer
+ 426              		.cfi_endproc
+ 427              	.LFE151:
+ 429              		.section	.bss.read_idx.0,"aw",%nobits
+ 430              		.align	2
+ 433              	read_idx.0:
+ 434 0000 00000000 		.space	4
+ 435              		.section	.bss.latest_sample,"aw",%nobits
+ 436              		.align	2
+ 439              	latest_sample:
+ 440 0000 00000000 		.space	4
+ 441              		.global	new_samples_ready
+ 442              		.section	.bss.new_samples_ready,"aw",%nobits
+ 445              	new_samples_ready:
+ 446 0000 00       		.space	1
+ 447              		.section	.bss.circ_sample_count,"aw",%nobits
+ 448              		.align	2
+ 451              	circ_sample_count:
+ 452 0000 00000000 		.space	4
+ 453              		.section	.bss.circ_write_idx,"aw",%nobits
+ 454              		.align	2
+ 457              	circ_write_idx:
+ 458 0000 00000000 		.space	4
+ 459              		.section	.bss.circular_buffer,"aw",%nobits
+ 460              		.align	2
+ 463              	circular_buffer:
+ 464 0000 00000000 		.space	8192
+ 464      00000000 
+ 464      00000000 
+ 464      00000000 
+ 464      00000000 
+ 465              		.section	.bss.i2s_rx_buffer,"aw",%nobits
+ 466              		.align	2
+ 469              	i2s_rx_buffer:
+ 470 0000 00000000 		.space	4096
+ 470      00000000 
+ 470      00000000 
+ 470      00000000 
+ 470      00000000 
+ 471              		.text
+ 472              	.Letext0:
+ 473              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 474              		.file 4 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 475              		.file 5 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 15
+
+
+ 476              		.file 6 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
+ 477              		.file 7 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h"
+ 478              		.file 8 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h"
+ 479              		.file 9 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h"
+ 480              		.file 10 "Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h"
+ 481              		.file 11 "Core/Inc/i2s_audio.h"
+ 482              		.file 12 "Core/Inc/sai.h"
+ 483              		.file 13 "Core/Inc/main.h"
+ARM GAS  C:\msys64\tmp\ccewfJbq.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 i2s_audio.c
-C:\msys64\tmp\cc63yG8g.s:20     .text.I2S_Audio_Init:00000000 $t
-C:\msys64\tmp\cc63yG8g.s:26     .text.I2S_Audio_Init:00000000 I2S_Audio_Init
-C:\msys64\tmp\cc63yG8g.s:61     .text.I2S_Audio_Init:0000001c $d
-C:\msys64\tmp\cc63yG8g.s:277    .bss.i2s_rx_buffer:00000000 i2s_rx_buffer
-C:\msys64\tmp\cc63yG8g.s:67     .rodata.I2S_Audio_Process.str1.4:00000000 $d
-C:\msys64\tmp\cc63yG8g.s:71     .text.I2S_Audio_Process:00000000 $t
-C:\msys64\tmp\cc63yG8g.s:77     .text.I2S_Audio_Process:00000000 I2S_Audio_Process
-C:\msys64\tmp\cc63yG8g.s:155    .text.I2S_Audio_Process:00000038 $d
-C:\msys64\tmp\cc63yG8g.s:265    .bss.capture_index:00000000 capture_index
-C:\msys64\tmp\cc63yG8g.s:271    .bss.captured_samples:00000000 captured_samples
-C:\msys64\tmp\cc63yG8g.s:162    .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
-C:\msys64\tmp\cc63yG8g.s:168    .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
-C:\msys64\tmp\cc63yG8g.s:206    .text.HAL_SAI_RxHalfCpltCallback:00000018 $d
-C:\msys64\tmp\cc63yG8g.s:212    .text.HAL_SAI_RxCpltCallback:00000000 $t
-C:\msys64\tmp\cc63yG8g.s:218    .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
-C:\msys64\tmp\cc63yG8g.s:256    .text.HAL_SAI_RxCpltCallback:00000018 $d
-C:\msys64\tmp\cc63yG8g.s:262    .bss.capture_index:00000000 $d
-C:\msys64\tmp\cc63yG8g.s:268    .bss.captured_samples:00000000 $d
-C:\msys64\tmp\cc63yG8g.s:274    .bss.i2s_rx_buffer:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:20     .text.I2S_Audio_Init:00000000 $t
+C:\msys64\tmp\ccewfJbq.s:26     .text.I2S_Audio_Init:00000000 I2S_Audio_Init
+C:\msys64\tmp\ccewfJbq.s:61     .text.I2S_Audio_Init:0000001c $d
+C:\msys64\tmp\ccewfJbq.s:469    .bss.i2s_rx_buffer:00000000 i2s_rx_buffer
+C:\msys64\tmp\ccewfJbq.s:67     .text.HAL_SAI_RxHalfCpltCallback:00000000 $t
+C:\msys64\tmp\ccewfJbq.s:73     .text.HAL_SAI_RxHalfCpltCallback:00000000 HAL_SAI_RxHalfCpltCallback
+C:\msys64\tmp\ccewfJbq.s:181    .text.HAL_SAI_RxHalfCpltCallback:00000060 $d
+C:\msys64\tmp\ccewfJbq.s:457    .bss.circ_write_idx:00000000 circ_write_idx
+C:\msys64\tmp\ccewfJbq.s:463    .bss.circular_buffer:00000000 circular_buffer
+C:\msys64\tmp\ccewfJbq.s:451    .bss.circ_sample_count:00000000 circ_sample_count
+C:\msys64\tmp\ccewfJbq.s:445    .bss.new_samples_ready:00000000 new_samples_ready
+C:\msys64\tmp\ccewfJbq.s:191    .text.HAL_SAI_RxCpltCallback:00000000 $t
+C:\msys64\tmp\ccewfJbq.s:197    .text.HAL_SAI_RxCpltCallback:00000000 HAL_SAI_RxCpltCallback
+C:\msys64\tmp\ccewfJbq.s:296    .text.HAL_SAI_RxCpltCallback:00000058 $d
+C:\msys64\tmp\ccewfJbq.s:306    .text.I2S_Audio_Process:00000000 $t
+C:\msys64\tmp\ccewfJbq.s:312    .text.I2S_Audio_Process:00000000 I2S_Audio_Process
+C:\msys64\tmp\ccewfJbq.s:336    .text.I2S_Audio_Process:00000010 $d
+C:\msys64\tmp\ccewfJbq.s:439    .bss.latest_sample:00000000 latest_sample
+C:\msys64\tmp\ccewfJbq.s:342    .text.I2S_GetSample:00000000 $t
+C:\msys64\tmp\ccewfJbq.s:348    .text.I2S_GetSample:00000000 I2S_GetSample
+C:\msys64\tmp\ccewfJbq.s:423    .text.I2S_GetSample:00000028 $d
+C:\msys64\tmp\ccewfJbq.s:433    .bss.read_idx.0:00000000 read_idx.0
+C:\msys64\tmp\ccewfJbq.s:430    .bss.read_idx.0:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:436    .bss.latest_sample:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:446    .bss.new_samples_ready:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:448    .bss.circ_sample_count:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:454    .bss.circ_write_idx:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:460    .bss.circular_buffer:00000000 $d
+C:\msys64\tmp\ccewfJbq.s:466    .bss.i2s_rx_buffer:00000000 $d
 
 UNDEFINED SYMBOLS
 MX_SAI1_Init
 HAL_SAI_Receive_DMA
 Error_Handler
 hsai_BlockA1
-printf
+BSP_LED_Toggle
