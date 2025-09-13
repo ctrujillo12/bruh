@@ -46,7 +46,7 @@ extern "C" {
 
 /* Exported constants --------------------------------------------------------*/
 /* USER CODE BEGIN EC */
-#define AUDIO_BUFFER_SIZE 256   // Example buffer size for I2S
+// #define AUDIO_BUFFER_SIZE 256   // Example buffer size for I2S
 /* USER CODE END EC */
 
 /* Exported macro ------------------------------------------------------------*/

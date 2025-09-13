@@ -1,4 +1,4 @@
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 1
 
 
    1              		.cpu cortex-m7
@@ -58,7 +58,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
   29:Core/Src/stm32h7xx_it.c **** 
   30:Core/Src/stm32h7xx_it.c **** /* USER CODE END TD */
   31:Core/Src/stm32h7xx_it.c **** 
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 2
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 2
 
 
   32:Core/Src/stm32h7xx_it.c **** /* Private define ------------------------------------------------------------*/
@@ -87,7 +87,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
   55:Core/Src/stm32h7xx_it.c **** /* USER CODE END 0 */
   56:Core/Src/stm32h7xx_it.c **** 
   57:Core/Src/stm32h7xx_it.c **** /* External variables --------------------------------------------------------*/
-  58:Core/Src/stm32h7xx_it.c **** 
+  58:Core/Src/stm32h7xx_it.c **** extern DMA_HandleTypeDef hdma_sai1_a;
   59:Core/Src/stm32h7xx_it.c **** /* USER CODE BEGIN EV */
   60:Core/Src/stm32h7xx_it.c **** 
   61:Core/Src/stm32h7xx_it.c **** /* USER CODE END EV */
@@ -118,7 +118,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
   36              		.loc 1 77 3 view .LVU2
   75:Core/Src/stm32h7xx_it.c ****   {
   37              		.loc 1 75 10 view .LVU3
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 3
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 3
 
 
   38 0000 FEE7     		b	.L2
@@ -178,7 +178,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
   99:Core/Src/stm32h7xx_it.c **** void MemManage_Handler(void)
  100:Core/Src/stm32h7xx_it.c **** {
   74              		.loc 1 100 1 view -0
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 4
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 4
 
 
   75              		.cfi_startproc
@@ -238,7 +238,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  106              		.loc 1 119 9 view .LVU15
  107 0000 FEE7     		b	.L8
  108              		.cfi_endproc
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 5
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 5
 
 
  109              	.LFE150:
@@ -298,7 +298,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  144              		.cfi_startproc
  145              		@ args = 0, pretend = 0, frame = 0
  146              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 6
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 6
 
 
  147              		@ link register save eliminated.
@@ -358,7 +358,7 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  170:Core/Src/stm32h7xx_it.c **** void PendSV_Handler(void)
  171:Core/Src/stm32h7xx_it.c **** {
  181              		.loc 1 171 1 view -0
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 7
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 7
 
 
  182              		.cfi_startproc
@@ -414,16 +414,16 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  213 0006 08BD     		pop	{r3, pc}
  214              		.cfi_endproc
  215              	.LFE155:
- 217              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
+ 217              		.section	.text.DMA1_Stream0_IRQHandler,"ax",%progbits
  218              		.align	1
- 219              		.global	EXTI15_10_IRQHandler
+ 219              		.global	DMA1_Stream0_IRQHandler
  220              		.syntax unified
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 8
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 8
 
 
  221              		.thumb
  222              		.thumb_func
- 224              	EXTI15_10_IRQHandler:
+ 224              	DMA1_Stream0_IRQHandler:
  225              	.LFB156:
  193:Core/Src/stm32h7xx_it.c **** 
  194:Core/Src/stm32h7xx_it.c **** /******************************************************************************/
@@ -434,9 +434,9 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  199:Core/Src/stm32h7xx_it.c **** /******************************************************************************/
  200:Core/Src/stm32h7xx_it.c **** 
  201:Core/Src/stm32h7xx_it.c **** /**
- 202:Core/Src/stm32h7xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
+ 202:Core/Src/stm32h7xx_it.c ****   * @brief This function handles DMA1 stream0 global interrupt.
  203:Core/Src/stm32h7xx_it.c ****   */
- 204:Core/Src/stm32h7xx_it.c **** void EXTI15_10_IRQHandler(void)
+ 204:Core/Src/stm32h7xx_it.c **** void DMA1_Stream0_IRQHandler(void)
  205:Core/Src/stm32h7xx_it.c **** {
  226              		.loc 1 205 1 is_stmt 1 view -0
  227              		.cfi_startproc
@@ -447,52 +447,108 @@ ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 1
  232              		.cfi_def_cfa_offset 8
  233              		.cfi_offset 3, -8
  234              		.cfi_offset 14, -4
- 206:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+ 206:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 0 */
  207:Core/Src/stm32h7xx_it.c **** 
- 208:Core/Src/stm32h7xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
- 209:Core/Src/stm32h7xx_it.c ****   BSP_PB_IRQHandler(BUTTON_USER);
+ 208:Core/Src/stm32h7xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 0 */
+ 209:Core/Src/stm32h7xx_it.c ****   HAL_DMA_IRQHandler(&hdma_sai1_a);
  235              		.loc 1 209 3 view .LVU30
- 236 0002 0020     		movs	r0, #0
- 237 0004 FFF7FEFF 		bl	BSP_PB_IRQHandler
+ 236 0002 0248     		ldr	r0, .L18
+ 237 0004 FFF7FEFF 		bl	HAL_DMA_IRQHandler
  238              	.LVL1:
- 210:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+ 210:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN DMA1_Stream0_IRQn 1 */
  211:Core/Src/stm32h7xx_it.c **** 
- 212:Core/Src/stm32h7xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
+ 212:Core/Src/stm32h7xx_it.c ****   /* USER CODE END DMA1_Stream0_IRQn 1 */
  213:Core/Src/stm32h7xx_it.c **** }
  239              		.loc 1 213 1 is_stmt 0 view .LVU31
  240 0008 08BD     		pop	{r3, pc}
- 241              		.cfi_endproc
- 242              	.LFE156:
- 244              		.text
- 245              	.Letext0:
- 246              		.file 2 "Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h"
- 247              		.file 3 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
-ARM GAS  C:\msys64\tmp\ccJuzZQy.s 			page 9
+ 241              	.L19:
+ 242 000a 00BF     		.align	2
+ 243              	.L18:
+ 244 000c 00000000 		.word	hdma_sai1_a
+ 245              		.cfi_endproc
+ 246              	.LFE156:
+ 248              		.section	.text.EXTI15_10_IRQHandler,"ax",%progbits
+ 249              		.align	1
+ 250              		.global	EXTI15_10_IRQHandler
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	EXTI15_10_IRQHandler:
+ 256              	.LFB157:
+ 214:Core/Src/stm32h7xx_it.c **** 
+ 215:Core/Src/stm32h7xx_it.c **** /**
+ 216:Core/Src/stm32h7xx_it.c ****   * @brief This function handles EXTI line[15:10] interrupts.
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 9
+
+
+ 217:Core/Src/stm32h7xx_it.c ****   */
+ 218:Core/Src/stm32h7xx_it.c **** void EXTI15_10_IRQHandler(void)
+ 219:Core/Src/stm32h7xx_it.c **** {
+ 257              		.loc 1 219 1 is_stmt 1 view -0
+ 258              		.cfi_startproc
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261 0000 08B5     		push	{r3, lr}
+ 262              	.LCFI2:
+ 263              		.cfi_def_cfa_offset 8
+ 264              		.cfi_offset 3, -8
+ 265              		.cfi_offset 14, -4
+ 220:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
+ 221:Core/Src/stm32h7xx_it.c **** 
+ 222:Core/Src/stm32h7xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 0 */
+ 223:Core/Src/stm32h7xx_it.c ****   BSP_PB_IRQHandler(BUTTON_USER);
+ 266              		.loc 1 223 3 view .LVU33
+ 267 0002 0020     		movs	r0, #0
+ 268 0004 FFF7FEFF 		bl	BSP_PB_IRQHandler
+ 269              	.LVL2:
+ 224:Core/Src/stm32h7xx_it.c ****   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
+ 225:Core/Src/stm32h7xx_it.c **** 
+ 226:Core/Src/stm32h7xx_it.c ****   /* USER CODE END EXTI15_10_IRQn 1 */
+ 227:Core/Src/stm32h7xx_it.c **** }
+ 270              		.loc 1 227 1 is_stmt 0 view .LVU34
+ 271 0008 08BD     		pop	{r3, pc}
+ 272              		.cfi_endproc
+ 273              	.LFE157:
+ 275              		.text
+ 276              	.Letext0:
+ 277              		.file 2 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 278              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 279              		.file 4 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
+ 280              		.file 5 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h"
+ 281              		.file 6 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h"
+ 282              		.file 7 "Drivers/BSP/STM32H7xx_Nucleo/stm32h7xx_nucleo.h"
+ 283              		.file 8 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h"
+ARM GAS  C:\msys64\tmp\ccr80EaH.s 			page 10
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32h7xx_it.c
-C:\msys64\tmp\ccJuzZQy.s:20     .text.NMI_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:26     .text.NMI_Handler:00000000 NMI_Handler
-C:\msys64\tmp\ccJuzZQy.s:43     .text.HardFault_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:49     .text.HardFault_Handler:00000000 HardFault_Handler
-C:\msys64\tmp\ccJuzZQy.s:66     .text.MemManage_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:72     .text.MemManage_Handler:00000000 MemManage_Handler
-C:\msys64\tmp\ccJuzZQy.s:89     .text.BusFault_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:95     .text.BusFault_Handler:00000000 BusFault_Handler
-C:\msys64\tmp\ccJuzZQy.s:112    .text.UsageFault_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:118    .text.UsageFault_Handler:00000000 UsageFault_Handler
-C:\msys64\tmp\ccJuzZQy.s:135    .text.SVC_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:141    .text.SVC_Handler:00000000 SVC_Handler
-C:\msys64\tmp\ccJuzZQy.s:154    .text.DebugMon_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:160    .text.DebugMon_Handler:00000000 DebugMon_Handler
-C:\msys64\tmp\ccJuzZQy.s:173    .text.PendSV_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:179    .text.PendSV_Handler:00000000 PendSV_Handler
-C:\msys64\tmp\ccJuzZQy.s:192    .text.SysTick_Handler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:198    .text.SysTick_Handler:00000000 SysTick_Handler
-C:\msys64\tmp\ccJuzZQy.s:218    .text.EXTI15_10_IRQHandler:00000000 $t
-C:\msys64\tmp\ccJuzZQy.s:224    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
+C:\msys64\tmp\ccr80EaH.s:20     .text.NMI_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:26     .text.NMI_Handler:00000000 NMI_Handler
+C:\msys64\tmp\ccr80EaH.s:43     .text.HardFault_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:49     .text.HardFault_Handler:00000000 HardFault_Handler
+C:\msys64\tmp\ccr80EaH.s:66     .text.MemManage_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:72     .text.MemManage_Handler:00000000 MemManage_Handler
+C:\msys64\tmp\ccr80EaH.s:89     .text.BusFault_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:95     .text.BusFault_Handler:00000000 BusFault_Handler
+C:\msys64\tmp\ccr80EaH.s:112    .text.UsageFault_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:118    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\msys64\tmp\ccr80EaH.s:135    .text.SVC_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:141    .text.SVC_Handler:00000000 SVC_Handler
+C:\msys64\tmp\ccr80EaH.s:154    .text.DebugMon_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:160    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\msys64\tmp\ccr80EaH.s:173    .text.PendSV_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:179    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\msys64\tmp\ccr80EaH.s:192    .text.SysTick_Handler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:198    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\msys64\tmp\ccr80EaH.s:218    .text.DMA1_Stream0_IRQHandler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:224    .text.DMA1_Stream0_IRQHandler:00000000 DMA1_Stream0_IRQHandler
+C:\msys64\tmp\ccr80EaH.s:244    .text.DMA1_Stream0_IRQHandler:0000000c $d
+C:\msys64\tmp\ccr80EaH.s:249    .text.EXTI15_10_IRQHandler:00000000 $t
+C:\msys64\tmp\ccr80EaH.s:255    .text.EXTI15_10_IRQHandler:00000000 EXTI15_10_IRQHandler
 
 UNDEFINED SYMBOLS
 HAL_IncTick
+HAL_DMA_IRQHandler
+hdma_sai1_a
 BSP_PB_IRQHandler

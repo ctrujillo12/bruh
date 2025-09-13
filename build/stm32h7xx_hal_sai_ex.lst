@@ -1,0 +1,334 @@
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"stm32h7xx_hal_sai_ex.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.file 1 "Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c"
+  19              		.section	.text.HAL_SAIEx_ConfigPdmMicDelay,"ax",%progbits
+  20              		.align	1
+  21              		.global	HAL_SAIEx_ConfigPdmMicDelay
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	HAL_SAIEx_ConfigPdmMicDelay:
+  27              	.LVL0:
+  28              	.LFB144:
+   1:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /**
+   2:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   ******************************************************************************
+   3:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @file    stm32h7xx_hal_sai_ex.c
+   4:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @author  MCD Application Team
+   5:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @brief   SAI Extended HAL module driver.
+   6:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *          This file provides firmware functions to manage the following
+   7:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *          functionality of the SAI Peripheral Controller:
+   8:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *           + Modify PDM microphone delays.
+   9:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *
+  10:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   ******************************************************************************
+  11:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @attention
+  12:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *
+  13:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * Copyright (c) 2017 STMicroelectronics.
+  14:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * All rights reserved.
+  15:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *
+  16:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * This software is licensed under terms that can be found in the LICENSE file
+  17:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * in the root directory of this software component.
+  18:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
+  19:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *
+  20:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   ******************************************************************************
+  21:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  22:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  23:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Includes ------------------------------------------------------------------*/
+  24:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #include "stm32h7xx_hal.h"
+  25:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  26:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /** @addtogroup STM32H7xx_HAL_Driver
+  27:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @{
+  28:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  29:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #ifdef HAL_SAI_MODULE_ENABLED
+  30:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 2
+
+
+  31:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /** @defgroup SAIEx SAIEx
+  32:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @brief SAI Extended HAL module driver
+  33:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @{
+  34:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  35:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  36:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Private types -------------------------------------------------------------*/
+  37:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Private variables ---------------------------------------------------------*/
+  38:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Private constants ---------------------------------------------------------*/
+  39:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #define SAI_PDM_DELAY_MASK          0x77U
+  40:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #define SAI_PDM_DELAY_OFFSET        8U
+  41:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #define SAI_PDM_RIGHT_DELAY_OFFSET  4U
+  42:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  43:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Private macros ------------------------------------------------------------*/
+  44:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Private functions ---------------------------------------------------------*/
+  45:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /* Exported functions --------------------------------------------------------*/
+  46:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /** @defgroup SAIEx_Exported_Functions SAIEx Extended Exported Functions
+  47:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @{
+  48:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  49:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  50:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /** @defgroup SAIEx_Exported_Functions_Group1 Peripheral Control functions
+  51:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @brief    SAIEx control functions
+  52:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   *
+  53:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** @verbatim
+  54:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****  ===============================================================================
+  55:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                  ##### Extended features functions #####
+  56:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****  ===============================================================================
+  57:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     [..]  This section provides functions allowing to:
+  58:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       (+) Modify PDM microphone delays
+  59:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  60:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** @endverbatim
+  61:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @{
+  62:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  63:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  64:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** /**
+  65:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @brief  Configure PDM microphone delays.
+  66:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @param  hsai SAI handle.
+  67:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @param  pdmMicDelay Microphone delays configuration.
+  68:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   * @retval HAL status
+  69:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   */
+  70:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** HAL_StatusTypeDef HAL_SAIEx_ConfigPdmMicDelay(const SAI_HandleTypeDef *hsai,
+  71:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                                               const SAIEx_PdmMicDelayParamTypeDef *pdmMicDelay)
+  72:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** {
+  29              		.loc 1 72 1 view -0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              		.loc 1 72 1 is_stmt 0 view .LVU1
+  35 0000 30B4     		push	{r4, r5}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 4, -8
+  39              		.cfi_offset 5, -4
+  73:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
+  40              		.loc 1 73 3 is_stmt 1 view .LVU2
+  41              	.LVL1:
+  74:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   uint32_t offset;
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 3
+
+
+  42              		.loc 1 74 3 view .LVU3
+  75:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   SAI_TypeDef *SaiBaseAddress;
+  43              		.loc 1 75 3 view .LVU4
+  76:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  77:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   /* Get the SAI base address according to the SAI handle */
+  78:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #if defined(SAI4)
+  79:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   SaiBaseAddress = ((hsai->Instance == SAI1_Block_A) ? SAI1 : \
+  44              		.loc 1 79 3 view .LVU5
+  45              		.loc 1 79 26 is_stmt 0 view .LVU6
+  46 0002 0368     		ldr	r3, [r0]
+  47              		.loc 1 79 61 view .LVU7
+  48 0004 154A     		ldr	r2, .L10
+  49 0006 9342     		cmp	r3, r2
+  50 0008 0AD0     		beq	.L4
+  80:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                     (hsai->Instance == SAI4_Block_A) ? SAI4 : \
+  51              		.loc 1 80 61 view .LVU8
+  52 000a 02F1C052 		add	r2, r2, #402653184
+  53 000e A2F58232 		sub	r2, r2, #66560
+  54 0012 9342     		cmp	r3, r2
+  55 0014 02D0     		beq	.L9
+  81:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                      NULL);
+  82:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #else
+  83:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   SaiBaseAddress = ((hsai->Instance == SAI1_Block_A) ? SAI1 : NULL);
+  84:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** #endif /* SAI4 */
+  85:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  86:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   /* Check that SAI sub-block is SAI sub-block A */
+  87:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   if (SaiBaseAddress == NULL)
+  88:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   {
+  89:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     status = HAL_ERROR;
+  56              		.loc 1 89 12 view .LVU9
+  57 0016 0120     		movs	r0, #1
+  58              	.LVL2:
+  59              	.L3:
+  90:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   }
+  91:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   else
+  92:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   {
+  93:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     /* Check microphone delay parameters */
+  94:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     assert_param(IS_SAI_PDM_MIC_PAIRS_NUMBER(pdmMicDelay->MicPair));
+  95:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     assert_param(IS_SAI_PDM_MIC_DELAY(pdmMicDelay->LeftDelay));
+  96:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     assert_param(IS_SAI_PDM_MIC_DELAY(pdmMicDelay->RightDelay));
+  97:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  98:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     /* Compute offset on PDMDLY register according mic pair number */
+  99:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     offset = SAI_PDM_DELAY_OFFSET * (pdmMicDelay->MicPair - 1U);
+ 100:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 101:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     /* Check SAI state and offset */
+ 102:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     if ((hsai->State != HAL_SAI_STATE_RESET) && (offset <= 24U))
+ 103:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+ 104:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       /* Reset current delays for specified microphone */
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       SaiBaseAddress->PDMDLY &= ~(SAI_PDM_DELAY_MASK << offset);
+ 106:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 107:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       /* Apply new microphone delays */
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       SaiBaseAddress->PDMDLY |= (((pdmMicDelay->RightDelay << SAI_PDM_RIGHT_DELAY_OFFSET) | pdmMicD
+ 109:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 110:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     else
+ 111:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+ 112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****       status = HAL_ERROR;
+ 113:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 4
+
+
+ 114:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   }
+ 115:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   return status;
+  60              		.loc 1 115 3 is_stmt 1 view .LVU10
+ 116:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** }
+  61              		.loc 1 116 1 is_stmt 0 view .LVU11
+  62 0018 30BC     		pop	{r4, r5}
+  63              	.LCFI1:
+  64              		.cfi_remember_state
+  65              		.cfi_restore 5
+  66              		.cfi_restore 4
+  67              		.cfi_def_cfa_offset 0
+  68 001a 7047     		bx	lr
+  69              	.LVL3:
+  70              	.L9:
+  71              	.LCFI2:
+  72              		.cfi_restore_state
+  79:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                     (hsai->Instance == SAI4_Block_A) ? SAI4 : \
+  73              		.loc 1 79 61 view .LVU12
+  74 001c 104C     		ldr	r4, .L10+4
+  75 001e 00E0     		b	.L2
+  76              	.L4:
+  79:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****                     (hsai->Instance == SAI4_Block_A) ? SAI4 : \
+  77              		.loc 1 79 61 discriminator 1 view .LVU13
+  78 0020 104C     		ldr	r4, .L10+8
+  79              	.L2:
+  94:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     assert_param(IS_SAI_PDM_MIC_DELAY(pdmMicDelay->LeftDelay));
+  80              		.loc 1 94 5 is_stmt 1 view .LVU14
+  95:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     assert_param(IS_SAI_PDM_MIC_DELAY(pdmMicDelay->RightDelay));
+  81              		.loc 1 95 5 view .LVU15
+  96:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  82              		.loc 1 96 5 view .LVU16
+  99:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  83              		.loc 1 99 5 view .LVU17
+  99:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  84              		.loc 1 99 49 is_stmt 0 view .LVU18
+  85 0022 0B68     		ldr	r3, [r1]
+  99:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  86              		.loc 1 99 59 view .LVU19
+  87 0024 013B     		subs	r3, r3, #1
+  99:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  88              		.loc 1 99 12 view .LVU20
+  89 0026 DB00     		lsls	r3, r3, #3
+  90              	.LVL4:
+ 102:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+  91              		.loc 1 102 5 is_stmt 1 view .LVU21
+ 102:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+  92              		.loc 1 102 14 is_stmt 0 view .LVU22
+  93 0028 90F89120 		ldrb	r2, [r0, #145]	@ zero_extendqisi2
+ 102:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+  94              		.loc 1 102 8 view .LVU23
+  95 002c 92B1     		cbz	r2, .L6
+ 102:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     {
+  96              		.loc 1 102 46 discriminator 1 view .LVU24
+  97 002e 182B     		cmp	r3, #24
+  98 0030 12D8     		bhi	.L7
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+  99              		.loc 1 105 7 is_stmt 1 view .LVU25
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 5
+
+
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 100              		.loc 1 105 21 is_stmt 0 view .LVU26
+ 101 0032 A26C     		ldr	r2, [r4, #72]
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 102              		.loc 1 105 54 view .LVU27
+ 103 0034 7720     		movs	r0, #119
+ 104              	.LVL5:
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 105              		.loc 1 105 54 view .LVU28
+ 106 0036 9840     		lsls	r0, r0, r3
+ 105:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c **** 
+ 107              		.loc 1 105 30 view .LVU29
+ 108 0038 22EA0002 		bic	r2, r2, r0
+ 109 003c A264     		str	r2, [r4, #72]
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 110              		.loc 1 108 7 is_stmt 1 view .LVU30
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 111              		.loc 1 108 21 is_stmt 0 view .LVU31
+ 112 003e A06C     		ldr	r0, [r4, #72]
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 113              		.loc 1 108 47 view .LVU32
+ 114 0040 8D68     		ldr	r5, [r1, #8]
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 115              		.loc 1 108 104 view .LVU33
+ 116 0042 4A68     		ldr	r2, [r1, #4]
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 117              		.loc 1 108 91 view .LVU34
+ 118 0044 42EA0512 		orr	r2, r2, r5, lsl #4
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 119              		.loc 1 108 117 view .LVU35
+ 120 0048 02FA03F3 		lsl	r3, r2, r3
+ 121              	.LVL6:
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 122              		.loc 1 108 30 view .LVU36
+ 123 004c 0343     		orrs	r3, r3, r0
+ 124 004e A364     		str	r3, [r4, #72]
+  73:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****   uint32_t offset;
+ 125              		.loc 1 73 21 view .LVU37
+ 126 0050 0020     		movs	r0, #0
+ 108:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 127              		.loc 1 108 30 view .LVU38
+ 128 0052 E1E7     		b	.L3
+ 129              	.LVL7:
+ 130              	.L6:
+ 112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 131              		.loc 1 112 14 view .LVU39
+ 132 0054 0120     		movs	r0, #1
+ 133              	.LVL8:
+ 112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 134              		.loc 1 112 14 view .LVU40
+ 135 0056 DFE7     		b	.L3
+ 136              	.LVL9:
+ 137              	.L7:
+ 112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 138              		.loc 1 112 14 view .LVU41
+ 139 0058 0120     		movs	r0, #1
+ 140              	.LVL10:
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 6
+
+
+ 112:Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sai_ex.c ****     }
+ 141              		.loc 1 112 14 view .LVU42
+ 142 005a DDE7     		b	.L3
+ 143              	.L11:
+ 144              		.align	2
+ 145              	.L10:
+ 146 005c 04580140 		.word	1073829892
+ 147 0060 00540058 		.word	1476416512
+ 148 0064 00580140 		.word	1073829888
+ 149              		.cfi_endproc
+ 150              	.LFE144:
+ 152              		.text
+ 153              	.Letext0:
+ 154              		.file 2 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/ma
+ 155              		.file 3 "C:/Program Files (x86)/Arm GNU Toolchain arm-none-eabi/14.3 rel1/arm-none-eabi/include/sy
+ 156              		.file 4 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h723xx.h"
+ 157              		.file 5 "Drivers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h"
+ 158              		.file 6 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_def.h"
+ 159              		.file 7 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_dma.h"
+ 160              		.file 8 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai.h"
+ 161              		.file 9 "Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_sai_ex.h"
+ARM GAS  C:\msys64\tmp\ccIQeHwe.s 			page 7
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 stm32h7xx_hal_sai_ex.c
+C:\msys64\tmp\ccIQeHwe.s:20     .text.HAL_SAIEx_ConfigPdmMicDelay:00000000 $t
+C:\msys64\tmp\ccIQeHwe.s:26     .text.HAL_SAIEx_ConfigPdmMicDelay:00000000 HAL_SAIEx_ConfigPdmMicDelay
+C:\msys64\tmp\ccIQeHwe.s:146    .text.HAL_SAIEx_ConfigPdmMicDelay:0000005c $d
+
+NO UNDEFINED SYMBOLS
